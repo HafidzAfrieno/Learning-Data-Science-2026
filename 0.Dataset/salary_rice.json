@@ -1,0 +1,6 @@
+[
+  {"id": 1, "employee_name": "Budi Santoso", "salary_rice_kg": 10, "allowance_value_idr": 150000},
+  {"id": 2, "employee_name": "Siti Rahma", "salary_rice_kg": 20, "allowance_value_idr": 300000},
+  {"id": 3, "employee_name": "Ahmad Dani", "salary_rice_kg": 10, "allowance_value_idr": 150000},
+  {"id": 4, "employee_name": "Dewi Lestari", "salary_rice_kg": 25, "allowance_value_idr": 375000}
+]
