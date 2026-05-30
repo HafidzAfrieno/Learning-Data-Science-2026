@@ -1,0 +1,1021 @@
+PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+193,1,2,"Johnson, Mr./Mrs. Laina",female,,2,0,PC 61897,14.6663,E46,S
+540,0,3,"Futrelle, Mr./Mrs. Elizabeth",female,,0,0,PC 45221,241.1648,,S
+122,1,3,"Allen, Mr./Mrs. Gosta",male,1.0,0,0,309144,7.7993,,S
+810,0,1,"Johnson, Mr./Mrs. Florence",female,8.0,1,0,PC 32983,18.6753,,S
+326,1,2,"Smith, Mr./Mrs. Laina",MALE,13.0,0,1,PC 22255,39.5465,,Q
+669,0,1,"Cumings, Mr./Mrs. James",female,10.0,0,0,490917,51.3121,,S
+101,0,1,"Cumings, Mr./Mrs. Owen",female,65.0,0,0,701334,68.3822,,S
+45,0,3,"Allen, Mr./Mrs. Florence",female,74.0,1,0,PC 82070,20.4607,B17,S
+834,0,3,"Moran, Mr./Mrs. Edward",male,33.0,4,0,PC 56036,10.0354,,S
+227,1,2,"Smith, Mr./Mrs. Lily",male,71.0,0,2,146385,53.0905,,c
+157,1,1,"Futrelle, Mr./Mrs. William",male,69.0,0,0,890371,44.3935,,Q
+329,0,3,"Smith, Mr./Mrs. Lily",female,49.0,1,0,PC 32463,67.5938,F37,C
+40,0,2,"McCarthy, Mr./Mrs. William",male,54.0,0,0,PC 62855,75.3796,,C
+352,1,3,"Allen, Mr./Mrs. Edward",female,41.0,1,5,179710,7.5113,,C
+626,0,3,"Johnson, Mr./Mrs. Lily",MALE,72.0,0,0,662628,42.078,,S
+689,1,3,"Johnson, Mr./Mrs. James",male,,2,0,PC 10191,30.776,,Q
+872,0,1,"Palsson, Mr./Mrs. Florence",female,21.0,0,0,561101,51.6631,C2,S
+482,1,1,"Braund, Mr./Mrs. Edward",female,28.0,0,1,248225,113.762,,S
+662,1,3,"Smith, Mr./Mrs. Timothy",female,11.0,0,0,257375,26.0775,,S
+182,0,2,"Braund, Mr./Mrs. Florence",male,65.0,0,0,PC 36497,81.7204,,
+748,0,2,"McCarthy, Mr./Mrs. Edward",male,59.0,1,2,130914,7.0513,,S
+485,0,2,"Braund, Mr./Mrs. Elizabeth",male,37.0,0,0,294776,45.3503,,S
+161,0,3,"Braund, Mr./Mrs. Gosta",female,40.0,0,0,PC 40972,14.8321,,S
+998,0,1,"Moran, Mr./Mrs. Edward",male,31.0,0,0,371216,62.6414,,S
+148,0,3,"Futrelle, Mr./Mrs. Timothy",male,41.0,2,0,PC 35318,38.2795,,S
+774,0,3,"Palsson, Mr./Mrs. Gosta",male,57.0,0,0,788772,29.2974,A11,C
+433,1,3,"Palsson, Mr./Mrs. Florence",FEMALE,62.0,0,1,203396,48.8053,,S
+865,0,3,"Heikkinen, Mr./Mrs. Elizabeth",male,37.0,0,0,221119,34.1064,B97,S
+272,1,3,"Johnson, Mr./Mrs. Edward",male,32.0,0,0,396809,19.7561,,S
+638,0,1,"Heikkinen, Mr./Mrs. William",female,62.0,0,0,738407,25.0433,,S
+340,0,1,"Cumings, Mr./Mrs. William",male,3.0,0,0,PC 33508,13.1514,,S
+80,0,3,"Cumings, Mr./Mrs. James",female,54.0,0,0,313795,7.0239,,S
+506,0,2,"Moran, Mr./Mrs. Elizabeth",male,75.0,0,0,PC 24838,13.9199,,s
+403,0,1,"Palsson, Mr./Mrs. Gosta",male,49.0,0,0,828716,15.9309,,S
+338,1,3,"Futrelle, Mr./Mrs. Florence",male,,0,0,PC 46749,23.5404,,S
+408,0,3,"Palsson, Mr./Mrs. Florence",male,,0,0,691240,33.6917,A83,S
+144,0,3,"Heikkinen, Mr./Mrs. Owen",male,26.0,0,0,PC 94972,8.0246,,S
+402,1,1,"Allen, Mr./Mrs. Gosta",male,62.0,0,0,PC 51830,44.7384,,C
+11,0,1,"Futrelle, Mr./Mrs. Elizabeth",male,,1,0,560959,28.1191,,C
+924,1,2,"Smith, Mr./Mrs. Timothy",male,5.0,0,0,PC 99764,12.3897,,S
+474,1,2,"Braund, Mr./Mrs. Lily",female,53.0,0,0,469082,22.5015,,S
+324,0,1,"Braund, Mr./Mrs. Lily",male,17.0,0,0,PC 95686,19.0357,F8,C
+847,0,1,"Johnson, Mr./Mrs. Laina",female,57.0,0,0,PC 14062,12.1922,E46,S
+356,1,3,"Moran, Mr./Mrs. Lily",male,29.0,0,1,764926,26.1345,,S
+673,0,3,"Cumings, Mr./Mrs. Florence",female,3.0,0,4,PC 62550,23.6579,B43,S
+315,1,3,"Moran, Mr./Mrs. Lily",mAlE,48.0,0,0,200992,71.1493,,S
+588,0,2,"McCarthy, Mr./Mrs. Owen",female,54.0,2,0,656278,25.7632,,S
+414,0,1,"McCarthy, Mr./Mrs. Edward",male,45.0,0,0,PC 19064,22.2602,,Q
+816,0,3,"Futrelle, Mr./Mrs. Lily",female,,0,0,PC 14244,17.7728,C105,S
+198,1,3,"Futrelle, Mr./Mrs. Florence",female,60.0,0,0,PC 17897,35.1379,,
+846,0,2,"Allen, Mr./Mrs. Gosta",male,78.0,1,0,743453,30.5654,,
+902,0,1,"Futrelle, Mr./Mrs. Owen",female,76.0,0,0,PC 78116,25.4782,,S
+444,0,2,"Palsson, Mr./Mrs. William",female,,0,1,427040,10.9313,,S
+944,1,3,"Moran, Mr./Mrs. Timothy",female,3.0,1,1,963508,13.1253,,S
+860,0,3,"Palsson, Mr./Mrs. Laina",male,40.0,2,0,794178,17.4741,,C
+226,0,3,"Cumings, Mr./Mrs. Timothy",male,21.0,0,0,PC 16380,19.3439,,Q
+214,0,3,"Moran, Mr./Mrs. William",MALE,,0,0,PC 70686,86.856,,C
+222,0,1,"Cumings, Mr./Mrs. Edward",male,38.0,4,0,PC 12050,81.6139,,S
+589,0,2,"Allen, Mr./Mrs. Elizabeth",male,74.0,4,0,PC 89995,87.3261,,S
+650,0,3,"Palsson, Mr./Mrs. Timothy",male,57.0,0,0,166974,135.3739,,c
+633,0,3,"Heikkinen, Mr./Mrs. Florence",male,40.0,0,0,PC 18665,41.2236,,C
+253,1,1,"Smith, Mr./Mrs. James",female,58.0,1,0,367382,48.4352,C143,S
+968,0,2,"Smith, Mr./Mrs. James",female,75.0,3,0,645928,19.0001,,C
+383,1,3,"Allen, Mr./Mrs. William",female,,5,2,PC 32216,288.5952,,C
+755,0,3,"Johnson, Mr./Mrs. Elizabeth",female,54.0,0,0,532005,13.7404,,S
+992,1,1,"Allen, Mr./Mrs. Edward",female,61.0,0,0,PC 72355,38.6319,,S
+919,1,2,"Heikkinen, Mr./Mrs. Elizabeth",male,20.0,1,0,PC 16460,69.4086,,S
+704,0,3,"Futrelle, Mr./Mrs. Timothy",male,10.0,1,0,PC 18163,10.0488,,C
+197,1,3,"Moran, Mr./Mrs. Lily",male,58.0,0,0,166857,53.0074,F83,C
+58,0,2,"Braund, Mr./Mrs. Florence",male,41.0,0,1,742848,136.0148,,S
+419,1,3,"Smith, Mr./Mrs. Timothy",male,44.0,5,0,PC 59412,21.0287,,S
+809,0,1,"Moran, Mr./Mrs. Laina",male,72.0,2,0,PC 39260,14.1757,,Q
+391,1,1,"Smith, Mr./Mrs. William",male,78.0,0,2,PC 35630,7.0406,C129,S
+695,0,2,"Smith, Mr./Mrs. William",MALE,38.0,1,2,PC 28661,41.3716,,S
+349,0,3,"Moran, Mr./Mrs. Gosta",female,73.0,1,0,PC 20279,42.0582,,S
+962,1,2,"Heikkinen, Mr./Mrs. James",male,64.0,3,0,PC 39329,59.59,A120,C
+188,0,1,"McCarthy, Mr./Mrs. Elizabeth",female,,1,1,158338,14.5509,,C
+851,0,2,"McCarthy, Mr./Mrs. Owen",female,,0,0,299212,21.2313,,C
+196,0,3,"Moran, Mr./Mrs. Owen",male,61.0,0,0,544278,39.9661,,S
+78,0,3,"Smith, Mr./Mrs. James",male,,0,0,562462,72.0319,,C
+357,0,3,"Cumings, Mr./Mrs. William",female,19.0,0,0,572436,14.3299,,S
+890,0,3,"Braund, Mr./Mrs. James",female,52.0,0,4,PC 29326,18.621,,C
+479,1,3,"Johnson, Mr./Mrs. Laina",male,70.0,0,0,240454,9.8476,A73,S
+132,0,3,"McCarthy, Mr./Mrs. Owen",male,17.0,1,1,PC 62034,89.9161,,S
+266,1,1,"Futrelle, Mr./Mrs. Laina",female,30.0,0,0,299254,44.4348,B134,S
+213,1,1,"Futrelle, Mr./Mrs. Timothy",male,54.0,1,0,PC 12979,112.5803,,C
+36,1,3,"Allen, Mr./Mrs. Florence",male,7.0,0,0,PC 71680,26.112,,C
+484,1,1,"Allen, Mr./Mrs. Elizabeth",male,1.0,0,0,PC 85340,164.1115,,S
+791,0,1,"Palsson, Mr./Mrs. Elizabeth",female,4.0,2,0,652021,32.6014,C35,S
+929,1,3,"Allen, Mr./Mrs. Owen",female,35.0,1,0,776913,25.6634,,S
+600,0,3,"Cumings, Mr./Mrs. Laina",male,46.0,0,0,775933,51.1199,,S
+648,1,3,"Allen, Mr./Mrs. Gosta",male,51.0,0,1,PC 13847,15.3801,,Q
+799,1,1,"Cumings, Mr./Mrs. Elizabeth",FEMALE,,0,4,PC 19506,55.7344,,C
+469,0,3,"Moran, Mr./Mrs. William",male,13.0,0,1,219490,67.595,A111,c
+984,0,3,"Johnson, Mr./Mrs. Laina",female,30.0,5,0,PC 13336,44.3088,,Q
+316,1,3,"Palsson, Mr./Mrs. James",male,77.0,1,0,PC 41584,36.5498,,C
+562,0,1,"Allen, Mr./Mrs. Owen",female,63.0,0,0,578693,13.8496,,S
+619,1,3,"Futrelle, Mr./Mrs. Florence",female,37.0,0,0,170813,28.7293,B147,Q
+288,0,2,"Heikkinen, Mr./Mrs. Lily",male,34.0,1,0,786406,61.5728,,S
+305,1,3,"Moran, Mr./Mrs. Timothy",female,67.0,0,1,747847,85.7685,,C
+452,0,3,"Cumings, Mr./Mrs. Lily",MALE,,4,0,PC 94930,30.466,,C
+861,1,3,"Palsson, Mr./Mrs. Gosta",female,23.0,0,2,PC 72957,40.2637,F111,S
+999,1,1,"Braund, Mr./Mrs. Owen",male,,1,0,PC 83273,33.6254,B53,C
+818,0,3,"Cumings, Mr./Mrs. William",male,2.0,0,0,PC 90134,20.572,,S
+498,0,3,"Allen, Mr./Mrs. Timothy",female,56.0,2,0,980690,21.4248,,S
+994,0,1,"Johnson, Mr./Mrs. Laina",male,,0,0,414777,31.5314,,S
+923,1,3,"Allen, Mr./Mrs. Gosta",female,,1,0,393964,24.2462,F147,S
+672,1,3,"Heikkinen, Mr./Mrs. Gosta",male,15.0,0,1,640828,21.2707,,C
+319,0,1,"Allen, Mr./Mrs. Florence",male,64.0,0,0,516176,35.3852,A75,S
+976,0,3,"Heikkinen, Mr./Mrs. James",male,59.0,0,2,389913,55.2114,,S
+149,0,3,"Cumings, Mr./Mrs. Edward",male,42.0,0,0,997734,11.6048,D61,S
+959,0,3,"Cumings, Mr./Mrs. Elizabeth",male,18.0,0,0,PC 99417,16.8218,B16,S
+539,0,1,"McCarthy, Mr./Mrs. Laina",female,79.0,2,0,249077,16.9941,,C
+258,1,3,"Futrelle, Mr./Mrs. Gosta",male,35.0,0,1,495489,33.0858,,S
+160,1,1,"Moran, Mr./Mrs. Florence",female,34.0,0,1,PC 44282,60.7745,,S
+190,0,3,"Cumings, Mr./Mrs. Laina",female,54.0,0,0,691303,61.7377,,S
+678,0,2,"Smith, Mr./Mrs. Elizabeth",male,56.0,0,0,691194,64.9951,D135,Q
+169,0,1,"Heikkinen, Mr./Mrs. Gosta",female,75.0,0,0,240057,114.2118,,S
+958,0,2,"Moran, Mr./Mrs. James",female,68.0,0,1,529399,37.1916,A66,C
+8,1,3,"Futrelle, Mr./Mrs. Lily",female,51.0,1,1,946567,56.4126,D31,Q
+723,0,2,"Futrelle, Mr./Mrs. Timothy",female,,0,5,360276,19.6298,C106,S
+500,1,3,"Allen, Mr./Mrs. Owen",male,,0,1,132359,67.4119,,S
+95,1,1,"Cumings, Mr./Mrs. Lily",male,70.0,0,0,PC 39473,92.0669,F26,C
+56,1,2,"Heikkinen, Mr./Mrs. Elizabeth",female,28.0,1,2,PC 29521,74.3138,,C
+153,0,3,"McCarthy, Mr./Mrs. Edward",female,,1,0,PC 34219,30.5025,,Q
+339,0,1,"Smith, Mr./Mrs. Lily",male,25.0,0,0,PC 83860,168.5377,,S
+864,0,3,"Allen, Mr./Mrs. Lily",female,50.0,0,0,185916,63.8225,,s
+267,1,2,"Johnson, Mr./Mrs. Gosta",female,57.0,0,0,PC 25376,74.139,,Q
+867,0,1,"McCarthy, Mr./Mrs. Florence",male,54.0,0,0,793150,30.6982,,S
+341,0,2,"Smith, Mr./Mrs. Florence",female,79.0,1,1,PC 51220,42.7347,B42,S
+866,0,3,"Smith, Mr./Mrs. Elizabeth",female,64.0,0,2,516774,36.9247,,Q
+741,0,3,"McCarthy, Mr./Mrs. William",male,71.0,0,0,777366,19.2139,,S
+454,1,3,"Braund, Mr./Mrs. William",male,50.0,0,1,876459,26.839,,S
+111,0,3,"Futrelle, Mr./Mrs. Florence",male,,0,0,PC 27992,24.9791,B30,C
+96,0,1,"Futrelle, Mr./Mrs. Florence",female,59.0,0,0,PC 49008,26.6413,C60,S
+302,0,3,"Futrelle, Mr./Mrs. William",female,33.0,0,0,PC 18908,19.4134,,S
+425,0,3,"Heikkinen, Mr./Mrs. Lily",male,29.0,1,0,PC 21138,121.5084,E72,S
+375,0,2,"Allen, Mr./Mrs. Lily",female,76.0,0,0,471106,15.8268,,S
+587,0,3,"Moran, Mr./Mrs. Florence",male,59.0,0,0,PC 98753,67.5045,,S
+904,0,1,"Johnson, Mr./Mrs. Timothy",male,4.0,2,0,PC 91665,11.473,,S
+703,0,2,"Cumings, Mr./Mrs. Elizabeth",male,64.0,0,0,PC 19808,7.9898,,Q
+274,1,1,"Smith, Mr./Mrs. Elizabeth",female,23.0,0,0,PC 50425,13.524,,S
+211,0,2,"Allen, Mr./Mrs. Lily",female,7.0,0,0,233533,18.272,,C
+413,1,2,"Cumings, Mr./Mrs. Elizabeth",male,58.0,4,0,405482,60.0374,,S
+960,1,3,"Johnson, Mr./Mrs. William",female,,1,0,238741,17.8356,,S
+104,0,3,"Cumings, Mr./Mrs. Elizabeth",female,,1,0,PC 29198,11.2814,,S
+590,0,3,"Cumings, Mr./Mrs. Gosta",female,22.0,1,0,PC 67684,25.5756,,S
+281,1,3,"Allen, Mr./Mrs. Gosta",male,33.0,5,0,332022,28.5018,,
+126,0,3,"Johnson, Mr./Mrs. Owen",female,46.0,2,2,702022,183.636,,S
+969,0,2,"Palsson, Mr./Mrs. Elizabeth",female,61.0,0,2,PC 62055,35.3866,,S
+46,1,3,"Futrelle, Mr./Mrs. Edward",female,,0,0,753516,7.6171,,S
+424,0,1,"Allen, Mr./Mrs. Florence",male,6.0,0,0,PC 80373,22.4924,,Q
+363,0,3,"Heikkinen, Mr./Mrs. Gosta",male,11.0,0,0,358421,21.7542,C110,C
+591,0,3,"Moran, Mr./Mrs. William",female,65.0,1,0,323404,32.4656,,S
+975,0,2,"Smith, Mr./Mrs. Florence",male,56.0,0,0,PC 73142,23.348,,S
+530,1,3,"Cumings, Mr./Mrs. Lily",mAlE,48.0,1,0,PC 99037,41.9786,,S
+9,1,2,"Johnson, Mr./Mrs. Edward",male,72.0,0,4,PC 48985,15.9385,,S
+586,0,1,"McCarthy, Mr./Mrs. Elizabeth",female,,0,0,PC 27451,33.3762,,C
+102,1,3,"Futrelle, Mr./Mrs. Florence",male,,1,0,PC 59767,93.7764,,S
+842,1,2,"Moran, Mr./Mrs. Elizabeth",female,,3,2,278368,25.4414,,Q
+603,0,1,"Cumings, Mr./Mrs. Florence",female,20.0,0,0,824016,13.7241,,S
+290,0,1,"McCarthy, Mr./Mrs. James",male,28.0,0,0,961501,13.4898,,Q
+347,1,2,"McCarthy, Mr./Mrs. Gosta",female,,1,0,PC 80852,50.8067,,S
+337,1,1,"McCarthy, Mr./Mrs. Timothy",male,17.0,1,0,177959,7.8914,A79,Q
+264,0,3,"Heikkinen, Mr./Mrs. Owen",male,76.0,1,0,449138,25.977,,S
+507,1,3,"Johnson, Mr./Mrs. Timothy",female,54.0,0,2,PC 45112,33.4134,,S
+42,0,3,"Moran, Mr./Mrs. Owen",female,29.0,0,0,689107,13.8359,,S
+296,0,1,"McCarthy, Mr./Mrs. Gosta",male,15.0,1,1,668471,30.4342,,S
+841,0,2,"Braund, Mr./Mrs. Gosta",male,75.0,1,0,209812,14.0608,,S
+697,0,1,"Allen, Mr./Mrs. William",female,2.0,0,0,342716,33.2435,,S
+772,1,3,"Moran, Mr./Mrs. Elizabeth",male,72.0,0,0,PC 86544,84.9921,,C
+354,0,3,"Palsson, Mr./Mrs. Timothy",female,71.0,0,0,PC 88067,77.2702,,S
+268,1,3,"Braund, Mr./Mrs. Elizabeth",female,73.0,0,0,PC 72773,17.976,,C
+10,1,3,"Braund, Mr./Mrs. Elizabeth",male,12.0,1,0,822063,18.6842,,C
+868,0,1,"Allen, Mr./Mrs. Lily",female,,0,1,773045,73.408,,S
+719,0,3,"McCarthy, Mr./Mrs. Florence",female,48.0,0,0,946826,21.2544,,S
+852,1,3,"McCarthy, Mr./Mrs. Elizabeth",male,12.0,0,0,681028,59.868,,C
+844,1,3,"Cumings, Mr./Mrs. William",MALE,15.0,0,0,PC 81702,24.9272,E99,C
+765,0,1,"Palsson, Mr./Mrs. Edward",male,53.0,0,0,693128,124.7509,,S
+666,0,3,"Futrelle, Mr./Mrs. Timothy",male,34.0,1,0,437433,51.8474,,C
+729,0,3,"Cumings, Mr./Mrs. Owen",male,13.0,0,0,PC 82105,47.1194,,C
+850,0,3,"Moran, Mr./Mrs. Owen",male,27.0,0,0,206176,33.2508,F148,C
+770,1,2,"Allen, Mr./Mrs. William",female,38.0,0,0,PC 17679,29.3761,C4,C
+393,0,1,"Allen, Mr./Mrs. Lily",male,40.0,0,0,514913,30.6013,E43,S
+920,0,2,"Allen, Mr./Mrs. James",male,64.0,1,0,PC 45203,27.5647,B124,C
+333,0,1,"Cumings, Mr./Mrs. Laina",female,49.0,2,0,PC 79226,50.153,,S
+12,1,3,"McCarthy, Mr./Mrs. Lily",male,75.0,0,1,587002,9.0886,,Q
+885,1,1,"Johnson, Mr./Mrs. Elizabeth",male,49.0,0,0,182790,28.067,,S
+681,1,2,"Moran, Mr./Mrs. Timothy",male,64.0,0,0,PC 74665,9.178,,C
+525,1,3,"McCarthy, Mr./Mrs. Florence",female,59.0,0,0,PC 79767,10.173,,c
+421,1,2,"Smith, Mr./Mrs. Owen",male,59.0,1,1,520274,28.7535,,S
+671,0,2,"Allen, Mr./Mrs. James",female,-52.0,0,1,PC 33507,38.805,F65,S
+803,0,2,"Cumings, Mr./Mrs. Edward",female,17.0,0,0,265154,8.8813,,C
+933,1,3,"Heikkinen, Mr./Mrs. Edward",male,26.0,2,0,PC 59009,39.6303,,C
+430,0,3,"Palsson, Mr./Mrs. William",female,,3,0,PC 62378,42.0755,,Q
+332,1,3,"Smith, Mr./Mrs. Edward",male,58.0,1,0,999636,133.991,,S
+448,1,3,"Cumings, Mr./Mrs. Edward",male,76.0,0,0,830609,42.7803,,s
+295,0,3,"Braund, Mr./Mrs. Edward",male,19.0,0,0,673095,16.9625,,S
+158,1,3,"McCarthy, Mr./Mrs. Laina",male,43.0,1,0,445637,20.3678,,C
+782,0,3,"Palsson, Mr./Mrs. Edward",female,49.0,1,2,873959,45.0108,,S
+459,0,1,"Smith, Mr./Mrs. Timothy",male,,0,0,PC 34430,80.5272,,S
+252,0,3,"Allen, Mr./Mrs. Elizabeth",female,49.0,1,0,PC 27575,94.2422,,S
+466,0,1,"Allen, Mr./Mrs. Timothy",male,45.0,0,0,PC 18200,54.7446,,S
+820,0,2,"Johnson, Mr./Mrs. Elizabeth",male,30.0,0,0,620287,25.4465,A34,S
+1,0,1,"Cumings, Mr./Mrs. Owen",male,57.0,0,0,PC 85598,82.6971,,S
+400,1,3,"Palsson, Mr./Mrs. Florence",female,30.0,1,0,PC 36326,43.6409,,Q
+916,0,3,"Allen, Mr./Mrs. Florence",female,24.0,0,0,748276,56.4243,E103,S
+877,1,3,"Heikkinen, Mr./Mrs. William",male,6.0,5,0,460491,FREE,,S
+545,1,3,"Smith, Mr./Mrs. Lily",male,68.0,0,1,486999,25.9442,,S
+786,1,3,"Braund, Mr./Mrs. Gosta",male,62.0,0,0,PC 83807,83.7227,,C
+326,1,2,"Smith, Mr./Mrs. Laina",MALE,13.0,0,1,PC 22255,39.5465,,Q
+37,0,2,"Smith, Mr./Mrs. Laina",male,79.0,0,0,108574,20.5528,,S
+908,0,2,"Moran, Mr./Mrs. Owen",male,16.0,1,1,PC 23133,15.9355,D148,S
+431,0,3,"Braund, Mr./Mrs. Lily",female,,0,0,PC 53463,14.7672,F30,C
+209,0,2,"Futrelle, Mr./Mrs. Lily",male,,0,0,464663,60.9994,,Q
+489,1,2,"Heikkinen, Mr./Mrs. Gosta",female,21.0,0,0,PC 74178,21.873,,Q
+16,0,3,"Moran, Mr./Mrs. William",male,17.0,1,0,PC 27139,51.728,,S
+895,1,3,"Moran, Mr./Mrs. Elizabeth",male,,0,0,816308,67.978,,C
+291,0,2,"Johnson, Mr./Mrs. Gosta",female,11.0,1,1,858705,62.0374,,S
+881,0,3,"McCarthy, Mr./Mrs. Laina",male,,0,2,PC 78495,58.9917,,C
+464,0,3,"Heikkinen, Mr./Mrs. James",female,61.0,0,3,838968,64.7629,E10,S
+439,1,1,"Heikkinen, Mr./Mrs. Florence",male,11.0,0,2,PC 75597,10.0681,,S
+780,1,3,"Palsson, Mr./Mrs. Edward",male,,0,0,PC 32768,21.0942,,S
+918,1,3,"McCarthy, Mr./Mrs. Edward",female,26.0,0,0,447596,32.5298,,C
+243,1,3,"McCarthy, Mr./Mrs. Elizabeth",female,63.0,0,1,PC 78742,31.1109,,S
+873,1,3,"Cumings, Mr./Mrs. Gosta",female,66.0,1,0,337232,7.5697,,S
+229,1,3,"McCarthy, Mr./Mrs. Owen",male,47.0,1,0,PC 17398,22.5618,,C
+175,1,3,"Cumings, Mr./Mrs. Florence",male,36.0,0,0,PC 42435,16.5394,,S
+323,1,3,"Cumings, Mr./Mrs. Owen",female,26.0,0,2,968286,13.9411,,S
+297,1,1,"Braund, Mr./Mrs. James",male,28.0,0,0,PC 17698,15.5458,,S
+837,1,1,"Johnson, Mr./Mrs. Elizabeth",mAlE,9.0,0,0,PC 39567,48.2402,E69,S
+722,0,1,"Allen, Mr./Mrs. Owen",female,40.0,1,0,PC 29441,10.9277,,C
+548,1,3,"Palsson, Mr./Mrs. William",male,,0,0,PC 22208,87.6776,,C
+456,0,3,"Heikkinen, Mr./Mrs. Gosta",male,23.0,0,0,PC 53383,8.6701,,S
+255,0,3,"Allen, Mr./Mrs. Lily",female,61.0,0,1,571635,83.4719,B150,S
+606,0,3,"Palsson, Mr./Mrs. James",male,59.0,0,0,736408,76.468,,C
+5,0,3,"Cumings, Mr./Mrs. Edward",male,56.0,0,1,757629,11.9614,,S
+653,0,2,"Cumings, Mr./Mrs. Florence",male,20.0,0,0,477617,101.7308,,S
+237,0,3,"Moran, Mr./Mrs. Timothy",female,27.0,0,0,415098,34.8608,F13,C
+154,0,3,"Smith, Mr./Mrs. Elizabeth",female,52.0,2,0,PC 72580,8.2102,,C
+429,0,3,"Palsson, Mr./Mrs. Edward",male,3.0,0,0,776364,22.8539,,C
+957,0,3,"Palsson, Mr./Mrs. Florence",female,47.0,1,0,316773,30.4947,,C
+807,1,3,"Cumings, Mr./Mrs. William",female,23.0,0,0,PC 83659,35.5445,,S
+815,1,1,"Moran, Mr./Mrs. Gosta",female,28.0,1,0,908274,122.2146,,S
+601,0,1,"Braund, Mr./Mrs. Owen",female,14.0,0,0,680278,14.4734,,S
+38,0,3,"Johnson, Mr./Mrs. Lily",male,14.0,2,0,PC 66482,13.069,,S
+718,1,3,"Cumings, Mr./Mrs. James",FEMALE,13.0,0,1,225738,9.6688,,C
+455,0,1,"Smith, Mr./Mrs. Owen",female,12.0,0,0,282927,81.6666,F88,C
+665,0,3,"McCarthy, Mr./Mrs. Gosta",female,58.0,1,1,PC 95944,40.5899,,
+988,0,3,"Johnson, Mr./Mrs. William",male,,2,0,842464,13.6612,E72,S
+183,1,3,"McCarthy, Mr./Mrs. William",male,8.0,0,2,PC 29641,47.0236,,S
+513,1,3,"Palsson, Mr./Mrs. Timothy",male,,1,0,PC 42444,9.5544,,S
+967,1,1,"Moran, Mr./Mrs. Elizabeth",female,72.0,5,0,589368,7.4844,,S
+604,0,2,"Futrelle, Mr./Mrs. Elizabeth",male,50.0,0,0,988217,11.2955,F3,S
+931,0,3,"Moran, Mr./Mrs. Elizabeth",female,53.0,0,0,963994,53.2397,F106,S
+649,1,3,"Braund, Mr./Mrs. Owen",male,,0,1,550179,43.9863,,S
+157,1,1,"Futrelle, Mr./Mrs. William",male,69.0,0,0,890371,44.3935,,Q
+57,0,3,"Palsson, Mr./Mrs. Florence",male,62.0,0,0,PC 77568,17.0352,B6,S
+598,0,1,"Cumings, Mr./Mrs. Gosta",male,,2,1,550246,24.0874,,S
+115,1,3,"Braund, Mr./Mrs. Florence",female,65.0,1,0,344146,17.9343,,S
+236,1,2,"Allen, Mr./Mrs. Timothy",female,60.0,0,0,PC 78321,68.3926,E74,S
+203,0,1,"McCarthy, Mr./Mrs. Owen",male,18.0,1,0,PC 94656,94.1836,,S
+680,1,3,"Cumings, Mr./Mrs. Timothy",male,11.0,1,0,486162,17.3771,,Q
+979,0,3,"Moran, Mr./Mrs. Laina",female,59.0,1,1,PC 95389,33.5844,,S
+13,1,3,"Palsson, Mr./Mrs. Edward",female,5.0,0,2,736129,37.2253,,C
+106,0,1,"Palsson, Mr./Mrs. Lily",male,59.0,0,0,PC 20358,7.9163,,C
+699,0,3,"Braund, Mr./Mrs. Laina",female,11.0,0,0,490586,20.7295,,S
+836,0,3,"Allen, Mr./Mrs. Timothy",female,52.0,0,2,PC 85766,16.7688,,S
+971,1,1,"Cumings, Mr./Mrs. Florence",male,5.0,0,3,PC 96816,24.7709,,S
+284,0,1,"Moran, Mr./Mrs. James",male,42.0,0,0,PC 64732,99.9926,,S
+640,0,3,"McCarthy, Mr./Mrs. Elizabeth",female,45.0,0,0,PC 33022,36.6365,,S
+7,0,3,"Braund, Mr./Mrs. Florence",male,,1,0,PC 73300,48.601,E76,S
+184,1,3,"Braund, Mr./Mrs. Owen",male,51.0,1,0,995993,61.5456,,S
+437,0,2,"Johnson, Mr./Mrs. Lily",male,,1,0,492292,13.6455,,S
+991,1,3,"Allen, Mr./Mrs. Laina",male,64.0,0,0,660605,34.7452,,C
+826,1,3,"Heikkinen, Mr./Mrs. Gosta",female,40.0,0,2,PC 54007,26.5061,,Q
+248,1,1,"Palsson, Mr./Mrs. Gosta",female,,0,1,PC 49418,20.2292,,S
+531,1,2,"Allen, Mr./Mrs. Lily",female,35.0,1,2,PC 27771,10.5577,,S
+609,0,1,"McCarthy, Mr./Mrs. Florence",female,12.0,0,2,PC 41370,58.0787,,S
+223,0,2,"McCarthy, Mr./Mrs. James",male,,0,0,170559,45.1828,,S
+17,0,1,"Heikkinen, Mr./Mrs. Lily",male,6.0,0,0,PC 77499,29.1829,,S
+734,0,2,"Johnson, Mr./Mrs. James",MALE,77.0,0,0,PC 27133,30.4219,,C
+643,0,3,"Moran, Mr./Mrs. Elizabeth",female,48.0,0,1,463546,8.0691,,S
+387,0,3,"Johnson, Mr./Mrs. Laina",male,64.0,1,0,414313,88.0756,B75,S
+432,1,3,"Allen, Mr./Mrs. William",female,36.0,2,0,PC 66420,14.9948,,S
+495,0,3,"McCarthy, Mr./Mrs. Lily",male,50.0,0,1,688861,33.6815,E71,S
+523,1,2,"Palsson, Mr./Mrs. William",male,35.0,0,1,PC 37082,16.9508,,S
+717,1,1,"Futrelle, Mr./Mrs. Elizabeth",female,22.0,0,0,585854,49.5528,,S
+336,0,3,"Allen, Mr./Mrs. Edward",male,62.0,0,0,PC 72324,10.2031,E141,S
+716,1,3,"McCarthy, Mr./Mrs. William",male,9.0,0,1,PC 37215,48.8715,,C
+377,1,2,"Allen, Mr./Mrs. Edward",male,,0,1,PC 52523,21.2862,,S
+141,1,3,"Braund, Mr./Mrs. Owen",female,4.0,1,0,PC 71344,132.6054,,S
+103,0,3,"Braund, Mr./Mrs. James",male,10.0,1,1,PC 61712,93.3086,,Q
+109,0,3,"Palsson, Mr./Mrs. Lily",male,48.0,1,0,968170,38.9128,,S
+462,1,3,"McCarthy, Mr./Mrs. James",female,38.0,0,0,PC 35863,41.941,B25,S
+370,0,1,"Futrelle, Mr./Mrs. Timothy",female,48.0,0,0,898329,48.0862,,S
+520,0,3,"Palsson, Mr./Mrs. Owen",female,15.0,0,0,PC 55957,15.6763,,S
+225,0,2,"Smith, Mr./Mrs. Elizabeth",male,74.0,0,0,804667,17.2538,,C
+893,1,3,"Smith, Mr./Mrs. James",female,60.0,1,1,PC 35260,15.2478,,S
+130,0,2,"Futrelle, Mr./Mrs. Timothy",male,,0,0,978292,8.3583,,S
+162,1,1,"Smith, Mr./Mrs. Edward",female,75.0,0,2,223967,31.9902,,S
+706,1,1,"Moran, Mr./Mrs. Laina",female,24.0,0,0,373668,38.8642,,S
+218,1,3,"Moran, Mr./Mrs. Owen",male,3.0,0,1,262656,10.4389,,S
+781,1,1,"Johnson, Mr./Mrs. Owen",male,76.0,0,0,721301,13.2419,,Q
+900,0,3,"Braund, Mr./Mrs. William",male,40.0,0,0,683390,20.2595,,S
+682,0,3,"Braund, Mr./Mrs. William",female,,1,0,PC 35614,46.172,,S
+727,0,3,"Heikkinen, Mr./Mrs. William",male,63.0,0,0,PC 14073,29.1604,,S
+140,1,3,"Braund, Mr./Mrs. James",female,15.0,0,0,PC 27589,23.7726,,C
+279,1,1,"Allen, Mr./Mrs. Elizabeth",female,18.0,1,0,312994,41.9038,,S
+544,1,2,"Smith, Mr./Mrs. Timothy",female,25.0,1,0,886224,54.8573,,s
+827,0,1,"Braund, Mr./Mrs. Timothy",female,,1,0,378095,37.106,,S
+345,0,3,"Cumings, Mr./Mrs. Elizabeth",female,16.0,0,0,352153,43.4591,,S
+395,0,2,"Allen, Mr./Mrs. Owen",female,55.0,0,0,445549,53.6533,D41,S
+981,0,1,"Heikkinen, Mr./Mrs. Laina",male,,1,0,PC 41496,19.9568,,S
+862,0,3,"Smith, Mr./Mrs. Owen",male,56.0,0,0,126985,73.1126,,S
+597,1,2,"Smith, Mr./Mrs. Lily",male,76.0,0,0,PC 60335,7.764,,S
+66,0,3,"Johnson, Mr./Mrs. William",female,10.0,0,2,PC 64596,49.975,,S
+700,0,3,"Heikkinen, Mr./Mrs. Edward",female,46.0,0,0,884229,89.1166,,S
+784,0,3,"Smith, Mr./Mrs. Gosta",female,31.0,0,2,834591,28.1033,,c
+857,0,3,"Cumings, Mr./Mrs. James",male,43.0,0,0,PC 74349,93.3264,,C
+327,0,1,"Futrelle, Mr./Mrs. Laina",female,69.0,1,0,495490,45.4616,,S
+100,0,2,"Futrelle, Mr./Mrs. Owen",male,68.0,1,0,PC 45842,27.2137,,Q
+912,0,3,"Palsson, Mr./Mrs. Timothy",male,14.0,0,0,PC 44620,77.3015,,S
+612,1,3,"Braund, Mr./Mrs. James",male,38.0,3,1,PC 79243,11.7261,E88,S
+385,1,3,"Cumings, Mr./Mrs. Lily",male,,1,0,253023,39.5751,F39,Q
+883,0,3,"Moran, Mr./Mrs. Florence",male,37.0,0,0,PC 72236,17.6702,,Q
+138,1,3,"Futrelle, Mr./Mrs. Owen",female,25.0,0,0,772464,205.5088,,C
+65,0,2,"Braund, Mr./Mrs. Florence",male,3.0,0,0,447329,36.1325,F6,S
+280,1,3,"Palsson, Mr./Mrs. Lily",male,22.0,0,1,534037,15.6794,,c
+238,0,3,"Allen, Mr./Mrs. Elizabeth",male,56.0,0,0,683761,9.631,,C
+410,0,3,"Heikkinen, Mr./Mrs. Laina",male,36.0,0,0,904905,55.5355,F71,S
+700,0,3,"Heikkinen, Mr./Mrs. Edward",female,46.0,0,0,884229,89.1166,,S
+798,0,1,"Cumings, Mr./Mrs. James",female,54.0,0,3,PC 78982,80.5552,C83,Q
+508,1,3,"Palsson, Mr./Mrs. James",male,38.0,1,0,PC 58085,19.0864,,S
+301,0,1,"Futrelle, Mr./Mrs. Gosta",female,,0,0,983472,49.4678,,S
+990,1,3,"Futrelle, Mr./Mrs. Elizabeth",female,63.0,0,0,848021,10.3248,C101,S
+307,0,3,"Heikkinen, Mr./Mrs. Edward",male,40.0,1,0,PC 96413,26.3393,E59,S
+35,1,1,"Moran, Mr./Mrs. Lily",female,54.0,0,1,983791,17.3855,,S
+832,0,3,"Futrelle, Mr./Mrs. William",female,52.0,1,5,PC 31802,36.4802,,S
+423,0,1,"Futrelle, Mr./Mrs. Lily",female,9.0,2,0,PC 57124,29.2552,,S
+420,1,3,"Allen, Mr./Mrs. Edward",male,29.0,1,0,726979,29.3848,,S
+317,0,3,"Moran, Mr./Mrs. Timothy",male,48.0,0,0,652029,48.608,A19,S
+610,1,3,"Palsson, Mr./Mrs. Edward",male,40.0,4,0,218220,17.0452,,S
+712,0,1,"Braund, Mr./Mrs. Florence",male,,0,1,PC 30369,27.4188,,S
+783,0,3,"Futrelle, Mr./Mrs. James",FEMALE,59.0,0,0,PC 87537,37.6477,,
+84,0,3,"Cumings, Mr./Mrs. Gosta",female,,0,0,PC 77984,9.7267,,C
+526,0,2,"Moran, Mr./Mrs. Elizabeth",male,21.0,0,0,664939,11.2988,,C
+68,1,1,"Allen, Mr./Mrs. Timothy",male,2.0,1,0,597643,31.9352,,S
+596,0,3,"Johnson, Mr./Mrs. James",female,15.0,1,1,229139,30.6682,E109,S
+168,0,3,"Moran, Mr./Mrs. William",male,33.0,0,0,331577,22.1431,,S
+936,0,3,"Futrelle, Mr./Mrs. James",male,50.0,1,0,631413,75.4421,,S
+312,0,3,"Heikkinen, Mr./Mrs. Gosta",female,13.0,1,0,PC 12246,10.7317,,S
+189,0,2,"Braund, Mr./Mrs. Florence",female,28.0,0,0,638179,19.5036,,C
+541,1,3,"McCarthy, Mr./Mrs. Edward",female,3.0,0,0,PC 59174,13.1689,,S
+91,0,3,"Johnson, Mr./Mrs. Lily",female,27.0,0,0,PC 99226,39.4349,,S
+771,0,3,"Smith, Mr./Mrs. Owen",male,72.0,0,0,PC 71824,41.7213,B71,S
+535,1,2,"Allen, Mr./Mrs. Owen",female,24.0,0,2,PC 27392,62.8205,,S
+461,0,2,"Palsson, Mr./Mrs. James",mAlE,,0,0,873207,42.5612,E108,S
+757,1,3,"Moran, Mr./Mrs. Laina",male,39.0,0,0,393366,10.9705,E54,C
+542,1,1,"Heikkinen, Mr./Mrs. Laina",female,69.0,0,1,764406,7.3253,,S
+569,1,3,"Futrelle, Mr./Mrs. Edward",female,4.0,0,0,PC 95054,FREE,B74,S
+93,1,3,"Moran, Mr./Mrs. Gosta",male,73.0,0,1,PC 35200,26.5117,B24,S
+922,0,1,"Moran, Mr./Mrs. William",female,67.0,1,0,932204,7.3544,,Q
+805,0,2,"Allen, Mr./Mrs. Timothy",male,,0,0,PC 73858,31.1896,,S
+532,1,3,"Cumings, Mr./Mrs. Timothy",female,,0,0,PC 63948,42.6737,,C
+125,0,3,"Cumings, Mr./Mrs. Owen",FEMALE,73.0,0,0,906066,31.3868,A106,S
+549,0,1,"Palsson, Mr./Mrs. William",male,43.0,0,0,PC 70089,18.9295,A144,C
+334,0,3,"Allen, Mr./Mrs. Florence",female,53.0,0,1,PC 40115,11.0182,,
+1000,0,2,"Cumings, Mr./Mrs. Owen",female,76.0,0,0,PC 33995,13.337,,S
+348,0,2,"Cumings, Mr./Mrs. Timothy",male,28.0,1,0,892313,180.7757,,C
+611,0,3,"McCarthy, Mr./Mrs. William",female,20.0,0,0,769077,76.8971,,S
+147,1,3,"Smith, Mr./Mrs. Florence",male,43.0,0,0,PC 84420,80.3719,B141,
+754,0,2,"Johnson, Mr./Mrs. Florence",male,14.0,0,0,PC 94840,43.111,,S
+898,1,1,"Heikkinen, Mr./Mrs. Laina",male,42.0,1,2,862422,15.9737,,S
+565,0,3,"Braund, Mr./Mrs. Edward",male,51.0,3,0,PC 95196,30.874,C106,S
+656,0,3,"Heikkinen, Mr./Mrs. William",male,49.0,5,0,207903,68.1307,,C
+659,1,2,"McCarthy, Mr./Mrs. Edward",male,42.0,0,0,PC 10336,100.7574,,S
+94,0,3,"Johnson, Mr./Mrs. Gosta",male,48.0,0,0,PC 46569,12.1794,,C
+750,1,1,"Cumings, Mr./Mrs. Timothy",female,13.0,1,0,325146,75.2267,,C
+906,1,1,"Allen, Mr./Mrs. Owen",male,,1,0,256911,12.3502,,S
+865,0,3,"Heikkinen, Mr./Mrs. Elizabeth",male,37.0,0,0,221119,34.1064,B97,S
+514,1,1,"McCarthy, Mr./Mrs. Laina",male,61.0,0,0,133796,24.7806,F2,S
+801,1,3,"Allen, Mr./Mrs. Edward",female,15.0,1,1,205939,9.9038,,S
+645,0,1,"Palsson, Mr./Mrs. Elizabeth",male,53.0,0,0,233096,36.3699,D32,S
+845,0,3,"Cumings, Mr./Mrs. Laina",female,12.0,0,0,PC 22203,35.1866,,C
+679,1,1,"Johnson, Mr./Mrs. James",male,23.0,0,0,PC 91620,12.7196,,Q
+567,0,3,"Futrelle, Mr./Mrs. Edward",male,12.0,0,1,477943,34.871,,S
+497,0,3,"Heikkinen, Mr./Mrs. Florence",female,6.0,1,0,615611,7.4354,,C
+677,0,1,"Johnson, Mr./Mrs. Owen",male,40.0,0,0,486839,28.6981,,C
+651,0,1,"McCarthy, Mr./Mrs. Florence",male,8.0,0,0,704663,44.5922,F131,C
+171,1,3,"Smith, Mr./Mrs. Elizabeth",female,48.0,0,0,PC 89395,23.3282,,S
+134,0,1,"Palsson, Mr./Mrs. William",male,27.0,0,4,PC 47941,10.5011,,S
+854,1,3,"McCarthy, Mr./Mrs. Florence",female,42.0,4,0,395198,57.8629,,S
+443,0,3,"Palsson, Mr./Mrs. Florence",female,59.0,0,0,865618,19.7079,,Q
+435,0,1,"Smith, Mr./Mrs. Lily",MALE,76.0,0,0,PC 83137,24.1651,,C
+233,0,1,"Moran, Mr./Mrs. Edward",female,1.0,1,0,PC 98150,26.2056,,S
+384,1,2,"Allen, Mr./Mrs. Lily",male,45.0,0,5,415759,7.07,,C
+512,0,3,"Braund, Mr./Mrs. James",female,12.0,0,1,970392,21.2808,,S
+800,1,1,"McCarthy, Mr./Mrs. William",male,1.0,0,0,794303,13.9555,,S
+551,0,3,"Allen, Mr./Mrs. Elizabeth",male,74.0,1,0,PC 80048,67.3857,,S
+282,0,3,"Cumings, Mr./Mrs. William",male,30.0,0,0,PC 12125,17.7839,,C
+875,0,3,"Braund, Mr./Mrs. Elizabeth",female,28.0,4,2,888775,31.1316,A71,S
+374,1,3,"Braund, Mr./Mrs. Florence",male,6.0,1,0,PC 23538,22.7921,C36,S
+953,0,3,"Allen, Mr./Mrs. Gosta",female,25.0,0,2,505343,9.1336,,Q
+749,1,3,"McCarthy, Mr./Mrs. Elizabeth",female,62.0,0,1,547389,17.6555,,S
+970,0,1,"Heikkinen, Mr./Mrs. Edward",male,64.0,0,2,PC 10963,11.7625,E26,Q
+39,1,1,"Heikkinen, Mr./Mrs. Gosta",male,19.0,1,1,377319,38.1299,A2,S
+608,0,3,"Smith, Mr./Mrs. Laina",male,,0,0,157219,49.5272,,S
+367,1,3,"Allen, Mr./Mrs. Elizabeth",male,57.0,0,0,508548,75.4974,,S
+364,0,3,"Futrelle, Mr./Mrs. James",male,53.0,0,0,PC 20752,12.5618,,S
+83,0,2,"Smith, Mr./Mrs. Florence",male,66.0,1,0,PC 18163,37.8573,,C
+417,0,1,"McCarthy, Mr./Mrs. Gosta",male,58.0,0,0,PC 41722,106.8838,D58,S
+406,1,3,"Palsson, Mr./Mrs. Florence",female,61.0,2,0,956156,16.9807,D121,S
+481,1,3,"Palsson, Mr./Mrs. Florence",male,33.0,0,0,291936,50.6772,,Q
+743,1,3,"Braund, Mr./Mrs. James",male,18.0,0,1,988432,18.1678,,C
+61,0,3,"Cumings, Mr./Mrs. Timothy",male,49.0,0,0,PC 76494,20.8698,,S
+26,1,3,"Allen, Mr./Mrs. Edward",male,50.0,0,1,PC 34881,77.9314,C54,S
+594,0,1,"Futrelle, Mr./Mrs. Gosta",male,4.0,0,0,PC 38474,110.179,B148,S
+986,0,1,"Heikkinen, Mr./Mrs. James",MALE,76.0,0,0,538897,16.4053,,S
+170,0,2,"Johnson, Mr./Mrs. William",male,16.0,0,0,577079,17.2264,F57,
+789,0,1,"Heikkinen, Mr./Mrs. Owen",MALE,,0,0,194641,81.2997,,C
+756,1,3,"Futrelle, Mr./Mrs. James",male,4.0,0,5,PC 72787,61.6515,,S
+445,1,3,"McCarthy, Mr./Mrs. William",male,40.0,0,5,922366,22.7457,,S
+615,1,2,"Moran, Mr./Mrs. Florence",male,56.0,0,0,979727,10.475,,S
+622,0,1,"Braund, Mr./Mrs. Owen",female,36.0,0,0,PC 62163,16.2974,,S
+232,0,1,"McCarthy, Mr./Mrs. Florence",male,69.0,4,0,PC 85690,17.9208,D27,
+964,0,2,"Cumings, Mr./Mrs. Lily",FEMALE,,0,1,PC 94245,36.5948,,Q
+703,0,2,"Cumings, Mr./Mrs. Elizabeth",male,64.0,0,0,PC 19808,7.9898,,Q
+928,0,3,"Smith, Mr./Mrs. Timothy",FEMALE,15.0,0,0,864201,77.2089,,C
+265,1,1,"Cumings, Mr./Mrs. Timothy",female,67.0,0,0,116078,14.5617,,C
+511,1,3,"Futrelle, Mr./Mrs. Timothy",male,20.0,5,2,PC 65725,46.365,,S
+87,1,3,"Palsson, Mr./Mrs. Elizabeth",male,22.0,0,0,PC 51124,64.0289,,S
+510,1,3,"Smith, Mr./Mrs. Timothy",female,27.0,0,0,PC 67850,43.9665,,C
+517,0,3,"Smith, Mr./Mrs. James",male,74.0,0,0,223088,19.1262,,S
+652,0,2,"Palsson, Mr./Mrs. Gosta",male,79.0,0,0,PC 75031,75.7114,D115,S
+997,1,3,"Smith, Mr./Mrs. Edward",male,34.0,0,0,593649,108.3758,,S
+891,1,1,"Cumings, Mr./Mrs. James",male,58.0,0,2,893969,7.8056,,S
+876,0,3,"Smith, Mr./Mrs. Lily",male,17.0,0,3,PC 22675,23.3935,,S
+660,0,2,"Johnson, Mr./Mrs. William",female,,0,0,112884,48.4635,C59,S
+351,0,3,"Heikkinen, Mr./Mrs. Elizabeth",female,65.0,0,2,558320,89.1188,,S
+505,1,2,"Palsson, Mr./Mrs. James",male,8.0,0,0,PC 74921,20.4027,,S
+472,1,3,"Braund, Mr./Mrs. Elizabeth",MALE,,0,0,507517,29.7545,,S
+422,1,3,"Smith, Mr./Mrs. Florence",male,71.0,0,0,PC 64827,7.127,,C
+256,0,2,"Futrelle, Mr./Mrs. Laina",female,9.0,0,1,PC 22119,36.6893,C2,S
+825,0,3,"Heikkinen, Mr./Mrs. Edward",male,-55.0,0,0,PC 97821,9.2983,,Q
+373,0,3,"Palsson, Mr./Mrs. Gosta",female,22.0,0,3,681687,10.7342,B21,S
+713,0,3,"Allen, Mr./Mrs. Gosta",male,55.0,0,0,571404,109.8315,,
+55,0,3,"Moran, Mr./Mrs. Lily",female,69.0,0,0,PC 72094,12.0323,,S
+321,0,2,"Johnson, Mr./Mrs. Owen",female,29.0,0,0,355021,14.1691,,Q
+625,1,1,"Futrelle, Mr./Mrs. Florence",male,75.0,0,4,521818,37.7835,,C
+418,0,1,"Palsson, Mr./Mrs. William",male,,1,0,261630,9.3362,,S
+378,0,3,"Moran, Mr./Mrs. Gosta",female,79.0,0,0,PC 11617,10.0117,,S
+64,0,2,"Allen, Mr./Mrs. Elizabeth",male,71.0,1,0,955374,34.6246,,S
+82,1,1,"Braund, Mr./Mrs. Lily",male,19.0,0,0,PC 71814,47.6551,,S
+599,0,1,"Allen, Mr./Mrs. Timothy",male,,0,0,246622,18.3793,C101,S
+470,1,3,"Moran, Mr./Mrs. Florence",male,27.0,0,0,613261,31.9328,,S
+139,0,3,"Smith, Mr./Mrs. Elizabeth",male,28.0,0,0,PC 74738,69.493,,s
+210,0,3,"Palsson, Mr./Mrs. James",female,4.0,0,2,663356,16.6646,,S
+276,0,1,"Palsson, Mr./Mrs. Laina",female,17.0,0,1,PC 71080,17.3326,,S
+831,0,3,"Futrelle, Mr./Mrs. Elizabeth",male,,0,0,559507,15.2282,,s
+982,1,3,"McCarthy, Mr./Mrs. Elizabeth",male,60.0,0,0,PC 88647,11.2714,,Q
+639,0,3,"Braund, Mr./Mrs. Laina",MALE,7.0,1,1,798435,17.8771,,C
+555,1,1,"McCarthy, Mr./Mrs. William",male,20.0,0,0,673896,16.5022,F114,C
+330,0,3,"Palsson, Mr./Mrs. William",male,67.0,0,1,986392,31.3552,C96,C
+987,1,3,"Futrelle, Mr./Mrs. James",male,39.0,1,4,872519,209.1512,,C
+578,1,3,"Heikkinen, Mr./Mrs. Elizabeth",female,18.0,2,0,226451,16.9006,,S
+192,1,3,"Moran, Mr./Mrs. Edward",female,9.0,0,0,PC 50392,69.9021,,S
+499,1,2,"Moran, Mr./Mrs. Elizabeth",FEMALE,59.0,0,2,275377,36.4087,,
+63,1,3,"Palsson, Mr./Mrs. Elizabeth",female,76.0,0,2,690268,9.2985,E13,S
+86,0,3,"Heikkinen, Mr./Mrs. Laina",male,34.0,1,0,PC 72701,16.2203,,S
+304,1,3,"Braund, Mr./Mrs. Timothy",male,19.0,1,0,578160,11.3545,,S
+231,1,3,"Futrelle, Mr./Mrs. James",female,68.0,0,0,867051,8.457,A92,S
+275,0,3,"McCarthy, Mr./Mrs. Elizabeth",MALE,,0,0,637727,29.0222,E136,S
+121,1,3,"McCarthy, Mr./Mrs. Laina",female,36.0,0,0,598807,29.7723,,S
+41,0,3,"Johnson, Mr./Mrs. Lily",female,20.0,0,0,520040,109.2797,,S
+753,1,1,"Heikkinen, Mr./Mrs. Florence",male,60.0,0,1,749253,23.5264,,S
+236,1,2,"Allen, Mr./Mrs. Timothy",female,60.0,0,0,PC 78321,68.3926,E74,S
+269,0,3,"Futrelle, Mr./Mrs. Florence",male,29.0,0,0,PC 89220,9.7382,,S
+286,0,3,"Heikkinen, Mr./Mrs. Laina",male,10.0,0,2,498290,35.0221,,S
+4,0,3,"Cumings, Mr./Mrs. Elizabeth",male,78.0,0,0,PC 13969,7.5986,,C
+501,1,3,"Allen, Mr./Mrs. William",female,71.0,0,0,PC 38905,77.2402,E124,S
+181,0,3,"Palsson, Mr./Mrs. William",male,74.0,0,0,674251,105.0596,D56,C
+956,0,3,"Palsson, Mr./Mrs. Laina",female,70.0,0,0,PC 94853,33.2565,,S
+143,0,3,"Johnson, Mr./Mrs. Elizabeth",female,,0,0,270387,50.3562,A126,S
+457,0,3,"Johnson, Mr./Mrs. Gosta",male,18.0,0,0,PC 70562,70.7391,,
+839,0,3,"Futrelle, Mr./Mrs. Edward",female,1.0,0,1,PC 14379,78.2905,F19,S
+176,0,3,"Johnson, Mr./Mrs. Laina",female,59.0,0,1,PC 88094,45.6729,,C
+620,1,3,"Palsson, Mr./Mrs. Florence",male,,0,1,326222,13.3846,B148,C
+473,0,3,"Palsson, Mr./Mrs. Timothy",female,74.0,1,0,PC 86939,9.0633,,Q
+331,0,3,"Moran, Mr./Mrs. Laina",male,7.0,0,0,922478,27.396,A142,S
+251,0,3,"Heikkinen, Mr./Mrs. Florence",male,36.0,0,2,PC 64592,35.3678,,S
+112,0,1,"Cumings, Mr./Mrs. Timothy",male,30.0,0,0,876880,18.7095,,S
+278,1,3,"Allen, Mr./Mrs. Lily",male,6.0,0,4,980521,9.5509,A89,S
+442,1,1,"Smith, Mr./Mrs. William",male,8.0,0,0,190025,17.8322,,C
+446,1,1,"Johnson, Mr./Mrs. Elizabeth",male,59.0,0,0,606384,8.2138,,S
+250,1,3,"Johnson, Mr./Mrs. Gosta",male,5.0,0,0,PC 17552,32.8514,,S
+804,1,2,"Heikkinen, Mr./Mrs. James",MALE,,1,0,PC 67261,42.7524,C139,S
+635,0,3,"Braund, Mr./Mrs. James",female,55.0,1,0,PC 41278,11.9756,D26,C
+858,0,3,"Heikkinen, Mr./Mrs. Laina",male,,0,1,478356,23.0571,,C
+116,1,3,"Braund, Mr./Mrs. Timothy",male,45.0,5,0,533377,27.9026,,S
+720,1,1,"Allen, Mr./Mrs. Edward",male,,0,0,PC 89076,69.5451,,S
+242,1,3,"Smith, Mr./Mrs. William",male,,0,0,PC 94320,21.2176,B114,S
+208,1,2,"Braund, Mr./Mrs. Gosta",female,57.0,0,1,PC 80687,42.4061,,S
+359,1,2,"Palsson, Mr./Mrs. Edward",male,41.0,0,0,PC 59207,40.5525,,S
+137,0,3,"Futrelle, Mr./Mrs. William",male,35.0,0,0,451317,17.0207,,S
+416,0,3,"Futrelle, Mr./Mrs. Elizabeth",MALE,39.0,1,1,PC 28242,13.2118,,C
+314,1,3,"Allen, Mr./Mrs. Timothy",female,,0,0,287974,65.08,E2,S
+77,1,2,"Johnson, Mr./Mrs. Owen",male,29.0,0,0,PC 24404,18.0048,,S
+164,0,3,"Johnson, Mr./Mrs. Lily",female,50.0,0,0,626930,12.1199,,C
+777,0,3,"Cumings, Mr./Mrs. Florence",male,32.0,0,0,PC 38758,47.623,,S
+490,1,2,"Allen, Mr./Mrs. Elizabeth",male,35.0,0,0,296187,7.5719,A40,C
+152,0,3,"Smith, Mr./Mrs. Florence",male,39.0,1,0,520304,11.8004,,Q
+779,1,2,"Johnson, Mr./Mrs. Timothy",male,,3,2,979988,16.201,,S
+574,1,3,"Moran, Mr./Mrs. Laina",male,75.0,5,0,181724,78.2374,C91,
+977,0,2,"Cumings, Mr./Mrs. Gosta",female,69.0,4,0,PC 46291,97.6836,,C
+436,1,1,"McCarthy, Mr./Mrs. Florence",male,42.0,0,0,PC 85397,12.9318,,S
+33,0,1,"Palsson, Mr./Mrs. James",male,,0,0,470037,7.9352,,
+99,0,3,"Futrelle, Mr./Mrs. Edward",female,29.0,0,0,465746,8.6684,A26,S
+961,0,1,"Allen, Mr./Mrs. Laina",male,23.0,0,0,PC 88792,29.9148,F70,S
+802,0,3,"Heikkinen, Mr./Mrs. James",female,77.0,1,0,438273,36.7599,E40,Q
+14,0,1,"Allen, Mr./Mrs. Owen",male,,0,0,853258,hundred dollars,F98,C
+617,0,3,"Moran, Mr./Mrs. Owen",male,77.0,0,1,PC 32645,22.6733,C103,C
+79,0,1,"Palsson, Mr./Mrs. Owen",FEMALE,,0,0,258787,82.1403,,S
+313,0,3,"Heikkinen, Mr./Mrs. Owen",male,1.0,5,0,PC 98346,22.4725,,C
+888,0,2,"Braund, Mr./Mrs. Timothy",male,58.0,0,0,PC 77740,37.135,,Q
+194,1,3,"McCarthy, Mr./Mrs. Laina",female,59.0,0,0,103161,36.9497,,S
+561,1,2,"Smith, Mr./Mrs. William",female,69.0,0,2,999312,37.5819,D30,S
+951,1,1,"Allen, Mr./Mrs. Gosta",female,79.0,0,0,978343,36.1766,,S
+409,1,3,"Smith, Mr./Mrs. Owen",FEMALE,25.0,0,2,672133,7.4937,,S
+382,1,2,"Moran, Mr./Mrs. Gosta",female,66.0,0,0,PC 32227,14.1011,A142,C
+488,0,3,"Palsson, Mr./Mrs. Florence",female,70.0,1,2,PC 32706,45.758,F81,S
+566,0,2,"Palsson, Mr./Mrs. William",male,21.0,1,0,387330,47.5187,,S
+938,1,3,"Smith, Mr./Mrs. Owen",female,4.0,0,0,PC 84537,51.0553,E38,S
+985,1,1,"Allen, Mr./Mrs. Laina",male,11.0,0,1,PC 48745,16.6265,,S
+20,0,1,"Cumings, Mr./Mrs. James",female,28.0,0,1,359961,18.4079,,S
+833,0,3,"Palsson, Mr./Mrs. Lily",male,,1,0,PC 74629,45.256,,S
+131,0,3,"Braund, Mr./Mrs. Laina",male,,1,0,138105,14.4137,F145,S
+260,0,3,"Palsson, Mr./Mrs. Timothy",male,,0,0,176319,54.4734,C14,S
+605,0,1,"Heikkinen, Mr./Mrs. Timothy",male,33.0,1,1,PC 49537,18.9208,,S
+694,0,1,"Johnson, Mr./Mrs. Owen",male,64.0,0,0,162804,8.1721,,C
+173,0,3,"Allen, Mr./Mrs. Florence",male,38.0,0,0,PC 71712,31.6043,,S
+934,0,3,"Palsson, Mr./Mrs. Owen",male,47.0,0,0,PC 77537,68.4558,,s
+759,1,1,"Heikkinen, Mr./Mrs. William",female,25.0,0,0,935922,20.3523,,C
+398,0,2,"Braund, Mr./Mrs. Elizabeth",male,60.0,1,0,PC 27842,19.1326,F124,C
+812,1,3,"Moran, Mr./Mrs. Owen",female,59.0,0,0,PC 26691,40.7656,,S
+954,1,3,"Futrelle, Mr./Mrs. Florence",male,21.0,1,2,995296,122.0204,,C
+795,0,1,"McCarthy, Mr./Mrs. Timothy",male,49.0,0,0,PC 52413,27.6024,,C
+177,1,3,"Allen, Mr./Mrs. William",male,,0,2,PC 20730,7.4633,,S
+487,0,2,"Futrelle, Mr./Mrs. Florence",male,,0,0,PC 94575,42.6769,,S
+817,0,2,"Heikkinen, Mr./Mrs. Laina",male,16.0,0,0,433674,9.3605,,S
+191,0,1,"Johnson, Mr./Mrs. Owen",male,37.0,0,0,584838,31.6081,,S
+592,1,3,"Smith, Mr./Mrs. Timothy",female,64.0,1,0,PC 29840,57.9132,,S
+2,1,3,"Allen, Mr./Mrs. Lily",male,,0,0,321048,11.7421,,S
+404,1,3,"Moran, Mr./Mrs. Laina",male,,0,0,PC 85481,92.864,,C
+697,0,1,"Allen, Mr./Mrs. William",female,2.0,0,0,342716,33.2435,,S
+481,1,3,"Palsson, Mr./Mrs. Florence",male,33.0,0,0,291936,50.6772,,Q
+930,0,1,"Cumings, Mr./Mrs. Timothy",male,76.0,1,0,563173,11.9324,,S
+889,0,3,"Moran, Mr./Mrs. William",female,13.0,0,0,PC 98805,22.4256,F84,S
+579,0,3,"Moran, Mr./Mrs. Elizabeth",male,27.0,1,0,PC 65353,64.3091,,S
+843,0,2,"Cumings, Mr./Mrs. Elizabeth",female,32.0,0,0,PC 31090,23.8162,,S
+407,0,3,"Cumings, Mr./Mrs. Timothy",male,79.0,0,0,PC 57843,30.5,D12,S
+298,0,1,"Allen, Mr./Mrs. Timothy",male,24.0,1,0,PC 19742,11.2206,E112,S
+440,0,3,"Braund, Mr./Mrs. Laina",male,54.0,0,0,125755,33.0423,,S
+90,0,1,"McCarthy, Mr./Mrs. Lily",male,,0,1,PC 98587,94.4152,F23,S
+824,0,3,"Heikkinen, Mr./Mrs. Laina",male,,0,0,PC 21629,101.5244,,C
+752,1,1,"Futrelle, Mr./Mrs. James",female,77.0,0,0,255851,36.9566,A64,S
+241,1,3,"Heikkinen, Mr./Mrs. Edward",female,21.0,0,1,PC 16145,21.3556,,C
+108,1,3,"Smith, Mr./Mrs. Edward",female,51.0,1,2,PC 72793,21.219,,S
+848,1,1,"McCarthy, Mr./Mrs. Florence",male,8.0,0,0,785386,9.1705,,C
+480,0,2,"Allen, Mr./Mrs. Gosta",female,76.0,0,2,350161,18.5485,,S
+230,1,2,"Johnson, Mr./Mrs. Elizabeth",male,35.0,0,0,403314,24.3147,,S
+70,1,2,"Braund, Mr./Mrs. William",male,74.0,0,0,PC 85821,45.6494,,S
+205,1,3,"McCarthy, Mr./Mrs. Lily",female,22.0,4,0,PC 60132,hundred dollars,,S
+688,0,3,"Cumings, Mr./Mrs. James",male,49.0,0,0,PC 11257,12.0213,,C
+684,1,3,"Moran, Mr./Mrs. Florence",male,60.0,0,0,PC 42129,22.748,,S
+792,0,3,"Johnson, Mr./Mrs. Edward",FEMALE,13.0,1,0,447848,99.503,,C
+15,0,3,"Heikkinen, Mr./Mrs. Timothy",male,,0,0,462147,21.3215,E77,S
+721,1,1,"Palsson, Mr./Mrs. Elizabeth",female,76.0,0,0,976530,15.4721,,S
+911,0,2,"McCarthy, Mr./Mrs. Timothy",male,31.0,0,0,PC 55071,76.7267,,S
+460,0,3,"Palsson, Mr./Mrs. Florence",male,38.0,1,0,PC 66640,97.5019,,Q
+559,1,3,"Futrelle, Mr./Mrs. Timothy",male,,0,1,756596,8.9837,,S
+185,0,1,"Moran, Mr./Mrs. Laina",female,,1,0,PC 25235,42.2195,A32,Q
+486,1,2,"McCarthy, Mr./Mrs. Florence",FEMALE,63.0,1,0,663483,18.1312,A97,Q
+381,0,1,"Johnson, Mr./Mrs. James",female,45.0,1,0,PC 41816,10.405,D55,S
+426,0,3,"Heikkinen, Mr./Mrs. Elizabeth",female,58.0,2,2,360289,12.5473,,S
+947,0,2,"Braund, Mr./Mrs. Laina",male,62.0,0,0,PC 41711,13.2553,,Q
+438,1,3,"Heikkinen, Mr./Mrs. William",male,13.0,0,0,909859,7.3394,,S
+59,0,3,"Heikkinen, Mr./Mrs. Laina",female,69.0,0,0,512042,22.4473,,S
+568,0,1,"Moran, Mr./Mrs. Lily",male,50.0,0,0,489906,101.4669,,S
+342,0,3,"Smith, Mr./Mrs. Owen",male,29.0,0,0,317221,13.0937,,S
+178,0,1,"Smith, Mr./Mrs. Lily",female,77.0,0,0,PC 79228,8.625,A66,C
+119,1,2,"Futrelle, Mr./Mrs. Elizabeth",male,49.0,0,0,677086,24.0298,D124,C
+915,0,2,"Moran, Mr./Mrs. Elizabeth",male,67.0,0,0,388792,34.3866,,Q
+174,0,2,"Heikkinen, Mr./Mrs. William",female,,0,0,PC 97044,29.3495,,S
+174,0,2,"Heikkinen, Mr./Mrs. William",female,,0,0,PC 97044,29.3495,,S
+24,0,3,"Cumings, Mr./Mrs. Timothy",male,33.0,1,0,267457,20.5286,,Q
+47,0,1,"Moran, Mr./Mrs. Lily",male,8.0,0,0,PC 25572,44.4563,C117,C
+558,0,2,"Palsson, Mr./Mrs. Florence",male,,0,1,PC 16345,29.4064,,S
+44,1,3,"Moran, Mr./Mrs. Timothy",male,,0,1,505116,41.9329,,S
+740,0,2,"Smith, Mr./Mrs. Timothy",male,60.0,0,2,167603,51.3962,,S
+62,0,3,"McCarthy, Mr./Mrs. Edward",male,49.0,0,0,PC 79774,25.5645,,C
+644,0,3,"Smith, Mr./Mrs. Florence",female,27.0,0,0,PC 43980,29.1276,,S
+53,1,3,"Smith, Mr./Mrs. Timothy",male,6.0,1,1,142210,51.4311,,C
+133,0,1,"McCarthy, Mr./Mrs. William",female,74.0,1,1,PC 34420,21.5883,,S
+502,0,3,"Smith, Mr./Mrs. Edward",female,77.0,0,2,388204,28.1634,C79,C
+907,1,3,"Futrelle, Mr./Mrs. William",FEMALE,9.0,0,0,716493,46.1036,,S
+550,1,3,"Braund, Mr./Mrs. Gosta",male,66.0,1,1,PC 56952,14.505,A129,S
+60,0,3,"McCarthy, Mr./Mrs. Edward",male,41.0,0,0,PC 49221,13.268,C10,S
+219,1,3,"Cumings, Mr./Mrs. William",female,78.0,0,0,860242,7.5135,,S
+483,0,3,"Futrelle, Mr./Mrs. Laina",female,8.0,0,0,PC 64819,47.4925,,S
+668,0,3,"McCarthy, Mr./Mrs. Timothy",female,50.0,2,1,966120,31.8544,B48,S
+201,1,3,"Heikkinen, Mr./Mrs. Lily",FEMALE,,0,0,528728,11.0706,,S
+522,0,3,"Heikkinen, Mr./Mrs. Florence",male,13.0,0,0,PC 31755,22.6275,,S
+496,0,3,"Smith, Mr./Mrs. Elizabeth",male,48.0,0,4,PC 74876,29.4321,,S
+661,0,3,"Palsson, Mr./Mrs. Elizabeth",male,19.0,0,0,594681,14.9377,,S
+368,1,3,"Braund, Mr./Mrs. Elizabeth",female,18.0,0,0,211726,34.1322,,S
+180,0,3,"Allen, Mr./Mrs. Elizabeth",male,3.0,0,1,PC 24707,20.3778,,C
+320,0,1,"Palsson, Mr./Mrs. Owen",male,61.0,1,0,525750,42.1843,F78,C
+884,0,3,"Johnson, Mr./Mrs. Elizabeth",male,68.0,0,1,PC 40886,17.685,,S
+808,1,1,"Johnson, Mr./Mrs. Timothy",male,46.0,0,0,PC 90440,24.5807,,Q
+537,1,1,"Braund, Mr./Mrs. William",female,32.0,0,0,359579,24.1091,,S
+389,1,3,"Palsson, Mr./Mrs. William",female,3.0,0,0,358568,106.2799,,S
+855,0,3,"Moran, Mr./Mrs. Lily",male,,2,1,200575,18.6778,,S
+647,0,1,"Braund, Mr./Mrs. Elizabeth",MALE,35.0,1,0,PC 25473,47.8751,E148,s
+343,0,3,"Moran, Mr./Mrs. Elizabeth",male,,0,0,PC 62205,48.2867,,S
+870,1,3,"Braund, Mr./Mrs. Lily",male,11.0,0,0,499974,16.6799,,Q
+917,0,3,"McCarthy, Mr./Mrs. Florence",female,73.0,0,1,PC 62654,7.5581,C22,S
+946,0,3,"Futrelle, Mr./Mrs. Florence",male,,0,0,PC 26236,13.1784,,S
+747,0,1,"Cumings, Mr./Mrs. Lily",female,68.0,1,0,859620,32.8358,C101,
+921,1,3,"Cumings, Mr./Mrs. Florence",male,10.0,1,0,PC 12651,7.1317,E51,S
+950,0,2,"Cumings, Mr./Mrs. William",female,52.0,1,0,PC 55843,9.0887,F138,S
+577,0,1,"Heikkinen, Mr./Mrs. Lily",FEMALE,,0,1,829386,160.8402,,Q
+244,0,3,"Braund, Mr./Mrs. William",mAlE,52.0,0,0,536548,35.0967,,S
+739,0,2,"Smith, Mr./Mrs. Timothy",MALE,38.0,0,0,PC 19828,50.5528,,S
+624,0,3,"Heikkinen, Mr./Mrs. Edward",female,,1,0,PC 64451,9.5132,,C
+412,1,1,"Cumings, Mr./Mrs. Lily",male,73.0,0,0,PC 37479,23.6906,E140,S
+311,0,1,"Cumings, Mr./Mrs. Timothy",male,50.0,1,0,PC 80220,14.2239,D81,C
+458,0,3,"Allen, Mr./Mrs. Laina",female,62.0,0,1,524723,20.3425,,S
+768,1,3,"Palsson, Mr./Mrs. Florence",male,3.0,0,1,329659,22.1031,,S
+593,0,1,"Moran, Mr./Mrs. Florence",female,71.0,0,0,PC 90750,34.9946,,S
+19,0,3,"Cumings, Mr./Mrs. Timothy",male,57.0,0,0,228473,34.9309,,Q
+318,0,3,"Allen, Mr./Mrs. Timothy",male,49.0,0,0,471658,10.915,,S
+88,1,1,"Heikkinen, Mr./Mrs. William",female,67.0,0,0,PC 70249,26.9081,C61,C
+450,0,3,"Moran, Mr./Mrs. Edward",male,44.0,1,1,949541,75.6103,,C
+664,0,3,"Johnson, Mr./Mrs. Lily",female,71.0,0,5,942127,32.3441,,S
+943,1,3,"Heikkinen, Mr./Mrs. Elizabeth",male,-30.0,1,0,PC 36097,35.3248,,Q
+910,0,1,"Cumings, Mr./Mrs. James",male,76.0,0,0,PC 47498,35.6329,,S
+822,0,1,"Smith, Mr./Mrs. Laina",male,13.0,0,0,463656,32.5044,,S
+819,0,3,"Cumings, Mr./Mrs. Elizabeth",male,,0,0,693022,50.5144,,S
+386,1,2,"Moran, Mr./Mrs. Florence",female,20.0,0,0,555791,11.8726,,S
+28,0,3,"Futrelle, Mr./Mrs. Florence",FEMALE,69.0,0,0,PC 71186,FREE,,S
+463,1,1,"Moran, Mr./Mrs. Florence",female,67.0,0,0,550418,26.2914,,S
+366,0,1,"Allen, Mr./Mrs. Edward",male,30.0,1,0,PC 93086,7.3219,,Q
+98,0,1,"Smith, Mr./Mrs. Elizabeth",female,2.0,1,0,PC 74094,18.5233,,C
+973,1,2,"Palsson, Mr./Mrs. Elizabeth",female,,0,0,PC 87826,36.2321,,S
+892,1,2,"Futrelle, Mr./Mrs. Florence",female,32.0,0,0,275284,7.1255,A77,S
+811,1,3,"McCarthy, Mr./Mrs. Elizabeth",male,59.0,1,0,869649,30.7885,,S
+942,0,2,"Cumings, Mr./Mrs. Edward",female,66.0,1,0,153015,30.3751,,C
+655,0,1,"Heikkinen, Mr./Mrs. Florence",female,12.0,1,0,264951,45.7761,D38,S
+401,0,1,"Braund, Mr./Mrs. Edward",male,2.0,4,0,286266,77.2719,B17,Q
+76,1,2,"Heikkinen, Mr./Mrs. Elizabeth",female,39.0,0,0,700383,11.4811,D27,Q
+212,1,3,"Futrelle, Mr./Mrs. Owen",female,61.0,1,0,PC 39188,7.0201,F46,S
+449,0,3,"Braund, Mr./Mrs. Timothy",male,10.0,2,0,170437,156.8561,D44,Q
+287,0,1,"Futrelle, Mr./Mrs. Timothy",FEMALE,36.0,0,0,PC 42208,26.873,,C
+299,1,3,"McCarthy, Mr./Mrs. Elizabeth",male,72.0,0,5,PC 97584,11.2252,F19,Q
+949,1,2,"McCarthy, Mr./Mrs. Elizabeth",male,15.0,0,0,597635,27.0279,,S
+476,1,3,"Smith, Mr./Mrs. Gosta",female,79.0,0,0,806309,11.8866,,C
+897,0,3,"Palsson, Mr./Mrs. Gosta",male,1.0,1,0,PC 87994,16.9467,D31,S
+702,0,2,"Heikkinen, Mr./Mrs. Owen",FEMALE,69.0,0,0,PC 93521,73.3149,,S
+73,0,1,"Allen, Mr./Mrs. Elizabeth",male,26.0,0,0,PC 91230,45.75,,S
+776,0,2,"Moran, Mr./Mrs. William",male,78.0,0,1,PC 17328,20.2816,,S
+411,0,1,"Smith, Mr./Mrs. William",female,8.0,0,0,PC 70505,21.3617,,s
+247,0,1,"Smith, Mr./Mrs. James",male,46.0,0,0,PC 41584,59.3888,,S
+887,1,1,"McCarthy, Mr./Mrs. Gosta",male,,0,2,PC 75811,21.2247,,C
+533,1,3,"Cumings, Mr./Mrs. Florence",male,31.0,0,0,PC 46349,39.289,F1,S
+277,1,2,"Palsson, Mr./Mrs. Gosta",female,66.0,0,0,857505,49.0186,F3,S
+927,0,3,"Braund, Mr./Mrs. James",female,27.0,0,0,965938,13.2678,A69,S
+628,1,3,"Futrelle, Mr./Mrs. James",female,43.0,1,0,424960,105.8271,,S
+828,0,3,"Moran, Mr./Mrs. Lily",male,73.0,0,0,826847,16.4574,,S
+552,1,3,"Heikkinen, Mr./Mrs. Florence",male,61.0,1,0,550513,82.6692,,S
+475,0,2,"Johnson, Mr./Mrs. James",male,79.0,0,0,PC 90918,25.809,C148,C
+948,1,1,"Palsson, Mr./Mrs. Elizabeth",male,,0,0,722899,85.9463,,S
+538,0,3,"Moran, Mr./Mrs. James",male,55.0,0,0,PC 98635,45.3001,E4,S
+309,1,2,"McCarthy, Mr./Mrs. Edward",male,65.0,1,0,PC 63914,48.7375,D116,C
+687,0,3,"Palsson, Mr./Mrs. Lily",male,,0,0,980357,23.9565,A92,S
+120,0,1,"Palsson, Mr./Mrs. Laina",female,9.0,0,0,PC 30701,10.3878,E113,C
+573,0,3,"Braund, Mr./Mrs. Edward",male,14.0,0,0,PC 10142,40.1942,,C
+658,0,2,"Johnson, Mr./Mrs. James",female,64.0,1,0,PC 39937,16.6958,D19,C
+503,0,1,"Palsson, Mr./Mrs. Laina",female,18.0,0,0,402692,48.7122,,S
+478,0,3,"Futrelle, Mr./Mrs. William",female,23.0,0,0,PC 87354,31.535,,Q
+427,0,1,"Cumings, Mr./Mrs. Laina",male,17.0,4,0,PC 56531,20.9902,,S
+199,1,3,"Moran, Mr./Mrs. Elizabeth",male,,0,0,PC 19046,16.906,,S
+358,0,2,"Palsson, Mr./Mrs. Lily",male,,0,2,473095,33.749,,C
+390,1,3,"Smith, Mr./Mrs. Elizabeth",female,54.0,1,0,PC 74985,37.2076,,C
+575,1,1,"Cumings, Mr./Mrs. William",male,32.0,0,0,337178,49.2415,B147,S
+107,0,2,"Johnson, Mr./Mrs. Laina",female,22.0,0,0,563864,68.8292,C92,S
+259,0,1,"Smith, Mr./Mrs. Florence",male,39.0,3,0,PC 89026,129.6196,A40,Q
+705,0,2,"McCarthy, Mr./Mrs. Gosta",female,40.0,0,0,237057,68.7211,,S
+92,1,3,"Allen, Mr./Mrs. Timothy",MALE,10.0,1,0,PC 44650,80.2592,,C
+519,1,2,"Cumings, Mr./Mrs. Elizabeth",female,35.0,0,0,873443,72.6556,,S
+980,0,3,"Johnson, Mr./Mrs. Edward",FEMALE,2.0,0,0,257212,23.9001,D41,S
+773,0,3,"Cumings, Mr./Mrs. William",female,62.0,1,0,PC 30922,73.235,,S
+30,0,3,"Allen, Mr./Mrs. Florence",female,47.0,0,0,194423,84.1314,E112,S
+159,0,3,"Allen, Mr./Mrs. Gosta",male,48.0,0,0,857997,14.7712,,S
+113,1,1,"Moran, Mr./Mrs. Timothy",male,25.0,0,0,PC 41779,111.8252,,C
+72,0,1,"Johnson, Mr./Mrs. Florence",male,22.0,0,0,PC 32349,84.6746,,S
+48,0,1,"Palsson, Mr./Mrs. Timothy",female,62.0,1,0,201377,100.1027,,c
+179,1,3,"Moran, Mr./Mrs. Lily",female,46.0,0,0,PC 20237,36.27,E51,S
+728,1,3,"Allen, Mr./Mrs. James",male,39.0,1,0,PC 69270,9.0258,,C
+940,0,1,"Palsson, Mr./Mrs. James",male,55.0,0,0,PC 36309,48.3035,,S
+737,0,2,"Braund, Mr./Mrs. Gosta",mAlE,76.0,0,0,PC 21015,42.6694,,S
+745,0,2,"Palsson, Mr./Mrs. James",female,55.0,0,0,583388,7.8396,,S
+926,0,1,"Moran, Mr./Mrs. Gosta",female,58.0,0,0,879850,46.4798,,S
+871,0,3,"McCarthy, Mr./Mrs. Edward",female,49.0,1,0,567429,73.7379,,S
+509,1,3,"Futrelle, Mr./Mrs. Lily",female,48.0,0,0,PC 15453,9.8206,,S
+76,1,2,"Heikkinen, Mr./Mrs. Elizabeth",female,39.0,0,0,700383,11.4811,D27,Q
+155,1,3,"Moran, Mr./Mrs. William",male,,1,0,360096,9.6915,,S
+206,0,3,"Allen, Mr./Mrs. Laina",female,,0,0,495833,71.4252,,S
+156,0,3,"Futrelle, Mr./Mrs. James",male,,0,0,502206,42.7057,,S
+67,0,1,"Moran, Mr./Mrs. Florence",male,35.0,0,0,PC 92478,7.9473,,S
+556,0,1,"Palsson, Mr./Mrs. William",MALE,,0,0,PC 84205,58.6307,,S
+853,0,3,"Moran, Mr./Mrs. Lily",male,65.0,1,0,PC 80795,22.7158,,S
+630,0,3,"Braund, Mr./Mrs. William",male,20.0,1,0,PC 30365,46.3856,,Q
+467,0,3,"Johnson, Mr./Mrs. Owen",male,28.0,1,0,PC 80371,38.1262,,S
+621,0,3,"Futrelle, Mr./Mrs. Edward",female,66.0,0,0,163406,49.4681,,S
+428,1,3,"Braund, Mr./Mrs. Timothy",MALE,16.0,1,1,742439,24.4027,C31,S
+151,1,3,"Smith, Mr./Mrs. Owen",male,40.0,0,0,PC 77538,66.4909,,S
+835,0,3,"Palsson, Mr./Mrs. Gosta",male,57.0,0,5,PC 23294,29.023,F107,C
+914,0,2,"Palsson, Mr./Mrs. Gosta",MALE,,1,0,PC 72003,8.1453,,S
+746,1,3,"Cumings, Mr./Mrs. Timothy",female,39.0,1,0,701761,17.7446,,S
+306,1,3,"Heikkinen, Mr./Mrs. Gosta",male,74.0,1,0,PC 90808,28.7701,,S
+726,1,1,"Allen, Mr./Mrs. Lily",male,79.0,0,0,959926,71.7904,,S
+698,0,1,"Moran, Mr./Mrs. James",male,,0,0,PC 78125,17.483,,Q
+172,0,3,"Braund, Mr./Mrs. Elizabeth",male,10.0,0,0,836038,137.1231,,C
+794,1,3,"Moran, Mr./Mrs. William",male,42.0,1,0,PC 54663,30.496,E76,Q
+894,0,1,"Heikkinen, Mr./Mrs. Owen",female,58.0,0,0,543940,23.6899,,S
+937,0,2,"Moran, Mr./Mrs. Timothy",female,12.0,0,0,918430,25.2068,C114,S
+952,1,1,"Futrelle, Mr./Mrs. Edward",female,46.0,0,0,PC 21847,36.4677,E134,S
+823,0,3,"Smith, Mr./Mrs. Timothy",female,43.0,0,1,PC 32005,92.0013,,Q
+23,0,3,"Palsson, Mr./Mrs. Elizabeth",female,,1,0,PC 64805,69.6725,,S
+830,0,2,"Allen, Mr./Mrs. Gosta",male,74.0,1,0,PC 10167,43.2309,,Q
+394,1,3,"Moran, Mr./Mrs. Laina",male,59.0,0,0,750318,16.751,E36,Q
+379,1,2,"Johnson, Mr./Mrs. Elizabeth",male,57.0,0,0,506637,16.4986,,S
+619,1,3,"Futrelle, Mr./Mrs. Florence",female,37.0,0,0,170813,28.7293,B147,Q
+785,0,3,"Johnson, Mr./Mrs. Laina",female,69.0,0,4,695225,22.8346,A33,Q
+564,0,2,"Braund, Mr./Mrs. Edward",male,,1,0,822040,43.2092,F59,S
+909,0,2,"Moran, Mr./Mrs. William",male,56.0,0,0,PC 83752,27.2318,E24,S
+261,1,2,"Smith, Mr./Mrs. Lily",female,,0,0,898696,10.5951,,S
+292,0,1,"McCarthy, Mr./Mrs. Owen",male,78.0,0,0,PC 74303,24.9252,,c
+195,0,1,"Braund, Mr./Mrs. William",male,2.0,1,1,PC 85800,9.8003,,S
+293,1,3,"Futrelle, Mr./Mrs. Timothy",male,39.0,1,0,868367,13.703,E2,c
+996,0,3,"Heikkinen, Mr./Mrs. Laina",female,,0,0,PC 33741,61.5383,,c
+676,1,2,"Moran, Mr./Mrs. Laina",male,72.0,1,0,679958,17.0053,,C
+543,0,3,"Heikkinen, Mr./Mrs. Florence",female,10.0,0,2,PC 22202,12.1558,,S
+114,1,3,"McCarthy, Mr./Mrs. Gosta",female,28.0,0,0,656837,113.8125,,C
+557,0,3,"Futrelle, Mr./Mrs. Timothy",male,24.0,0,0,PC 55054,39.0002,,C
+616,1,3,"Moran, Mr./Mrs. Elizabeth",male,,0,0,PC 57895,48.9141,,S
+117,1,1,"Moran, Mr./Mrs. Florence",male,68.0,0,0,595351,122.3972,,S
+614,0,2,"Palsson, Mr./Mrs. Lily",female,28.0,3,1,PC 51480,35.2783,D109,S
+283,0,3,"Futrelle, Mr./Mrs. William",male,,0,0,712401,48.0529,,S
+54,1,3,"Smith, Mr./Mrs. Timothy",female,58.0,3,0,243693,FREE,,S
+955,0,3,"Heikkinen, Mr./Mrs. Florence",female,5.0,1,0,PC 38091,32.1305,,s
+102,1,3,"Futrelle, Mr./Mrs. Florence",male,,1,0,PC 59767,93.7764,,S
+993,0,3,"Johnson, Mr./Mrs. Florence",female,54.0,1,1,PC 98063,21.5437,,
+216,0,1,"Moran, Mr./Mrs. Elizabeth",male,1.0,0,0,497700,9.6361,,S
+251,0,3,"Heikkinen, Mr./Mrs. Florence",male,36.0,0,2,PC 64592,35.3678,,S
+215,1,3,"Cumings, Mr./Mrs. William",female,,0,0,PC 81361,53.2827,,S
+696,1,1,"Braund, Mr./Mrs. Laina",male,22.0,0,0,PC 22193,17.8143,F137,S
+186,1,3,"Allen, Mr./Mrs. Laina",female,,1,0,PC 86434,11.2943,,S
+613,1,3,"Futrelle, Mr./Mrs. Gosta",male,,0,0,PC 11581,20.1198,,S
+685,1,1,"Smith, Mr./Mrs. Elizabeth",male,10.0,0,0,529954,25.7664,,S
+793,0,3,"Heikkinen, Mr./Mrs. James",female,,1,0,PC 36406,14.6355,,S
+97,0,1,"Moran, Mr./Mrs. Owen",female,59.0,0,0,PC 37168,13.4142,,S
+372,0,1,"Futrelle, Mr./Mrs. Gosta",female,8.0,1,0,551914,29.1237,,S
+711,1,1,"Heikkinen, Mr./Mrs. Edward",female,65.0,0,0,907557,38.5846,,C
+27,0,3,"Moran, Mr./Mrs. Edward",female,19.0,0,0,PC 75308,60.757,B148,S
+683,0,3,"Smith, Mr./Mrs. William",male,56.0,0,0,PC 81638,15.7067,,S
+397,1,2,"Allen, Mr./Mrs. Owen",male,4.0,0,0,PC 95332,28.1536,,S
+641,0,3,"Cumings, Mr./Mrs. Florence",male,59.0,1,0,842287,8.6277,C93,
+775,1,3,"Braund, Mr./Mrs. Owen",male,6.0,0,1,659614,25.42,,S
+453,0,3,"Smith, Mr./Mrs. Edward",female,,0,0,938913,13.7658,E131,S
+118,0,3,"Futrelle, Mr./Mrs. Lily",female,,0,1,908206,7.1562,,S
+886,0,3,"Johnson, Mr./Mrs. Owen",female,43.0,0,2,995420,47.6868,E103,S
+518,1,3,"Cumings, Mr./Mrs. Gosta",male,,1,0,PC 41056,43.7229,,S
+49,0,3,"Palsson, Mr./Mrs. Laina",male,29.0,2,0,933510,39.0,,S
+365,1,3,"Allen, Mr./Mrs. James",female,46.0,0,0,498458,76.3664,,S
+262,1,3,"McCarthy, Mr./Mrs. Gosta",female,5.0,1,0,PC 98008,55.2243,,S
+636,0,1,"Futrelle, Mr./Mrs. Edward",female,16.0,0,0,190400,248.2374,,C
+595,1,3,"Braund, Mr./Mrs. Edward",male,65.0,1,0,205345,41.5535,B14,S
+270,0,2,"Palsson, Mr./Mrs. Laina",male,37.0,0,1,PC 61987,18.3448,,S
+447,1,3,"Palsson, Mr./Mrs. Gosta",male,2.0,0,0,202365,86.8777,,s
+51,1,3,"Futrelle, Mr./Mrs. Elizabeth",male,17.0,0,0,PC 28909,30.8325,,S
+529,0,3,"Braund, Mr./Mrs. Edward",male,30.0,1,1,999695,80.7828,,Q
+939,0,3,"Smith, Mr./Mrs. Laina",MALE,,0,0,302127,272.6103,,Q
+257,1,1,"Braund, Mr./Mrs. Owen",male,6.0,0,0,PC 34966,31.0087,,S
+21,1,3,"Moran, Mr./Mrs. Edward",MALE,78.0,0,0,153063,8.1203,,C
+708,1,1,"Moran, Mr./Mrs. Edward",male,60.0,0,0,PC 52762,14.5195,F126,C
+806,1,3,"Heikkinen, Mr./Mrs. Edward",FEMALE,72.0,0,2,PC 32833,41.7852,,S
+788,0,3,"Cumings, Mr./Mrs. Elizabeth",male,41.0,0,0,PC 33010,53.9057,,S
+972,1,3,"Allen, Mr./Mrs. Timothy",male,53.0,0,1,PC 59051,32.7178,,S
+913,1,3,"Moran, Mr./Mrs. Laina",female,25.0,0,0,609172,50.8199,,S
+246,1,3,"McCarthy, Mr./Mrs. Edward",male,55.0,0,1,891062,20.3434,F50,Q
+730,0,3,"Palsson, Mr./Mrs. Timothy",male,32.0,1,0,584487,38.2513,,S
+376,0,3,"McCarthy, Mr./Mrs. Lily",male,57.0,1,0,PC 88240,7.5063,,S
+725,0,3,"Braund, Mr./Mrs. Lily",male,15.0,0,0,PC 98759,90.0117,,S
+663,1,3,"Cumings, Mr./Mrs. Florence",male,50.0,0,0,999138,57.9393,,S
+670,0,3,"McCarthy, Mr./Mrs. James",male,32.0,0,0,806033,48.6111,,S
+234,0,1,"Moran, Mr./Mrs. Florence",female,68.0,0,0,PC 41051,10.9811,B144,Q
+905,0,3,"Johnson, Mr./Mrs. Gosta",male,,0,0,PC 64997,7.405,,S
+434,0,3,"Futrelle, Mr./Mrs. William",male,42.0,0,0,635482,29.1993,,S
+498,0,3,"Allen, Mr./Mrs. Timothy",female,56.0,2,0,980690,21.4248,,S
+477,0,3,"Palsson, Mr./Mrs. Owen",male,-4.0,0,0,PC 48986,10.4604,B66,Q
+310,0,3,"Smith, Mr./Mrs. Owen",male,,5,0,655134,31.0295,,S
+166,1,3,"Heikkinen, Mr./Mrs. James",FEMALE,62.0,0,0,PC 93717,13.4635,,S
+22,0,2,"Allen, Mr./Mrs. Owen",female,,0,0,502810,39.2453,,S
+840,1,1,"Heikkinen, Mr./Mrs. William",male,44.0,0,0,434198,25.0407,C20,C
+3,1,3,"Futrelle, Mr./Mrs. Laina",female,7.0,4,0,PC 64602,8.7882,,S
+187,1,3,"Palsson, Mr./Mrs. Elizabeth",female,39.0,0,0,635167,53.4155,F130,S
+273,1,3,"Moran, Mr./Mrs. Gosta",male,46.0,0,1,659572,17.4283,,S
+71,1,2,"Johnson, Mr./Mrs. Laina",female,38.0,3,0,PC 16731,8.8349,,S
+838,0,2,"McCarthy, Mr./Mrs. Laina",male,54.0,0,0,177289,13.7255,,S
+127,1,1,"Cumings, Mr./Mrs. Lily",female,32.0,1,0,874568,58.5879,,S
+859,0,3,"Braund, Mr./Mrs. William",male,32.0,1,0,191884,57.3537,,S
+135,1,3,"McCarthy, Mr./Mrs. Elizabeth",female,54.0,1,1,PC 11214,45.7847,,S
+129,0,2,"Palsson, Mr./Mrs. Gosta",female,6.0,0,0,PC 32946,39.2747,,C
+52,1,3,"Johnson, Mr./Mrs. William",male,66.0,0,2,633853,14.1257,C126,C
+978,0,2,"Palsson, Mr./Mrs. Elizabeth",male,73.0,1,0,845635,70.3483,,S
+879,0,2,"Smith, Mr./Mrs. James",female,56.0,0,0,PC 87296,14.4537,,C
+124,0,3,"Palsson, Mr./Mrs. Elizabeth",male,,0,1,777273,14.9795,,S
+224,0,3,"Moran, Mr./Mrs. Timothy",male,,0,0,135207,10.2523,,S
+821,1,1,"Braund, Mr./Mrs. James",female,13.0,0,0,881549,hundred dollars,,S
+581,0,1,"Heikkinen, Mr./Mrs. William",male,54.0,1,1,501677,40.4789,,S
+733,1,3,"Futrelle, Mr./Mrs. Elizabeth",male,20.0,0,0,918895,20.1221,A48,S
+165,0,1,"Johnson, Mr./Mrs. William",male,67.0,1,0,PC 50760,97.4999,D85,S
+797,1,3,"Braund, Mr./Mrs. James",male,77.0,0,0,PC 28566,61.6244,,C
+769,0,2,"Palsson, Mr./Mrs. Gosta",male,22.0,1,0,950069,90.1383,,S
+360,0,3,"Smith, Mr./Mrs. Timothy",male,45.0,0,4,812711,18.5337,,Q
+738,1,1,"Cumings, Mr./Mrs. James",male,44.0,1,0,PC 43924,15.8107,,Q
+671,0,2,"Allen, Mr./Mrs. James",female,-52.0,0,1,PC 33507,38.805,F65,S
+901,0,3,"Futrelle, Mr./Mrs. Owen",male,63.0,0,0,441968,29.0656,,S
+634,0,3,"Braund, Mr./Mrs. Laina",male,30.0,0,0,558737,14.0689,,Q
+654,1,2,"Moran, Mr./Mrs. Edward",male,53.0,0,0,694423,28.3438,,Q
+364,0,3,"Futrelle, Mr./Mrs. James",male,53.0,0,0,PC 20752,12.5618,,S
+145,0,2,"Johnson, Mr./Mrs. Florence",male,19.0,0,0,295243,11.1491,,Q
+941,0,1,"Moran, Mr./Mrs. Gosta",male,1.0,1,1,PC 42701,10.8799,F96,S
+325,1,3,"Futrelle, Mr./Mrs. Owen",female,71.0,0,0,PC 95182,38.0096,D41,S
+631,1,3,"Heikkinen, Mr./Mrs. Laina",female,8.0,3,0,PC 61213,47.0175,,C
+298,0,1,"Allen, Mr./Mrs. Timothy",male,24.0,1,0,PC 19742,11.2206,E112,S
+692,0,3,"McCarthy, Mr./Mrs. Elizabeth",female,26.0,0,0,655550,138.1227,,s
+353,1,2,"Johnson, Mr./Mrs. Gosta",female,51.0,0,0,906360,48.8896,,S
+623,0,3,"Moran, Mr./Mrs. Lily",male,54.0,0,0,PC 92388,28.5979,,S
+217,0,1,"McCarthy, Mr./Mrs. Elizabeth",female,55.0,0,0,PC 42441,25.9858,D150,C
+607,0,1,"Johnson, Mr./Mrs. Timothy",male,43.0,0,0,PC 61347,54.7228,,S
+335,0,3,"Smith, Mr./Mrs. Owen",male,65.0,0,0,825916,52.2096,,S
+686,0,3,"Futrelle, Mr./Mrs. Laina",male,39.0,0,0,667851,78.0173,B8,S
+200,1,1,"McCarthy, Mr./Mrs. Edward",male,36.0,1,1,PC 71875,8.019,,S
+350,1,1,"Heikkinen, Mr./Mrs. Timothy",male,56.0,1,0,PC 55332,28.7661,,C
+554,0,3,"Smith, Mr./Mrs. William",female,25.0,1,0,968581,38.7663,E65,S
+882,1,3,"Cumings, Mr./Mrs. Elizabeth",female,38.0,0,0,661527,24.1709,,S
+935,0,3,"Heikkinen, Mr./Mrs. Florence",female,34.0,0,0,PC 18600,49.7847,,S
+289,0,1,"Cumings, Mr./Mrs. Timothy",male,-73.0,1,0,PC 54245,43.7963,,S
+494,0,1,"Johnson, Mr./Mrs. Laina",male,46.0,0,0,954815,12.7174,,S
+6,0,3,"McCarthy, Mr./Mrs. Owen",female,,1,0,PC 94136,41.3295,,S
+263,0,2,"McCarthy, Mr./Mrs. Lily",female,42.0,2,0,PC 72835,12.9833,,s
+856,0,2,"Braund, Mr./Mrs. James",male,11.0,2,0,699544,9.4203,,S
+235,0,3,"Allen, Mr./Mrs. Elizabeth",female,12.0,0,0,250219,26.3215,,S
+709,0,3,"Smith, Mr./Mrs. Florence",male,-62.0,0,0,385166,31.6467,D77,C
+85,0,3,"Cumings, Mr./Mrs. Elizabeth",male,53.0,0,0,440839,14.8576,,S
+504,1,2,"Palsson, Mr./Mrs. Elizabeth",MALE,,4,2,579536,19.1748,,S
+527,0,2,"McCarthy, Mr./Mrs. James",male,54.0,0,0,838253,24.1256,C50,Q
+572,1,1,"Allen, Mr./Mrs. Gosta",female,25.0,0,0,195629,44.4955,A142,C
+880,0,3,"Futrelle, Mr./Mrs. Edward",male,28.0,0,0,163946,58.3342,,S
+932,1,3,"Heikkinen, Mr./Mrs. Owen",female,44.0,1,0,607993,56.9368,,S
+105,1,3,"Futrelle, Mr./Mrs. William",female,79.0,0,0,401602,22.4033,A36,S
+471,0,3,"McCarthy, Mr./Mrs. Elizabeth",male,7.0,0,0,PC 93769,59.1256,C12,S
+355,0,3,"Smith, Mr./Mrs. William",female,78.0,4,0,911131,9.0371,,S
+536,1,1,"Braund, Mr./Mrs. James",female,49.0,0,1,845951,71.8478,,S
+715,0,1,"Smith, Mr./Mrs. Gosta",male,56.0,1,0,475691,83.2644,,C
+344,0,3,"McCarthy, Mr./Mrs. James",male,26.0,0,0,PC 49226,29.5252,B30,C
+322,1,1,"Moran, Mr./Mrs. Lily",female,39.0,2,0,PC 39603,74.8897,,S
+714,0,3,"McCarthy, Mr./Mrs. Gosta",male,53.0,0,1,526259,43.0799,,Q
+657,0,3,"Smith, Mr./Mrs. Edward",female,,0,0,PC 98358,21.1121,,C
+690,0,3,"Cumings, Mr./Mrs. William",male,13.0,0,0,PC 59319,112.4625,,S
+602,0,2,"Allen, Mr./Mrs. Gosta",male,,0,0,PC 89638,14.3501,,S
+707,0,3,"Moran, Mr./Mrs. William",male,44.0,0,2,PC 61505,51.0096,E3,S
+629,0,1,"Heikkinen, Mr./Mrs. Edward",male,22.0,0,1,313068,73.3301,,S
+989,0,2,"Cumings, Mr./Mrs. William",female,72.0,1,0,PC 34892,12.1276,B39,S
+983,0,3,"Braund, Mr./Mrs. Florence",female,51.0,1,0,435109,10.6053,,S
+361,0,3,"Moran, Mr./Mrs. Owen",male,15.0,1,1,PC 59816,26.7169,,C
+240,0,1,"McCarthy, Mr./Mrs. Timothy",male,25.0,0,0,PC 65994,27.5917,,S
+899,0,2,"Cumings, Mr./Mrs. Gosta",male,48.0,1,0,PC 18783,15.2526,F98,S
+516,0,1,"Heikkinen, Mr./Mrs. Elizabeth",female,61.0,0,0,PC 21401,42.3486,D112,C
+69,0,2,"Heikkinen, Mr./Mrs. Gosta",male,24.0,0,0,787436,8.7395,E65,C
+553,0,3,"Palsson, Mr./Mrs. James",female,43.0,0,0,PC 74843,31.9602,C138,S
+25,0,3,"Cumings, Mr./Mrs. Elizabeth",male,62.0,0,0,PC 85718,22.833,A116,S
+204,1,2,"Heikkinen, Mr./Mrs. James",male,63.0,0,0,PC 59081,14.403,,C
+346,1,2,"Moran, Mr./Mrs. Owen",female,25.0,0,0,PC 61007,14.2557,,S
+896,0,3,"Moran, Mr./Mrs. Laina",female,28.0,0,1,962520,58.2604,,S
+492,1,2,"Palsson, Mr./Mrs. Gosta",male,5.0,0,0,PC 57059,7.702,C67,S
+369,0,1,"Futrelle, Mr./Mrs. Florence",male,51.0,0,0,423241,19.8946,,S
+285,0,2,"Johnson, Mr./Mrs. Florence",male,,0,0,305721,hundred dollars,,S
+563,0,3,"McCarthy, Mr./Mrs. William",male,,0,0,548580,36.8363,D57,S
+763,0,1,"Palsson, Mr./Mrs. Gosta",female,63.0,2,0,PC 57069,12.9403,E32,C
+81,1,3,"Allen, Mr./Mrs. Lily",male,20.0,0,1,912617,35.8556,,S
+758,0,3,"Futrelle, Mr./Mrs. Florence",female,72.0,1,0,539599,41.1478,,S
+362,1,1,"Palsson, Mr./Mrs. James",male,3.0,4,1,748665,17.4828,,S
+221,1,3,"Allen, Mr./Mrs. Owen",female,1.0,0,1,PC 64950,110.6745,A134,C
+415,1,3,"Smith, Mr./Mrs. Edward",male,62.0,0,2,PC 63627,8.548,C20,S
+207,0,3,"Cumings, Mr./Mrs. Timothy",male,58.0,0,0,815894,30.5459,,Q
+202,0,1,"Heikkinen, Mr./Mrs. Laina",male,79.0,0,1,242007,38.1572,,S
+903,0,3,"Moran, Mr./Mrs. William",male,72.0,0,0,112964,14.88,,S
+142,0,2,"Smith, Mr./Mrs. Gosta",male,73.0,2,0,948102,40.6047,,Q
+303,0,1,"McCarthy, Mr./Mrs. Gosta",male,62.0,0,0,PC 11198,8.1285,,S
+582,1,2,"Palsson, Mr./Mrs. William",female,75.0,0,0,945106,48.5766,,S
+576,1,1,"Moran, Mr./Mrs. Timothy",female,11.0,0,0,PC 68335,29.72,,S
+814,1,1,"Heikkinen, Mr./Mrs. Lily",male,39.0,0,0,PC 85082,53.6384,,S
+796,1,1,"Moran, Mr./Mrs. Edward",female,20.0,1,0,254887,16.5659,,C
+571,0,3,"Cumings, Mr./Mrs. Owen",male,,0,0,PC 40689,13.1044,,S
+731,0,2,"Heikkinen, Mr./Mrs. Laina",female,,1,2,932369,119.807,,C
+744,0,1,"Heikkinen, Mr./Mrs. Edward",male,16.0,1,2,PC 53456,16.5794,,S
+515,0,1,"Palsson, Mr./Mrs. Owen",female,31.0,1,1,465509,25.6879,,C
+50,0,1,"Allen, Mr./Mrs. Laina",male,74.0,0,1,PC 83116,25.2863,,S
+995,0,3,"Smith, Mr./Mrs. Edward",male,58.0,1,0,PC 96194,56.6978,E40,S
+18,0,3,"Moran, Mr./Mrs. Florence",female,5.0,2,0,PC 51827,11.376,,S
+254,0,1,"Cumings, Mr./Mrs. Lily",female,39.0,0,0,778120,86.9446,,S
+74,1,1,"Smith, Mr./Mrs. Lily",female,43.0,1,0,PC 59832,29.6572,,C
+136,0,1,"Palsson, Mr./Mrs. Laina",female,50.0,0,0,732063,18.3888,,Q
+618,0,3,"McCarthy, Mr./Mrs. William",male,66.0,0,0,PC 19567,56.0994,,S
+75,1,3,"Heikkinen, Mr./Mrs. James",female,55.0,0,0,813793,25.6402,,S
+528,0,2,"Palsson, Mr./Mrs. Elizabeth",MALE,75.0,0,0,700556,52.9953,,S
+761,0,3,"Smith, Mr./Mrs. Laina",male,32.0,0,0,PC 81258,32.5355,F11,Q
+787,0,3,"Cumings, Mr./Mrs. James",MALE,52.0,0,1,PC 74517,7.9458,,S
+957,0,3,"Palsson, Mr./Mrs. Florence",female,47.0,1,0,316773,30.4947,,C
+220,1,2,"Heikkinen, Mr./Mrs. Edward",male,38.0,0,1,PC 14222,37.6429,C109,S
+570,0,3,"Allen, Mr./Mrs. Laina",female,42.0,0,0,515594,10.5944,,S
+584,0,3,"Palsson, Mr./Mrs. Florence",male,44.0,0,2,413791,11.8452,A21,S
+724,1,1,"Smith, Mr./Mrs. Owen",male,,0,0,PC 61936,14.9687,,S
+813,0,2,"Moran, Mr./Mrs. William",female,13.0,2,0,101885,55.377,E128,C
+963,0,3,"Johnson, Mr./Mrs. Lily",male,67.0,0,0,944193,8.6368,,S
+585,1,3,"Heikkinen, Mr./Mrs. Lily",female,5.0,0,0,911032,25.7233,,C
+228,0,2,"Allen, Mr./Mrs. Owen",female,67.0,0,0,345722,58.8639,,S
+34,1,1,"Heikkinen, Mr./Mrs. James",FEMALE,13.0,0,0,395023,40.0252,,S
+521,0,1,"Heikkinen, Mr./Mrs. Timothy",female,,0,0,PC 89988,130.5011,F99,S
+249,1,3,"Palsson, Mr./Mrs. Lily",female,55.0,0,0,PC 28920,8.8249,,S
+764,1,3,"Smith, Mr./Mrs. Edward",male,38.0,0,1,919394,39.4115,,S
+742,0,3,"Cumings, Mr./Mrs. Timothy",male,,0,0,235047,28.155,,S
+732,1,3,"McCarthy, Mr./Mrs. Elizabeth",male,40.0,1,0,112537,33.1953,A137,C
+627,0,1,"Smith, Mr./Mrs. Lily",male,40.0,0,0,PC 30012,22.2288,,C
+300,0,3,"Johnson, Mr./Mrs. Edward",male,9.0,0,1,106693,35.0106,,C
+380,0,3,"Moran, Mr./Mrs. Timothy",female,49.0,0,0,PC 83339,10.1066,,Q
+271,1,3,"Palsson, Mr./Mrs. Elizabeth",male,13.0,2,0,PC 82362,42.7071,C57,S
+974,0,3,"McCarthy, Mr./Mrs. Timothy",female,37.0,0,0,PC 49121,17.2647,,S
+667,0,1,"Moran, Mr./Mrs. Gosta",male,20.0,0,0,855276,38.1323,,S
+534,0,2,"Palsson, Mr./Mrs. Laina",male,78.0,0,0,PC 26631,59.4378,,S
+123,0,3,"Futrelle, Mr./Mrs. Florence",MALE,10.0,1,0,PC 47649,23.7165,,S
+32,0,3,"McCarthy, Mr./Mrs. William",female,68.0,2,2,352422,38.538,,C
+790,1,3,"Futrelle, Mr./Mrs. Gosta",mAlE,22.0,0,0,730889,25.9194,,
+580,0,3,"Johnson, Mr./Mrs. William",female,55.0,1,0,PC 72613,24.8081,,C
+465,1,3,"McCarthy, Mr./Mrs. Gosta",female,1.0,0,0,391865,111.321,,S
+239,1,3,"Heikkinen, Mr./Mrs. Lily",male,23.0,0,0,PC 32955,13.8092,,S
+646,1,3,"Futrelle, Mr./Mrs. Edward",male,73.0,3,0,PC 45227,9.0645,C51,S
+493,0,1,"Futrelle, Mr./Mrs. Gosta",female,60.0,0,0,PC 73518,38.919,,S
+965,0,3,"Heikkinen, Mr./Mrs. Lily",female,10.0,1,0,494763,59.6053,,S
+583,0,3,"Moran, Mr./Mrs. Florence",male,21.0,0,0,428572,39.1424,,S
+399,1,3,"Allen, Mr./Mrs. Laina",female,,0,1,732512,56.7804,C11,S
+560,1,3,"Smith, Mr./Mrs. James",male,28.0,1,0,PC 70238,86.2373,E8,S
+163,1,2,"Cumings, Mr./Mrs. Florence",male,61.0,0,0,267475,117.3541,,S
+829,1,3,"Palsson, Mr./Mrs. Edward",male,52.0,2,0,369125,23.7261,,S
+878,1,3,"McCarthy, Mr./Mrs. Owen",male,19.0,2,0,PC 64262,43.6348,E40,S
+762,0,3,"Cumings, Mr./Mrs. Laina",male,59.0,0,0,PC 60134,26.268,,S
+245,0,3,"Allen, Mr./Mrs. Lily",female,25.0,0,0,414455,58.0038,,S
+405,0,3,"Braund, Mr./Mrs. William",female,31.0,0,0,PC 52714,10.5439,,C
+328,1,3,"Palsson, Mr./Mrs. Florence",male,,1,0,PC 17355,10.8015,E76,s
+110,0,1,"Palsson, Mr./Mrs. Timothy",FEMALE,21.0,0,0,PC 83664,47.1571,,C
+760,1,3,"Futrelle, Mr./Mrs. Laina",male,77.0,0,0,PC 92674,51.0447,,S
+710,1,3,"Braund, Mr./Mrs. Laina",male,,0,0,312559,49.7659,A111,S
+547,0,3,"Heikkinen, Mr./Mrs. Lily",male,29.0,0,0,102593,106.2513,,S
+524,1,1,"Moran, Mr./Mrs. Edward",male,75.0,0,0,PC 17780,24.5148,,S
+642,0,3,"Palsson, Mr./Mrs. Gosta",male,56.0,0,0,111901,10.183,,S
+766,0,2,"Smith, Mr./Mrs. James",MALE,67.0,1,0,PC 60905,62.8855,,S
+388,0,1,"Futrelle, Mr./Mrs. Lily",female,67.0,0,0,180657,hundred dollars,,S
+869,1,1,"Allen, Mr./Mrs. Florence",male,49.0,1,1,PC 34232,8.421,,S
+441,0,3,"Allen, Mr./Mrs. Edward",female,16.0,1,0,409783,78.1824,B15,S
+294,0,3,"McCarthy, Mr./Mrs. Edward",male,,0,0,PC 32185,17.5921,,S
+767,1,3,"Moran, Mr./Mrs. Laina",male,28.0,2,0,127329,8.9803,A56,Q
+128,1,2,"Heikkinen, Mr./Mrs. Timothy",male,32.0,0,0,PC 14888,66.7914,F81,S
+674,0,3,"Cumings, Mr./Mrs. Florence",male,37.0,0,2,587686,119.6811,,C
+693,0,2,"Smith, Mr./Mrs. Edward",male,4.0,0,0,PC 65026,65.8648,B117,S
+31,1,1,"Futrelle, Mr./Mrs. Florence",male,39.0,0,0,PC 76249,12.3673,,S
+849,0,3,"Futrelle, Mr./Mrs. Gosta",female,72.0,0,0,555292,48.8295,,S
+632,1,2,"Johnson, Mr./Mrs. William",female,29.0,1,2,PC 95175,16.3085,,S
+874,0,3,"Smith, Mr./Mrs. Elizabeth",male,63.0,0,0,PC 83956,30.2881,,C
+29,0,2,"Braund, Mr./Mrs. Lily",male,66.0,0,2,423528,16.1545,A34,S
+945,0,3,"Moran, Mr./Mrs. William",female,21.0,1,1,516224,112.4052,,S
+43,0,2,"Futrelle, Mr./Mrs. Owen",male,,1,0,680096,FREE,A99,S
+701,0,3,"McCarthy, Mr./Mrs. Florence",male,62.0,0,0,200219,14.4074,,
+966,0,3,"Palsson, Mr./Mrs. Owen",female,52.0,0,0,PC 70161,12.4621,,C
+468,1,2,"Palsson, Mr./Mrs. Florence",male,21.0,0,0,441819,36.8694,,C
+150,0,3,"Futrelle, Mr./Mrs. Edward",female,-50.0,0,0,PC 63148,10.9369,,S
+925,0,3,"Heikkinen, Mr./Mrs. Gosta",male,67.0,1,0,339030,41.9436,E135,C
+491,0,1,"Allen, Mr./Mrs. Timothy",male,79.0,0,0,572908,45.8703,,S
+736,1,3,"Braund, Mr./Mrs. Timothy",female,63.0,0,0,760914,45.1415,,S
+637,0,2,"Moran, Mr./Mrs. Owen",MALE,,0,0,PC 25202,38.1634,,C
+392,0,1,"Cumings, Mr./Mrs. Lily",male,,0,2,242071,78.8203,,C
+167,0,3,"Cumings, Mr./Mrs. Lily",female,58.0,0,0,PC 48671,33.8173,,S
+451,1,3,"Allen, Mr./Mrs. Owen",male,11.0,0,0,PC 12960,27.4972,,S
+371,0,3,"Palsson, Mr./Mrs. Elizabeth",female,66.0,0,0,238943,29.6807,,s
+546,0,3,"Palsson, Mr./Mrs. Edward",male,61.0,0,0,611751,25.9857,E2,S
+193,1,2,"Johnson, Mr./Mrs. Laina",female,,2,0,PC 61897,14.6663,E46,S
+751,0,3,"Allen, Mr./Mrs. James",male,6.0,0,0,PC 46042,35.8172,,S
+778,1,2,"Smith, Mr./Mrs. Edward",male,10.0,0,1,PC 60911,17.8242,,C
+735,0,1,"Cumings, Mr./Mrs. Timothy",female,73.0,0,0,520040,131.0272,,Q
+237,0,3,"Moran, Mr./Mrs. Timothy",female,27.0,0,0,415098,34.8608,F13,C
+89,1,3,"Johnson, Mr./Mrs. Edward",female,6.0,2,0,PC 54869,28.3486,A4,S
+691,0,1,"Smith, Mr./Mrs. Lily",male,36.0,1,0,PC 50306,36.9421,,S
+396,1,3,"Johnson, Mr./Mrs. Laina",male,62.0,0,0,551533,90.6072,B145,S
+675,0,3,"McCarthy, Mr./Mrs. Florence",female,40.0,0,1,PC 50723,10.815,,S
+146,0,3,"Heikkinen, Mr./Mrs. Florence",female,17.0,0,0,453487,39.084,,S
+863,0,1,"Cumings, Mr./Mrs. Owen",MALE,6.0,0,0,769191,8.3612,,s
+308,0,3,"Johnson, Mr./Mrs. Owen",female,47.0,0,0,106933,8.2413,,S
