@@ -1,0 +1,112 @@
+======================================================================
+               CATATAN ENSEMBLE LEARNING & TREE MODEL
+======================================================================
+
+----------------------------------------------------------------------
+A. METODE ENSEMBLE (Bagging vs Boosting vs Stacking)
+----------------------------------------------------------------------
+
+1. Bagging (Bootstrap Aggregating)
+   - Konsep : Menggunakan model yang SAMA, dilatih secara PARALEL 
+              pada subset data yang diambil secara acak.
+   - Hasil  : Penggabungan prediksi menggunakan sistem Voting atau 
+              Rata-rata.
+   - Fokus  : Mengurangi Overfitting / Variance (Membuat model lebih
+              stabil dan konsisten).
+
+2. Boosting
+   - Konsep : Menggunakan model yang SAMA, dilatih secara SEKUANSIAL 
+              (berurutan/bergantian).
+   - Kerja  : Model baru fokus belajar dari kesalahan/error yang 
+              dibuat oleh model sebelumnya.
+   - Fokus  : Menaikkan Akurasi / Mengurangi Bias (Membuat model yang 
+              lemah menjadi kuat).
+
+3. Stacking (Stacked Generalization)
+   - Konsep : Menggunakan model yang BERBEDA JENIS, dilatih secara 
+              BERLAPIS (layered).
+   - Kerja  : Model di lapisan atas (meta-model) belajar dari hasil 
+              prediksi kumpulan model di lapisan bawahnya.
+   - Fokus  : Kombinasi kekuatan antar berbagai algoritma yang berbeda.
+
+
+----------------------------------------------------------------------
+B. KARAKTERISTIK MODEL BERBASIS TREE (POHON)
+----------------------------------------------------------------------
+
+* Fitur Scaling (Normalisasi / Standarisasi):
+  - Aturan  : DATA X TIDAK PERLU DI-NORMALISASI ATAU DI-STANDARISASI.
+  - Alasan  : Algoritma berbasis Tree (seperti Decision Tree, Random 
+              Forest, XGBoost) mengambil keputusan berdasarkan batas 
+              nilai (split/percabangan), BUKAN berdasarkan perhitungan 
+              jarak geometris antar data (seperti KNN, SVM, atau 
+              K-Means).
+
+
+
+
+
+======================================================================
+                  RAPOR EVALUASI MODEL MACHINE LEARNING
+======================================================================
+
+----------------------------------------------------------------------
+A. METRIK REGRESI (Prediksi Angka/Nilai)
+----------------------------------------------------------------------
+
+1. MAE (Mean Absolute Error)
+   - Fungsi Utama : Mengetahui rata-rata kesalahan tebakan model.
+   - Karakteristik: Nilainya jujur apa adanya dan satuannya sama dengan 
+                    data asli (misal: Rupiah, Kg, Meter).
+
+2. MSE & RMSE (Mean Squared & Root Mean Squared Error)
+   - Fungsi Utama : Menjadi "alarm" untuk kesalahan tebakan yang fatal.
+   - Karakteristik: Memberikan hukuman/penalti berat jika model membuat
+                    tebakan yang meleset terlalu jauh (ekstrem).
+
+3. MAPE (Mean Absolute Percentage Error)
+   - Fungsi Utama : Mengetahui persentase rata-rata kesalahan model.
+   - Karakteristik: Paling mudah dijelaskan ke orang awam karena berupa 
+                    persentase (misal: "Error model kita cuma 0.71%").
+
+4. R2 & Adjusted R2 Score
+   - Fungsi Utama : Mengukur seberapa pintar model memahami pola data.
+   - Karakteristik: Skala 0 sampai 1. Semakin mendekati 1, model hampir 
+                    sempurna menguasai variasi pada data.
+
+
+----------------------------------------------------------------------
+B. METRIK KLASIFIKASI (Prediksi Kategori/Label)
+----------------------------------------------------------------------
+
+1. Accuracy (Akurasi)
+   - Fungsi Utama : Mengukur persentase total tebakan benar (Iya & Tidak).
+   - Catatan      : Hanya bagus dipakai jika jumlah data antar kelas 
+                    seimbang (50:50).
+
+2. Precision (Presisi)
+   - Fungsi Utama : Meminimalkan "Salah Tuduh" (False Positive).
+   - Cocok Untuk  : Kasus yang tidak boleh salah tebak (misal: filter 
+                    spam, rekomendasi investasi).
+
+3. Recall (Sensitivitas)
+   - Fungsi Utama : Meminimalkan "Target Lolos" (False Negative).
+   - Cocok Untuk  : Kasus berbahaya yang targetnya tidak boleh lolos 
+                    sama sekali (misal: deteksi kanker, deteksi bom).
+
+4. F1-Score
+   - Fungsi Utama : Mencari titik keseimbangan antara Precision & Recall.
+   - Cocok Untuk  : Kasus di mana data antar kelas sangat timpang 
+                    (misal: data transaksi normal vs penipuan bank).
+
+5. ROC-AUC
+   - Fungsi Utama : Mengukur kemampuan model memisahkan dua kelompok.
+   - Karakteristik: Nilai 1 berarti model sempurna membedakan mana kelas 
+                    A dan mana kelas B. Nilai 0.5 sama dengan tebak koin.
+
+6. Log Loss
+   - Fungsi Utama : Mengukur tingkat kepastian/keyakinan prediksi model.
+   - Karakteristik: Nilai LEBIH KECIL = LEBIH BAGUS. Menghukum keras 
+                    model yang "sok tahu" (sangat yakin tapi salah).
+
+======================================================================
