@@ -9,5 +9,5 @@ Pastikan Anda telah menginstal [Miniconda](https://docs.conda.io/en/latest/minic
 
 1. **Unduh Repositori:**
    ```bash
-   git clone [https://github.com/HafidzAfrieno/Learning-Data-Science-2026.git](https://github.com/HafidzAfrieno/Learning-Data-Science-2026)
+   git clone https://github.com/HafidzAfrieno/Learning-Data-Science-2026.git
    cd Learning-Data-Science-2026
