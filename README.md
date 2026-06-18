@@ -7,7 +7,7 @@ Di sini, saya fokus membangun fondasi yang kuat mulai dari data preprocessing, f
 ---
 
 ## 📌 Daftar Isi
-* [Overview Proyek]([(https://github.com/HafidzAfrieno/Learning-Data-Science-2026/blob/main/01_overview_proyek.md))
+* [Overview Proyek](https://github.com/HafidzAfrieno/Learning-Data-Science-2026/blob/main/01_overview_proyek.md)
 * [Arsitektur & Alur Kerja Pipeline](#-arsitektur--alur-kerja-pipeline)
 * [Eksperimen Algoritma & Hyperparameter Tuning](#-eksperimen-algoritma--hyperparameter-tuning)
 * [Teknologi & Library yang Digunakan](#-teknologi--library-yang-digunakan)
