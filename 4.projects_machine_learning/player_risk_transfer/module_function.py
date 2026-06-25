@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import seaborn as sns
+import math
 import matplotlib.pyplot as plt
 from sklearn.metrics import (
     accuracy_score,
@@ -14,33 +15,13 @@ from sklearn.metrics import (
 )
 from sklearn.model_selection import cross_val_score
 
-# def evaluate_model(y_true,y_pred,model_name='model'):
-#     metrics = {
-#         "Model": model_name,
-#         "Accuracy": accuracy_score(y_true, y_pred),
-#         "Precision": precision_score(y_true, y_pred),
-#         "Recall": recall_score(y_true, y_pred),
-#         "F1 Score": f1_score(y_true, y_pred),
-#     }
-#     print(f"\n{'='*50}")
-#     print(f"  {model_name} Results")
-#     print(f"{'='*50}")
-#     print(f"  Accuracy:  {metrics['Accuracy']:.4f}")
-#     print(f"  Precision: {metrics['Precision']:.4f}")
-#     print(f"  Recall:    {metrics['Recall']:.4f}")
-#     print(f"  F1 Score:  {metrics['F1 Score']:.4f}")
-#     print(f"{'='*50}")
-#     print("\nClassification Report:")
-#     print(classification_report(y_true, y_pred))
-#     return metrics
-
-def evalute_model(model_dict,test_data):
+def evalute_models(model_dict,y_test,averages=None):
     score_list = []
     for model_name,y_pred in model_dict.items():
-        accuracy = accuracy_score(test_data, y_pred)
-        precision = precision_score(test_data, y_pred)
-        recall = recall_score(test_data, y_pred)
-        f1 = f1_score(test_data, y_pred)
+        accuracy = accuracy_score(y_test, y_pred)
+        precision = precision_score(y_test, y_pred, average=averages)
+        recall = recall_score(y_test, y_pred, average = averages)
+        f1 = f1_score(y_test, y_pred, average=averages)
 
         model_score = {
             'Model': model_name,
@@ -50,32 +31,22 @@ def evalute_model(model_dict,test_data):
             'F1-Score': f1,
         }
         print(f"=== CLASSIFICATION REPORT: {model_name} ===")
-        print(classification_report(test_data, y_pred))
+        print(classification_report(y_test, y_pred))
         print("\n" + "="*40 + "\n") # Pembatas antar model
 
         score_list.append(model_score)
     df_final = pd.DataFrame(score_list)
     return df_final
 
-
-
-
-
-def plot_confusion_matrix(y_true, y_pred, model_name="Model"):
-    """Plot a styled confusion matrix heatmap."""
-    cm = confusion_matrix(y_true, y_pred)
-    plt.figure(figsize=(6, 4))
-    sns.heatmap(
-        cm,
-        annot=True,
-        fmt="d",
-        cmap="Blues",
-        xticklabels=["Did Not Survive", "Survived"],
-        yticklabels=["Did Not Survive", "Survived"],
-    )
-    plt.title(f"Confusion Matrix — {model_name}")
-    plt.ylabel("Actual")
-    plt.xlabel("Predicted")
+def plot_confusion_matrix(model_dict,y_test,labels=[...]):
+    fig, axes = plt.subplots(3,3,figsize=(10,10))
+    axes = axes.flatten()
+    for i, (model_name, y_pred) in enumerate(model_dict.items()):
+        cm = confusion_matrix(y_test, y_pred)
+        sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=labels, yticklabels=labels, cbar=False, ax=axes[i])
+        axes[i].set_title(f"Confusion Matrix — {model_name}")
+        axes[i].set_ylabel("Actual")
+        axes[i].set_xlabel("Predicted")
     plt.tight_layout()
     plt.show()
 
