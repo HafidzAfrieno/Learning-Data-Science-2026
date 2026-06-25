@@ -14,25 +14,35 @@ from sklearn.metrics import (
 )
 from sklearn.model_selection import cross_val_score
 
-def evalute(y_true,y_pred,model_name='model'):
-    metrics = {
-        "Model": model_name,
-        "Accuracy": accuracy_score(y_true, y_pred),
-        "Precision": precision_score(y_true, y_pred),
-        "Recall": recall_score(y_true, y_pred),
-        "F1 Score": f1_score(y_true, y_pred),
-    }
-    print(f"\n{'='*50}")
-    print(f"  {model_name} Results")
-    print(f"{'='*50}")
-    print(f"  Accuracy:  {metrics['Accuracy']:.4f}")
-    print(f"  Precision: {metrics['Precision']:.4f}")
-    print(f"  Recall:    {metrics['Recall']:.4f}")
-    print(f"  F1 Score:  {metrics['F1 Score']:.4f}")
-    print(f"{'='*50}")
-    print("\nClassification Report:")
-    print(classification_report(y_true, y_pred))
-    return metrics
+# def evaluate_model(y_true,y_pred,model_name='model'):
+#     metrics = {
+#         "Model": model_name,
+#         "Accuracy": accuracy_score(y_true, y_pred),
+#         "Precision": precision_score(y_true, y_pred),
+#         "Recall": recall_score(y_true, y_pred),
+#         "F1 Score": f1_score(y_true, y_pred),
+#     }
+#     print(f"\n{'='*50}")
+#     print(f"  {model_name} Results")
+#     print(f"{'='*50}")
+#     print(f"  Accuracy:  {metrics['Accuracy']:.4f}")
+#     print(f"  Precision: {metrics['Precision']:.4f}")
+#     print(f"  Recall:    {metrics['Recall']:.4f}")
+#     print(f"  F1 Score:  {metrics['F1 Score']:.4f}")
+#     print(f"{'='*50}")
+#     print("\nClassification Report:")
+#     print(classification_report(y_true, y_pred))
+#     return metrics
+
+def evalute_model(pred,test,prob,model):
+    accuracy = accuracy_score(test,pred)
+    precision = precision_score(test,pred)
+    recall = recall_score(test,pred)
+    f1 = f1_score(test,pred)
+
+    
+
+
 
 def plot_confusion_matrix(y_true, y_pred, model_name="Model"):
     """Plot a styled confusion matrix heatmap."""
