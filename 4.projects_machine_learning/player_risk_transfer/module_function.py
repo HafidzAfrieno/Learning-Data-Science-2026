@@ -34,13 +34,30 @@ from sklearn.model_selection import cross_val_score
 #     print(classification_report(y_true, y_pred))
 #     return metrics
 
-def evalute_model(pred,test,prob,model):
-    accuracy = accuracy_score(test,pred)
-    precision = precision_score(test,pred)
-    recall = recall_score(test,pred)
-    f1 = f1_score(test,pred)
+def evalute_model(model_dict,test_data):
+    score_list = []
+    for model_name,y_pred in model_dict.items():
+        accuracy = accuracy_score(test_data, y_pred)
+        precision = precision_score(test_data, y_pred)
+        recall = recall_score(test_data, y_pred)
+        f1 = f1_score(test_data, y_pred)
 
-    
+        model_score = {
+            'Model': model_name,
+            'Accuracy': accuracy,
+            'Precision': precision,
+            'Recall': recall,
+            'F1-Score': f1,
+        }
+        print(f"=== CLASSIFICATION REPORT: {model_name} ===")
+        print(classification_report(test_data, y_pred))
+        print("\n" + "="*40 + "\n") # Pembatas antar model
+
+        score_list.append(model_score)
+    df_final = pd.DataFrame(score_list)
+    return df_final
+
+
 
 
 
