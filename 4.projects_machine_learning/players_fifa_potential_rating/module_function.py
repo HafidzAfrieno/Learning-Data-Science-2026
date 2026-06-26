@@ -11,11 +11,11 @@ from sklearn.metrics import (
     confusion_matrix,
     classification_report,
     roc_curve,
-    auc,
+    auc
 )
 from sklearn.model_selection import cross_val_score
 
-def evalute_models(model_dict,y_test,averages=None):
+def evalute_models_classification(model_dict,y_test,averages=None):
     score_list = []
     for model_name,y_pred in model_dict.items():
         accuracy = accuracy_score(y_test, y_pred)
