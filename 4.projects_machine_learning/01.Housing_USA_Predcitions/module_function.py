@@ -95,7 +95,7 @@ def plot_roc_curves(model_dict,X_test,y_test):
 def cross_validate_model(models_dict, X, y, cv_folds=5, mode='classification'):
     cv_result = []
     if mode == 'classification':
-        cv_strategy = StratifiedKFold(n_splits=cv,shuffle=True,random_state=42)
+        cv_strategy = StratifiedKFold(n_splits=cv_folds,shuffle=True,random_state=42)
         scoring_metrics = {
             'Accuracy': 'accuracy',
             'Precision': 'precision_macro',
@@ -104,7 +104,7 @@ def cross_validate_model(models_dict, X, y, cv_folds=5, mode='classification'):
         }
         print(f"=== MENJALANKAN STRATIFIED {cv_folds}-FOLD CROSS VALIDATION (KLASIFIKASI) ===\n")
     elif mode == 'regression':
-        cv_strategy = KFold(n_splits=cv,shuffle=True,random_state=42)
+        cv_strategy = KFold(n_splits=cv_folds,shuffle=True,random_state=42)
         scoring_metrics = {
             'R2-Score': 'r2',
             'MAE': 'neg_mean_absolute_error',     # Scikit-learn menggunakan nilai negatif untuk loss
