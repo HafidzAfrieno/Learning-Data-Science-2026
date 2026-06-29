@@ -47,10 +47,10 @@ def evaluate_models_Regression(model_dict, y_test):
 
         model_score = {
             'Model': model_name,
-            'R2-Score (R-Squared)': r2,
-            'MAE': mae,
-            'MSE': mse,
-            'RMSE': rmse
+            'R2-Score': round(r2, 4),
+            'MAE': round(mae, 4),
+            'MSE': round(mse, 4),
+            'RMSE': round(rmse, 4)
         }
         score_list.append(model_score)
     df_final = pd.DataFrame(score_list)
@@ -68,7 +68,6 @@ def plot_confusion_matrix(model_dict,y_test,labels=[...]):
         axes[i].set_xlabel("Predicted")
     plt.tight_layout()
     plt.show()
-
 
 def plot_roc_curves(model_dict,X_test,y_test):
     plt.figure(figsize=(8,6))
@@ -103,7 +102,7 @@ def cross_validate_model(models_dict, X, y, cv_folds=5, mode='classification'):
         cv_strategy = KFold(n_splits=cv_folds,shuffle=True,random_state=42)
         scoring_metrics = {
             'R2-Score': 'r2',
-            'MAE': 'neg_mean_absolute_error',     # Scikit-learn menggunakan nilai negatif untuk loss
+            'MAE': 'neg_mean_absolute_error',
             'MSE': 'neg_mean_squared_error'
         }
         print(f"=== MENJALANKAN {cv_folds}-FOLD CROSS VALIDATION (REGRESI) ===\n")
@@ -123,18 +122,16 @@ def cross_validate_model(models_dict, X, y, cv_folds=5, mode='classification'):
                 mean_score = -np.mean(raw_scores)
             else:
                 mean_score = np.mean(raw_scores)
-            model_summary[f'Mean {metric_name}'] = mean_score
+            model_summary[f'{metric_name}'] = mean_score
             
         # Tambahan metrik RMSE (akar dari MSE) jika dalam mode regresi
         if mode == 'regression':
-            model_summary['Mean RMSE'] = np.sqrt(model_summary['Mean MSE'])
+            model_summary['RMSE'] = np.sqrt(model_summary['MSE'])
             
         cv_result.append(model_summary)
         
     print("\n" + "="*40 + "\nProses CV Selesai!")
     return pd.DataFrame(cv_result)
-
-
 
 def plot_pred_vs_actual(y_true, y_pred, model_name, ax=None):
     if ax is None:
@@ -148,7 +145,6 @@ def plot_pred_vs_actual(y_true, y_pred, model_name, ax=None):
     ax.set_title(f"{model_name}")
     ax.legend()
     return ax
-
 
 def plot_all_modelsRegression_predictions(models_dict, X_train, y_train, X_test, y_test):
     num_models = len(models_dict)
