@@ -143,3 +143,34 @@ def compare_models(results_list):
     df = pd.DataFrame(results_list)
     df = df.sort_values("F1 Score", ascending=False).reset_index(drop=True)
     return df
+
+
+def plot_pred_vs_actual(y_true, y_pred, model_name, ax=None):
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(6, 5))
+    ax.scatter(y_true, y_pred, alpha=0.4, s=15, color="steelblue")
+    lo = min(np.min(y_true), np.min(y_pred))
+    hi = max(np.max(y_true), np.max(y_pred))
+    ax.plot([lo, hi], [lo, hi], "r--", label="perfect")
+    ax.set_xlabel("Actual")
+    ax.set_ylabel("Predicted")
+    ax.set_title(f"{model_name}")
+    ax.legend()
+    return ax
+
+
+def plot_all_modelsRegression_predictions(models_dict, X_train, y_train, X_test, y_test):
+    num_models = len(models_dict)
+    ncols = 3
+    nrows = int(np.ceil(num_models / ncols))
+    fig, axes = plt.subplots( nrows=nrows, ncols=ncols, figsize=(14, 5 * nrows), sharex=False, sharey=False)
+    axes = axes.flatten()  
+    for idx, (model_name, pipeline) in enumerate(models_dict.items()):
+        pipeline.fit(X_train, y_train)
+        y_pred = pipeline.predict(X_test)
+        plot_pred_vs_actual(y_true=y_test, y_pred=y_pred, model_name=model_name, ax=axes[idx])
+    for j in range(idx + 1, len(axes)):
+        fig.delaxes(axes[j])
+    plt.suptitle("Perbandingan Actual vs Predicted — Semua Model",fontsize=16,fontweight="bold",y=1.02,)
+    plt.tight_layout()
+    plt.show()
