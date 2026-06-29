@@ -11,6 +11,9 @@ from sklearn.metrics import accuracy_score,precision_score,recall_score,f1_score
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import cross_validate, StratifiedKFold, KFold
 
+#===============================================================================================================================================================================#    
+#===============================================================================================================================================================================#    
+
 def evalute_models_classification(model_dict,y_test,averages=None):
     score_list = []
     for model_name,y_pred in model_dict.items():
@@ -57,6 +60,9 @@ def evaluate_models_Regression(model_dict, y_test):
     print("\n" + "="*40 + "\nProses Training Selesai!")
     return df_final
 
+#===============================================================================================================================================================================#    
+#===============================================================================================================================================================================#    
+
 def plot_confusion_matrix(model_dict,y_test,labels=[...]):
     fig, axes = plt.subplots(3,3,figsize=(10,10))
     axes = axes.flatten()
@@ -86,6 +92,9 @@ def plot_roc_curves(model_dict,X_test,y_test):
     plt.legend(loc="lower right")
     plt.tight_layout()
     plt.show()
+
+#===============================================================================================================================================================================#    
+#===============================================================================================================================================================================#    
 
 def cross_validate_model(models_dict, X, y, cv_folds=5, mode='classification'):
     cv_result = []
@@ -133,16 +142,18 @@ def cross_validate_model(models_dict, X, y, cv_folds=5, mode='classification'):
     print("\n" + "="*40 + "\nProses CV Selesai!")
     return pd.DataFrame(cv_result)
 
+#===============================================================================================================================================================================#    
+#===============================================================================================================================================================================#    
+
 def feature_importance(result_crossValidate,model_dict):
     kolom_skor = [col for col in result_crossValidate.columns if 'r2-score' in col.lower() or 'accuracy' in col.lower()]
-    nama_kolom = kolom_skor[0]
-    df_top2 = result_crossValidate.sort_values(by=nama_kolom,ascending=False).head(2)
+    metrix_score_colom = kolom_skor[0]
+    df_top2 = result_crossValidate.sort_values(by=metrix_score_colom,ascending=False).head(2)
 
     fig, axes = plt.subplots(1, 2, figsize=(15, 6))
-    for ax, (_, row) in zip(axes, df_top2.iterrows()):
-        # Asumsi kolom pertama atau kolom bernama 'Model'/'index' berisi nama model
-        name = row['Model'] if 'Model' in row else row.iloc[0]
-        skor = row[nama_kolom]
+    for ax, (_, df_score) in zip(axes, df_top2.iterrows()):
+        name = df_score['Model']
+        skor = df_score[metrix_score_colom]
         
         pipe = model_dict[name]
         model = pipe.named_steps['model']
@@ -157,38 +168,43 @@ def feature_importance(result_crossValidate,model_dict):
             
         importances = pd.Series(nilai_kontribusi, index=feature_names).sort_values(ascending=True).tail(15)
         importances.plot(kind='barh', ax=ax, color='steelblue')
-        ax.set_title(f'{name}\n({nama_kolom}: {skor:.4f})')
-        
+        ax.set_title(f'{name}\n({metrix_score_colom}: {skor:.4f})')
+    plt.suptitle("Importacne Feature In Models ",fontsize=16,fontweight="bold",y=1.02,)
     plt.tight_layout()
     plt.show()
 
-
-def plot_pred_vs_actual(y_true, y_pred, model_name, ax=None):
-    if ax is None:
-        fig, ax = plt.subplots(figsize=(6, 5))
-    ax.scatter(y_true, y_pred, alpha=0.4, s=15, color="steelblue")
-    lo = min(np.min(y_true), np.min(y_pred))
-    hi = max(np.max(y_true), np.max(y_pred))
-    ax.plot([lo, hi], [lo, hi], "r--", label="perfect")
-    ax.set_xlabel("Actual")
-    ax.set_ylabel("Predicted")
-    ax.set_title(f"{model_name}")
-    ax.legend()
-    return ax
+#===============================================================================================================================================================================#    
+#===============================================================================================================================================================================#    
 
 def plot_all_modelsRegression_predictions(models_dict, X_train, y_train, X_test, y_test):
     num_models = len(models_dict)
     ncols = 3
     nrows = int(np.ceil(num_models / ncols))
+
     fig, axes = plt.subplots( nrows=nrows, ncols=ncols, figsize=(14, 5 * nrows), sharex=False, sharey=False)
     axes = axes.flatten()  
+
     for idx, (model_name, pipeline) in enumerate(models_dict.items()):
         pipeline.fit(X_train, y_train)
         y_pred = pipeline.predict(X_test)
-        plot_pred_vs_actual(y_true=y_test, y_pred=y_pred, model_name=model_name, ax=axes[idx])
+        axes[idx].scatter(y_test, y_pred, alpha=0.4, s=15, color="steelblue")
+        
+        # Hitung batas minimum dan maksimum untuk garis diagonal
+        lo = min(np.min(y_test), np.min(y_pred))
+        hi = max(np.max(y_test), np.max(y_pred))
+        
+        axes[idx].plot([lo, hi], [lo, hi], "r--", label="Perfect")
+        axes[idx].set_xlabel("Actual")
+        axes[idx].set_ylabel("Predicted")
+        axes[idx].set_title(f"{model_name}")
+        axes[idx].legend()
+        axes[idx].grid(True, linestyle="--", alpha=0.6)
+        
     for j in range(idx + 1, len(axes)):
         fig.delaxes(axes[j])
     plt.suptitle("Perbandingan Actual vs Predicted — Semua Model",fontsize=16,fontweight="bold",y=1.02,)
     plt.tight_layout()
     plt.show()
 
+#===============================================================================================================================================================================#    
+#===============================================================================================================================================================================#    
