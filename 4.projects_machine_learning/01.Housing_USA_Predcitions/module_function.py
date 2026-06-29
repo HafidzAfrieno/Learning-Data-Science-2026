@@ -133,6 +133,36 @@ def cross_validate_model(models_dict, X, y, cv_folds=5, mode='classification'):
     print("\n" + "="*40 + "\nProses CV Selesai!")
     return pd.DataFrame(cv_result)
 
+def feature_importance(result_crossValidate,model_dict):
+    kolom_skor = [col for col in result_crossValidate.columns if 'r2-score' in col.lower() or 'accuracy' in col.lower()]
+    nama_kolom = kolom_skor[0]
+    df_top2 = result_crossValidate.sort_values(by=nama_kolom,ascending=False).head(2)
+
+    fig, axes = plt.subplots(1, 2, figsize=(15, 6))
+    for ax, (_, row) in zip(axes, df_top2.iterrows()):
+        # Asumsi kolom pertama atau kolom bernama 'Model'/'index' berisi nama model
+        name = row['Model'] if 'Model' in row else row.iloc[0]
+        skor = row[nama_kolom]
+        
+        pipe = model_dict[name]
+        model = pipe.named_steps['model']
+        feature_names = pipe[:-1].get_feature_names_out()
+        
+        if hasattr(model,'feature_importances_'):
+            nilai_kontribusi  = model.feature_importances_
+        elif hasattr(model,'coef_'):
+            nilai_kontribusi = model.coef_
+        else:
+            continue
+            
+        importances = pd.Series(nilai_kontribusi, index=feature_names).sort_values(ascending=True).tail(15)
+        importances.plot(kind='barh', ax=ax, color='steelblue')
+        ax.set_title(f'{name}\n({nama_kolom}: {skor:.4f})')
+        
+    plt.tight_layout()
+    plt.show()
+
+
 def plot_pred_vs_actual(y_true, y_pred, model_name, ax=None):
     if ax is None:
         fig, ax = plt.subplots(figsize=(6, 5))
@@ -161,3 +191,4 @@ def plot_all_modelsRegression_predictions(models_dict, X_train, y_train, X_test,
     plt.suptitle("Perbandingan Actual vs Predicted — Semua Model",fontsize=16,fontweight="bold",y=1.02,)
     plt.tight_layout()
     plt.show()
+
