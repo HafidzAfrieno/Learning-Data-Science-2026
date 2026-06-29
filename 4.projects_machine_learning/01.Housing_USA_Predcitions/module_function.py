@@ -14,6 +14,7 @@ from sklearn.model_selection import cross_validate, StratifiedKFold, KFold
 def evalute_models_classification(model_dict,y_test,averages=None):
     score_list = []
     for model_name,y_pred in model_dict.items():
+        print(f"Menguji model: {model_name}")
         accuracy = accuracy_score(y_test, y_pred)
         precision = precision_score(y_test, y_pred, average=averages)
         recall = recall_score(y_test, y_pred, average = averages)
@@ -32,18 +33,18 @@ def evalute_models_classification(model_dict,y_test,averages=None):
 
         score_list.append(model_score)
     df_final = pd.DataFrame(score_list)
+    print("\n" + "="*40 + "\nProses Training Selesai!")
     return df_final
 
 def evaluate_models_Regression(model_dict, y_test):
     score_list = []
     for model_name, y_pred in model_dict.items():
-        # 1. Hitung metrik evaluasi Regresi
+        print(f"Menguji model: {model_name}")
         r2 = r2_score(y_test, y_pred)
         mae = mean_absolute_error(y_test, y_pred)
         mse = mean_squared_error(y_test, y_pred)
         rmse = np.sqrt(mse) # RMSE adalah akar dari MSE
 
-        # 2. Simpan skor ke dalam dictionary
         model_score = {
             'Model': model_name,
             'R2-Score (R-Squared)': r2,
@@ -52,13 +53,8 @@ def evaluate_models_Regression(model_dict, y_test):
             'RMSE': rmse
         }
         score_list.append(model_score)
-        
-        print(f"=== REGRESSION REPORT: {model_name} ===")
-        print(f"R² Score : {r2:.4f} (Mendekati 1.0 semakin bagus)")
-        print(f"MAE      : {mae:.4f} (Mendekati 0.0 semakin bagus)")
-        print(f"RMSE     : {rmse:.4f} (Mendekati 0.0 semakin bagus)")
-        print("\n" + "="*40 + "\n")
     df_final = pd.DataFrame(score_list)
+    print("\n" + "="*40 + "\nProses Training Selesai!")
     return df_final
 
 def plot_confusion_matrix(model_dict,y_test,labels=[...]):
@@ -138,11 +134,6 @@ def cross_validate_model(models_dict, X, y, cv_folds=5, mode='classification'):
     print("\n" + "="*40 + "\nProses CV Selesai!")
     return pd.DataFrame(cv_result)
 
-
-def compare_models(results_list):
-    df = pd.DataFrame(results_list)
-    df = df.sort_values("F1 Score", ascending=False).reset_index(drop=True)
-    return df
 
 
 def plot_pred_vs_actual(y_true, y_pred, model_name, ax=None):
