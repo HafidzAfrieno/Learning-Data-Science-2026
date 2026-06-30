@@ -169,7 +169,7 @@ def feature_importance(result_crossValidate,model_dict):
         importances = pd.Series(nilai_kontribusi, index=feature_names).sort_values(ascending=True).tail(15)
         importances.plot(kind='barh', ax=ax, color='steelblue')
         ax.set_title(f'{name}\n({metrix_score_colom}: {skor:.4f})')
-    plt.suptitle("Importacne Feature In Models ",fontsize=16,fontweight="bold",y=1.02,)
+    plt.suptitle("Importance Feature In Models ",fontsize=16,fontweight="bold",y=1.02,)
     plt.tight_layout()
     plt.show()
 
@@ -199,7 +199,7 @@ def plot_all_modelsRegression_predictions(models_dict, X_train, y_train, X_test,
         axes[idx].set_title(f"{model_name}")
         axes[idx].legend()
         axes[idx].grid(True, linestyle="--", alpha=0.6)
-        
+
     for j in range(idx + 1, len(axes)):
         fig.delaxes(axes[j])
     plt.suptitle("Perbandingan Actual vs Predicted — Semua Model",fontsize=16,fontweight="bold",y=1.02,)
@@ -208,3 +208,20 @@ def plot_all_modelsRegression_predictions(models_dict, X_train, y_train, X_test,
 
 #===============================================================================================================================================================================#    
 #===============================================================================================================================================================================#    
+
+
+def plot_residuals(y_true, y_pred, model_name):
+    fig, axes = plt.subplots(1, 2, figsize=(13, 4))
+    residuals = np.array(y_true) - np.array(y_pred)
+    axes[0].scatter(y_pred, residuals, alpha=0.3, s=10, color="steelblue")
+    axes[0].axhline(0, color="red", linestyle="--")
+    axes[0].set_xlabel("Predicted"); axes[0].set_ylabel("Residual")
+    axes[0].set_title(f"Residuals vs Predicted — {model_name}")
+    axes[1].hist(residuals, bins=40, color="seagreen", edgecolor="black")
+    axes[1].set_xlabel("Residual"); axes[1].set_title("Residual distribution")
+    plt.tight_layout()
+    return fig
+
+#===============================================================================================================================================================================#    
+#===============================================================================================================================================================================# 
+
