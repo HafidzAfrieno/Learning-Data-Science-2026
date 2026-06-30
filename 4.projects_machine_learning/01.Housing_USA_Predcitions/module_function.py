@@ -209,18 +209,29 @@ def plot_all_modelsRegression_predictions(models_dict, X_train, y_train, X_test,
 #===============================================================================================================================================================================#    
 #===============================================================================================================================================================================#    
 
+def plot_residuals(result_crossValidate,model_dict,x_test,y_test):
+    kolom_skor = [col for col in result_crossValidate.columns if 'r2-score' in col.lower() or 'accuracy' in col.lower()]
+    metrix_score_colom = kolom_skor[0]
+    df_top = result_crossValidate.sort_values(by=metrix_score_colom,ascending=False).iloc[0]
 
-def plot_residuals(y_true, y_pred, model_name):
-    fig, axes = plt.subplots(1, 2, figsize=(13, 4))
-    residuals = np.array(y_true) - np.array(y_pred)
+    name = df_top['Model']
+    skor = df_top[metrix_score_colom]
+    pipe = model_dict[name]
+
+    y_pred = pipe.predict(x_test)
+    residuals = (np.array(y_test) - np.array(y_pred)).flatten()
+
+    fig, axes = plt.subplots(1, 2, figsize=(15, 6))
     axes[0].scatter(y_pred, residuals, alpha=0.3, s=10, color="steelblue")
     axes[0].axhline(0, color="red", linestyle="--")
-    axes[0].set_xlabel("Predicted"); axes[0].set_ylabel("Residual")
-    axes[0].set_title(f"Residuals vs Predicted — {model_name}")
-    axes[1].hist(residuals, bins=40, color="seagreen", edgecolor="black")
+    axes[0].set_xlabel("Predicted")
+    axes[0].set_ylabel("Residual")
+    axes[0].set_title(f"Residuals vs Predicted — {name}")
+    axes[1].hist(residuals, bins=45, color="seagreen", edgecolor="black")
     axes[1].set_xlabel("Residual"); axes[1].set_title("Residual distribution")
+    plt.suptitle(f'{name}\n({metrix_score_colom}: {skor:.4f})',fontsize=16,fontweight="bold",y=1.02,)
     plt.tight_layout()
-    return fig
+    plt.show()
 
 #===============================================================================================================================================================================#    
 #===============================================================================================================================================================================# 
