@@ -188,7 +188,7 @@ def Hyperparameter_Tuning(method,pipeline_model,cv,type_model,param,x_train,x_te
         
     elif type_model == 'classification':
         fig, ax = plt.subplots(figsize=(6, 5))
-        
+
         cm = confusion_matrix(y_test, y_pred)
         disp = ConfusionMatrixDisplay(confusion_matrix=cm)
         disp.plot(cmap='Blues', ax=ax, values_format='d')
@@ -196,9 +196,34 @@ def Hyperparameter_Tuning(method,pipeline_model,cv,type_model,param,x_train,x_te
         plt.title(f'{model_name}\n(Best CV F1-Score: {best_cv_score:.4f})', fontsize=12, fontweight="bold")
         plt.tight_layout()
         plt.show()
+    return best
 
 #===============================================================================================================================================================================#    
 #===============================================================================================================================================================================#    
+
+def plot_tuned_feature_importance(tuned_model):
+    model_step = tuned_model.steps[-1][1]
+    model_name = type(model_step).__name__
+
+    try:
+        feature_names = tuned_model[:-1].get_feature_names_out()
+    except Exception:
+        raise AttributeError("Gagal mengambil nama fitur. Pastikan pipeline Anda mendukung get_feature_names_out().")
+
+    if hasattr(model_step,'feature_importances_'):
+        nilai_kontribusi  = model_step.feature_importances_
+    elif hasattr(model_step,'coef_'):
+        nilai_kontribusi = model_step.coef_
+
+    plt.figure(figsize=(15, 6))
+    importances = pd.Series(nilai_kontribusi,index=feature_names).sort_values(ascending=True).tail(15)
+    importances.plot(kind='barh',color='steelblue')
+    plt.suptitle(f"Top 15 Feature Importance in {model_name}-Tuned",fontsize=16,fontweight="bold",y=1.02,)
+    plt.tight_layout()
+    plt.show()
+
+#===============================================================================================================================================================================#    
+#===============================================================================================================================================================================# 
 
 def feature_importance(result_crossValidate,model_dict):
     kolom_skor = [col for col in result_crossValidate.columns if 'r2-score' in col.lower() or 'accuracy' in col.lower()]
