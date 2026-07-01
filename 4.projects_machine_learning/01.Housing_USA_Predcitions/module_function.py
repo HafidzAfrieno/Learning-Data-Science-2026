@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score,precision_score,recall_score,f1_score,confusion_matrix,classification_report,roc_curve,auc
 
 # metrix Regression
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-from sklearn.model_selection import cross_validate, StratifiedKFold, KFold
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score,confusion_matrix, ConfusionMatrixDisplay
+from sklearn.model_selection import cross_validate, StratifiedKFold, KFold,RandomizedSearchCV,GridSearchCV
 
 #===============================================================================================================================================================================#    
 #===============================================================================================================================================================================#    
@@ -141,6 +141,61 @@ def cross_validate_model(models_dict, X, y, cv_folds=5, mode='classification'):
         
     print("\n" + "="*40 + "\nProses CV Selesai!")
     return pd.DataFrame(cv_result)
+
+#===============================================================================================================================================================================#    
+#===============================================================================================================================================================================#  
+
+def Hyperparameter_Tuning(method,pipeline_model,cv,type_model,param,x_train,x_test,y_train,y_test):
+    if type_model == 'classification':
+        scoring_metric = 'f1'
+    elif type_model == 'regression':
+        scoring_metric = 'r2'
+    else:
+        raise ValueError("type_model harus berupa 'classification' atau 'regression'")
+    
+    if method == 'randomcv':
+        tuned_model = RandomizedSearchCV(estimator=pipeline_model,param_distributions=param,cv=cv,scoring=scoring_metric,
+                                         n_iter=10,random_state=42,n_jobs=-1)
+    elif method == 'gridcv':
+        tuned_model = GridSearchCV(estimator=pipeline_model,param_grid=param,cv=cv,scoring=scoring_metric,n_jobs=-1)
+    else:
+        raise ValueError("method harus berupa 'randomcv' atau 'gridcv'")
+
+    tuned_model.fit(x_train,y_train)
+    best = tuned_model.best_estimator_
+
+    y_pred = best.predict(x_test)
+    best_cv_score = tuned_model.best_score_
+    model_name = type(best.steps[-1][1]).__name__
+
+    if type_model == 'regression':
+        fig, axes = plt.subplots(1, 2, figsize=(15, 6))
+        residuals = (np.array(y_test) - np.array(y_pred)).flatten()
+
+        axes[0].scatter(y_pred, residuals, alpha=0.4, s=15, color="steelblue")
+        axes[0].axhline(0, color="red", linestyle="--")
+        axes[0].set_xlabel("Predicted")
+        axes[0].set_ylabel("Residual")
+        axes[0].set_title("Residuals vs Predicted")
+        
+        axes[1].hist(residuals, bins=45, color="seagreen", edgecolor="black")
+        axes[1].set_xlabel("Residual")
+        axes[1].set_title("Residual Distribution")
+        
+        plt.suptitle(f'{model_name}\n(Best CV R²: {best_cv_score:.4f})', fontsize=14, fontweight="bold", y=1.05)
+        plt.tight_layout()
+        plt.show()
+        
+    elif type_model == 'classification':
+        fig, ax = plt.subplots(figsize=(6, 5))
+        
+        cm = confusion_matrix(y_test, y_pred)
+        disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+        disp.plot(cmap='Blues', ax=ax, values_format='d')
+        
+        plt.title(f'{model_name}\n(Best CV F1-Score: {best_cv_score:.4f})', fontsize=12, fontweight="bold")
+        plt.tight_layout()
+        plt.show()
 
 #===============================================================================================================================================================================#    
 #===============================================================================================================================================================================#    
