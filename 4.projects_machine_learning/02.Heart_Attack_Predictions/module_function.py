@@ -64,8 +64,12 @@ def evaluate_models_Regression(model_dict, y_test):
 #===============================================================================================================================================================================#    
 
 def plot_confusion_matrix(model_dict,y_test,labels=[...]):
-    fig, axes = plt.subplots(3,3,figsize=(10,10))
-    axes = axes.flatten()
+    num_models = len(model_dict)
+    ncols = 3
+    nrows = int(np.ceil(num_models / ncols))
+
+    fig, axes = plt.subplots( nrows=nrows, ncols=ncols, figsize=(14, 5 * nrows), sharex=False, sharey=False)
+    axes = axes.flatten()  
     for i, (model_name, y_pred) in enumerate(model_dict.items()):
         cm = confusion_matrix(y_test, y_pred)
         sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=labels, yticklabels=labels, cbar=False, ax=axes[i])
