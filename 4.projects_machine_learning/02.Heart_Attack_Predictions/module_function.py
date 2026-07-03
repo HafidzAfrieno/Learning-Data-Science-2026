@@ -85,7 +85,7 @@ def plot_roc_curves(model_dict,X_test,y_test):
         if hasattr(model,'predict_proba'):
             y_prob = model.predict_proba(X_test)[:, 1]
         else:
-            y_prob = model.decision_function(X_test)
+            y_prob = model.decision_function
         fpr,tpr,_=roc_curve(y_test,y_prob)
         roc_auc = auc(fpr,tpr)
         plt.plot(fpr, tpr, label=f"{name} (AUC = {roc_auc:.3f})")
