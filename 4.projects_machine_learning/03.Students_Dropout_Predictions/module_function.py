@@ -3,6 +3,7 @@ import numpy as np
 import seaborn as sns
 import math
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import label_binarize, LabelEncoder
 
 # metrix Classification
 from sklearn.metrics import accuracy_score,precision_score,recall_score,f1_score,confusion_matrix,classification_report,roc_curve,auc
@@ -79,23 +80,82 @@ def plot_confusion_matrix(model_dict,y_test,labels=[...]):
     plt.tight_layout()
     plt.show()
 
-def plot_roc_curves(model_dict,X_test,y_test):
-    plt.figure(figsize=(8,6))
-    for name,model in model_dict.items():
-        if hasattr(model,'predict_proba'):
-            y_prob = model.predict_proba(X_test)[:, 1]
+#===============================================================================================================================================================================#    
+#===============================================================================================================================================================================#   
+
+def plot_roc_curves(model_dict, X_test, y_train, y_test, type_modelClassification='binary'):
+    y_test_arr = np.asarray(y_test)
+    target_encoder = LabelEncoder()
+    target_encoder.fit(y_train)
+    
+    if np.issubdtype(y_test_arr.dtype, np.number):
+        print("Deteksi: y_test sudah berupa angka/encoded. Melanjutkan proses...")
+        y_test_encoded = y_test_arr
+    else:
+        print("Deteksi: y_test berupa string/teks. Melakukan Label Encoding otomatis...")
+        y_test_encoded = target_encoder.transform(y_test_arr)
+
+    # --- MODE 1: BINARY CLASSIFICATION ---
+    if type_modelClassification == 'binary':
+        plt.figure(figsize=(8, 6))
+        for name, model in model_dict.items():
+            if hasattr(model, 'predict_proba'):
+                y_prob = model.predict_proba(X_test)[:, 1]
+            else:
+                y_prob = model.decision_function(X_test) # Perbaikan: Tambah (X_test)
+                
+            fpr, tpr, _ = roc_curve(y_test_encoded, y_prob) # Perbaikan: Gunakan y_test_encoded
+            roc_auc = auc(fpr, tpr)
+            plt.plot(fpr, tpr, label=f"{name} (AUC = {roc_auc:.3f})")
+
+        plt.plot([0, 1], [0, 1], "k--", label="Random (AUC = 0.500)")
+        plt.xlabel("False Positive Rate")
+        plt.ylabel("True Positive Rate")
+        plt.title("ROC Curve Comparison (Binary)")
+        plt.legend(loc="lower right")
+        plt.tight_layout()
+        plt.show()
+
+    # --- MODE 2: MULTICLASS CLASSIFICATION (Perbaikan: Indentasi disejajarkan) ---
+    elif type_modelClassification == 'multiclass':
+        classes = np.unique(y_test_encoded)
+        n_classes = len(classes)
+        class_names = target_encoder.classes_
+        y_test_bin = label_binarize(y_test_encoded, classes=classes)
+
+        num_models = len(model_dict)
+        ncols = min(3, num_models) # Mencegah grid kosong berlebih jika model < 3
+        nrows = int(np.ceil(num_models / ncols))
+        fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(14, 5 * nrows), sharex=False, sharey=False)
+        
+        # Perbaikan aman untuk flattening axes
+        if num_models > 1:
+            axes = axes.flatten()
         else:
-            y_prob = model.decision_function
-        fpr,tpr,_=roc_curve(y_test,y_prob)
-        roc_auc = auc(fpr,tpr)
-        plt.plot(fpr, tpr, label=f"{name} (AUC = {roc_auc:.3f})")
-    plt.plot([0, 1], [0, 1], "k--", label="Random (AUC = 0.500)")
-    plt.xlabel("False Positive Rate")
-    plt.ylabel("True Positive Rate")
-    plt.title("ROC Curve Comparison")
-    plt.legend(loc="lower right")
-    plt.tight_layout()
-    plt.show()
+            axes = [axes]
+
+        for idx, (name, pipeline) in enumerate(model_dict.items()):
+            if hasattr(pipeline, 'predict_proba'):
+                y_prob = pipeline.predict_proba(X_test)
+            else:
+                y_prob = pipeline.decision_function(X_test)
+
+            for i in range(n_classes):
+                fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_prob[:, i])
+                roc_auc = auc(fpr, tpr)
+                axes[idx].plot(fpr, tpr, label=f"Kelas: {class_names[i]} (AUC = {roc_auc:.3f})")
+
+            axes[idx].plot([0, 1], [0, 1], "k--", label="Acak (AUC = 0.50)")
+            axes[idx].set_xlabel("False Positive Rate (FPR)")
+            axes[idx].set_ylabel("True Positive Rate (TPR)")
+            axes[idx].set_title(f"ROC - {name}")
+            axes[idx].legend(loc="lower right", fontsize='small')
+
+        for j in range(idx + 1, len(axes)):
+            fig.delaxes(axes[j])
+            
+        plt.tight_layout()
+        plt.show()
 
 #===============================================================================================================================================================================#    
 #===============================================================================================================================================================================#    
@@ -151,7 +211,13 @@ def cross_validate_model(models_dict, X, y, cv_folds=5, mode='classification'):
 
 def Hyperparameter_Tuning(method,pipeline_model,cv,type_model,param,x_train,x_test,y_train,y_test):
     if type_model == 'classification':
-        scoring_metric = 'f1'
+        num_classes = len(np.unique(y_train))
+        if num_classes > 2:
+            scoring_metric = 'f1_macro' 
+            print(f"Deteksi Multiclass ({num_classes} kelas). Menggunakan metrik: 'f1_macro'")
+        else:
+            scoring_metric = 'f1'
+            print("Deteksi Binary. Menggunakan metrik: 'f1'")
     elif type_model == 'regression':
         scoring_metric = 'r2'
     else:
