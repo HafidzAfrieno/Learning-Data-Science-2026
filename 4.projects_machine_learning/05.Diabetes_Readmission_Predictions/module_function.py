@@ -283,7 +283,10 @@ def plot_tuned_feature_importance(tuned_model):
     if hasattr(model_step,'feature_importances_'):
         nilai_kontribusi  = model_step.feature_importances_
     elif hasattr(model_step,'coef_'):
-        nilai_kontribusi = model_step.coef_
+        if model_step.coef_.ndim > 1:
+            nilai_kontribusi = np.mean(np.abs(model_step.coef_), axis=0)
+        else:
+            nilai_kontribusi = model_step.coef_
 
     plt.figure(figsize=(15, 6))
     importances = pd.Series(nilai_kontribusi,index=feature_names).sort_values(ascending=True).tail(15)
@@ -312,7 +315,10 @@ def feature_importance(result_crossValidate,model_dict):
         if hasattr(model,'feature_importances_'):
             nilai_kontribusi  = model.feature_importances_
         elif hasattr(model,'coef_'):
-            nilai_kontribusi = model.coef_
+            if model.coef_.ndim > 1:
+                nilai_kontribusi = np.mean(np.abs(model.coef_), axis=0)
+            else:
+                nilai_kontribusi = model.coef_
         else:
             continue
             
