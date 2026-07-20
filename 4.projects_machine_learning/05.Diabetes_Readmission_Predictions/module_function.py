@@ -216,8 +216,10 @@ def Hyperparameter_Tuning(method,pipeline_model,cv,type_model,param,x_train,x_te
             scoring_metric = 'f1_macro' 
             print(f"Deteksi Multiclass ({num_classes} kelas). Menggunakan metrik: 'f1_macro'")
         else:
-            scoring_metric = 'f1'
-            print("Deteksi Binary. Menggunakan metrik: 'f1'")
+            # scoring_metric = 'f1'
+            # print("Deteksi Binary. Menggunakan metrik: 'f1'")
+            scoring_metric = 'roc_auc'
+            print("Deteksi Binary. Menggunakan metrik: 'roc_auc'")
     elif type_model == 'regression':
         scoring_metric = 'r2'
     else:
