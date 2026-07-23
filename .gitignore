@@ -1,5 +1,4 @@
 0.dataset/
-.gitignore
 .vscode/
 __pycache__/
 **/catboost_info/
