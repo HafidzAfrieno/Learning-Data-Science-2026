@@ -1,9 +1,27 @@
-0.dataset/
-.vscode/
-__pycache__/
+# ==========================================
+# 1. Python Cache & Logs (Semua Subfolder)
+# ==========================================
+**/__pycache__/
+*.py[cod]
 **/catboost_info/
 catboost_info/
+
+# ==========================================
+# 2. Environment & IDE Settings
+# ==========================================
+.vscode/
+.idea/
+.venv/
+
+# ==========================================
+# 3. Data & Model Heavy Files (Data Science)
+# ==========================================
+0.dataset/
 *.csv
 *.pkl
+**/*.pkl
+**/*.parquet
 *.parquet
+*.joblib
 4.projects_machine_learning/010.Amazon_Delivery_Predictions/Amanzon_Delivery_Prediction
+*.h5
