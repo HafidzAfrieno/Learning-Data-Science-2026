@@ -1,0 +1,9 @@
+0.dataset/
+.gitignore
+.vscode/
+__pycache__/
+catboost_info/
+*.csv
+*.pkl
+*.parquet
+4.projects_machine_learning/010.Amazon_Delivery_Predictions/Amanzon_Delivery_Prediction
