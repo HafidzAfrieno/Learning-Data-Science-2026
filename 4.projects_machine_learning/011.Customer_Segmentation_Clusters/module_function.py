@@ -28,7 +28,8 @@ class ModelKmeansPlus:
         self.db_scores = []
         self.inertias = []
         self.df = df_raw
-        self.k_range = range(2, rangeMax)
+        start_range = 2 if rangeMax > 2 else 2
+        self.k_range = range(start_range, rangeMax)
 
     def fit_model(self,X_cleaned):
         for k in self.k_range:
@@ -38,6 +39,7 @@ class ModelKmeansPlus:
             self.ch_scores.append(calinski_harabasz_score(X_cleaned, model_kmeans))
             self.db_scores.append(davies_bouldin_score(X_cleaned, model_kmeans))
             self.inertias.append(kmeans.inertia_)
+        print("Model Berhasil Di Training")
 
     @preprocessing_score
     def score_df(self):
@@ -64,10 +66,10 @@ class ModelKmeansPlus:
         df_pca['Cluster'] = self.df['Cluster'].values
         centroids_pca = pca.transform(best_kmeans.cluster_centers_)
         return df_pca, centroids_pca, pca
-
+    
 class ModelVizulazations(ModelKmeansPlus):
-    def __init__(self):
-        super().__init__()
+    def __init__(self,rangeMax=10, df_raw=None):
+        super().__init__(rangeMax=rangeMax, df_raw=df_raw)
 
     def Analysis_AllMetriks(self):
         df_scores = self.score_df()
@@ -110,7 +112,7 @@ class ModelVizulazations(ModelKmeansPlus):
         plt.show()
 
     def Analysis_Clusstering(self, X_cleaned, best_kmeans):
-        centroids_pca, df_pca, pca = self.convert_toPCA(X_cleaned, best_kmeans)
+        df_pca, centroids_pca, pca = self.convert_toPCA(X_cleaned, best_kmeans)
 
         sns.set_theme(style="whitegrid")
         palette = 'Set2'
@@ -123,9 +125,9 @@ class ModelVizulazations(ModelKmeansPlus):
         axes[0].set_ylabel(f'PCA Component 2 ({pca.explained_variance_ratio_[1]*100:.1f}% Variance)')
         axes[0].legend(title='Cluster', loc='upper right')
 
-        sns.scatterplot(ax=axes[1], x='Annual Income (k$)', y='Spending Score (1-100)', hue='Cluster', data=self.df, palette=palette, s=90, style='Cluster')
+        sns.scatterplot(ax=axes[1], x='Annual Income ($)', y='Spending Score (1-100)', hue='Cluster', data=self.df, palette=palette, s=90, style='Cluster')
         axes[1].set_title('Segmentasi Pelanggan: Income vs Spending', fontsize=13, fontweight='bold', pad=12)
-        axes[1].set_xlabel('Annual Income (k$)')
+        axes[1].set_xlabel('Annual Income ($)')
         axes[1].set_ylabel('Spending Score (1-100)')
         axes[1].legend(title='Cluster', loc='upper right')
         plt.suptitle('Analisis Visualisasi Klastering Pelanggan', fontsize=16, fontweight='bold', y=1.02)
