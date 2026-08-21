@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
+from math import ceil
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 
 class KMeansClustering:
@@ -161,5 +162,41 @@ class ClusteringVisualizer:
         axes[1].legend(title='Cluster', loc='upper right')
 
         plt.suptitle('Analisis Visualisasi Klaster Pelanggan', fontsize=16, fontweight='bold', y=1.02)
+        plt.tight_layout()
+        plt.show()
+
+    def plot_cluster_characteristic(self,num_cols:list):
+        """Visualisasi hasil karakteristik dan keseimbangan data klaster dalam bentuk barplot 2D"""
+        if self.model.df_scores is None:
+            self.model.compute_scores_dataframe()
+
+        best_idx = self.model.df_scores['Composite_Score'].idxmax()
+        best_k = int(self.model.df_scores.loc[best_idx, 'n_clusters(k)'])
+
+        features = [col for col in num_cols if col != 'Cluster']
+        n_features = len(features)
+        if n_features == 0:
+            print("[WARNING] Tidak ada fitur numerik untuk divisualisasikan.")
+            return
+        df_profile = self.model.df.groupby('Cluster')[features].mean().reset_index()
+        palette = 'Set2'
+
+        n_show = len(features)
+        n_cols = 3
+        nrows = ceil(n_show/n_cols)
+        _,axes = plt.subplots(nrows,n_cols,figsize=(25,6*nrows))
+        axes = axes.flatten()
+
+        for i, col in enumerate(features):
+            counts = df_profile[col]
+            sns.barplot(ax=axes[i], x='Cluster', y=col, data=df_profile,hue='Cluster',legend=False,palette=palette, edgecolor='black', alpha=0.85)
+            axes[i].set_title(f'Rata-Rata {col}', fontsize=12, fontweight='bold')
+            axes[i].set_xlabel('Cluster')
+            axes[i].set_ylabel('Rata-Rata')
+            for j, v in enumerate(counts.values):
+                    axes[i].text(j, v + (max(counts.values) * 0.02),f'{v:.1f}', ha="center", fontweight="bold")
+        for j in range(n_show, len(axes)):
+            axes[j].axis('off')
+        plt.suptitle(f'Analisis Karakteristik Pelanggan Per Klaster (k={best_k})', fontsize=15, fontweight='bold', y=1.05)
         plt.tight_layout()
         plt.show()
