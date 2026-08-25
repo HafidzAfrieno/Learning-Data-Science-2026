@@ -60,6 +60,37 @@ class DbscanClustering:
         return df_scores
 
     def fit_best_model(self, X_cleaned: np.ndarray):
-        print()
-    
-    
+        """Memilih epsilon terbaik berdasarkan Composite Score tertinggi dan melatih ulang model."""
+        dim = X_cleaned.shape[1]
+        min_samples_val = 2 * dim 
+
+        if self.df_scores is None:
+            self.compute_scores_dataframe()
+
+        best_idx = self.df_scores['Composite_Score'].idxmax()
+        best_eps = int(self.df_scores.loc[best_idx, 'Clusters Found'])
+        best_dbscan = DBSCAN(eps=best_eps,min_samples=min_samples_val)
+        self.df['Cluster'] = best_dbscan.fit_predict(X_cleaned)
+
+        print(f"[INFO] Model optimal dipilih dengan jumlah cluster (k) = {best_eps}")
+        return best_dbscan, self.df
+
+    def convert_to_pca(self, X_cleaned: np.ndarray):
+        """Mereduksi dimensi data menggunakan PCA untuk keperluan visualisasi 2D."""
+        pca = PCA(n_components=2, random_state=42)
+        X_pca = pca.fit_transform(X_cleaned)
+        df_pca = pd.DataFrame(X_pca, columns=['PCA1', 'PCA2'])
+
+        df_pca['Cluster'] = self.df['Cluster'].values
+        valid_clusters = df_pca[df_pca['Cluster'] != -1]
+        centroids_pca = valid_clusters.groupby('Cluster')[['PCA1', 'PCA2']].mean().values
+        
+        return df_pca, centroids_pca, pca
+
+class ClusteringVisualizer:
+    """
+    Kelas terpisah khusus untuk menangani seluruh visualisasi/plotting data.
+    Menerapkan prinsip Single Responsibility Principle (SRP).
+    """
+    def __init__(self, model_instance: DbscanClustering):
+            self.model = model_instance
