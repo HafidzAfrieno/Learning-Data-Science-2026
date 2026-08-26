@@ -83,18 +83,26 @@ class DbscanClustering:
         self.df_scores = df_scores
         return df_scores
 
+    def best_composcore(self):
+        if self.df_scores is None:
+            self.compute_scores_dataframe()
+        best_idx = self.df_scores['Composite_Score'].idxmax()
+        best_eps = int(self.df_scores.loc[best_idx,'eps'])
+        return best_eps
+
     def fit_best_model(self, X_cleaned: np.ndarray):
         """Memilih epsilon terbaik berdasarkan Composite Score tertinggi dan melatih ulang model."""
         min_samples_val = 3
-        if self.df_scores is None:
-            self.compute_scores_dataframe()
+        best_eps = self.best_composcore()
+        best_dbscan = DBSCAN(eps=best_eps, min_samples=min_samples_val)
+        labels = best_dbscan.fit_predict(X_cleaned)
+        self.df['Cluster'] = labels
+    
+        self.n_clusters = len(set(labels)) - (1 if -1 in labels else 0)
+        n_noise = int(np.sum(labels == -1))
 
-        best_idx = self.df_scores['Composite_Score'].idxmax()
-        best_eps = int(self.df_scores.loc[best_idx, 'eps'])
-        best_dbscan = DBSCAN(eps=best_eps,min_samples=min_samples_val)
-        self.df['Cluster'] = best_dbscan.fit_predict(X_cleaned)
-
-        print(f"[INFO] Model optimal dipilih dengan epsilonb(eps) = {best_eps}")
+        print(f'[INFO] Model optimal dipilih dengan epsilon (eps) = {best_eps:.2f} dan Jumlah Cluster (k={self.n_clusters})')
+        print(f'[INFO] Jumlah data noise (outlier): {n_noise}')
         return best_dbscan, self.df
 
     def convert_to_pca(self, X_cleaned: np.ndarray):
@@ -123,49 +131,49 @@ class ClusteringVisualizer:
             df_scores = self.model.compute_scores_dataframe()
             
         _, axes = plt.subplots(2, 2, figsize=(14, 10))
-        unique_k = sorted(df_scores['Clusters Found'].unique())
+        unique_eps = sorted(df_scores['eps'].unique())
 
         # --- Plot 1: Silhouette Score (Mendekati +1 Lebih Baik) ---
-        best_k_sil = int(df_scores.loc[df_scores['Silhouette Score'].idxmax(), 'Clusters Found'])
-        sns.lineplot(ax=axes[0, 0], x='Clusters Found', y='Silhouette Score', data=df_scores, marker='o', markersize=8, linewidth=2, color='#2b5c8f')
+        best_k_sil = int(df_scores.loc[df_scores['Silhouette Score'].idxmax(), 'eps'])
+        sns.lineplot(ax=axes[0, 0], x='eps', y='Silhouette Score', data=df_scores, marker='o', markersize=8, linewidth=2, color='#2b5c8f')
         axes[0, 0].axvline(x=best_k_sil, color='red', linestyle='--', alpha=0.7, label=f'Best k = {best_k_sil}')
         axes[0, 0].set_title('Silhouette Score\n(Mendekati +1 = Terbaik)', fontsize=11, fontweight='bold')
-        axes[0, 0].set_xlabel('Jumlah Cluster (k)')
-        axes[0, 0].set_xticks(unique_k)
+        axes[0, 0].set_xlabel('Jumlah Jarak Epsilon (eps)')
+        axes[0, 0].set_xticks(unique_eps)
         axes[0, 0].grid(True, linestyle=':', alpha=0.6)
         axes[0, 0].legend()
 
         # --- Plot 2: Calinski-Harabasz Score (Makin Tinggi Lebih Baik) ---
-        best_k_ch = int(df_scores.loc[df_scores['Calinski-Harabasz Score'].idxmax(), 'Clusters Found'])
-        sns.lineplot(ax=axes[0, 1], x='Clusters Found', y='Calinski-Harabasz Score', data=df_scores, marker='s', markersize=8, linewidth=2, color='#2e7d32')
+        best_k_ch = int(df_scores.loc[df_scores['Calinski-Harabasz Score'].idxmax(), 'eps'])
+        sns.lineplot(ax=axes[0, 1], x='eps', y='Calinski-Harabasz Score', data=df_scores, marker='s', markersize=8, linewidth=2, color='#2e7d32')
         axes[0, 1].axvline(x=best_k_ch, color='red', linestyle='--', alpha=0.7, label=f'Puncak k = {best_k_ch}')
         axes[0, 1].set_title('Calinski-Harabasz Score\n(Semakin Tinggi = Terbaik)', fontsize=11, fontweight='bold')
-        axes[0, 1].set_xlabel('Jumlah Cluster (k)')
-        axes[0, 1].set_xticks(unique_k)
+        axes[0, 1].set_xlabel('Jumlah Jarak Epsilon (eps)')
+        axes[0, 1].set_xticks(unique_eps)
         axes[0, 1].grid(True, linestyle=':', alpha=0.6)
         axes[0, 1].legend()
 
         # --- Plot 3: Davies-Bouldin Score (Makin Rendah Lebih Baik) ---
-        best_k_db = int(df_scores.loc[df_scores['Davies-Bouldin Score'].idxmin(), 'Clusters Found'])
-        sns.lineplot(ax=axes[1, 0], x='Clusters Found', y='Davies-Bouldin Score', data=df_scores, marker='^', markersize=8, linewidth=2, color='#c62828')
+        best_k_db = int(df_scores.loc[df_scores['Davies-Bouldin Score'].idxmin(), 'eps'])
+        sns.lineplot(ax=axes[1, 0], x='eps', y='Davies-Bouldin Score', data=df_scores, marker='^', markersize=8, linewidth=2, color='#c62828')
         axes[1, 0].axvline(x=best_k_db, color='green', linestyle='--', alpha=0.7, label=f'Terendah k = {best_k_db}')
         axes[1, 0].set_title('Davies-Bouldin Score\n(Semakin Rendah = Terbaik)', fontsize=11, fontweight='bold')
-        axes[1, 0].set_xlabel('Jumlah Cluster (k)')
-        axes[1, 0].set_xticks(unique_k)
+        axes[1, 0].set_xlabel('Jumlah Jarak Epsilon (eps)')
+        axes[1, 0].set_xticks(unique_eps)
         axes[1, 0].grid(True, linestyle=':', alpha=0.6)
         axes[1, 0].legend()
 
         # --- Plot 4: Normalized Composite Score (Gabungan 3 Metrik) ---
-        best_k_comp = int(df_scores.loc[df_scores['Composite_Score'].idxmax(), 'Clusters Found'])
-        sns.lineplot(ax=axes[1, 1], x='Clusters Found', y='Composite_Score', data=df_scores, marker='D', markersize=8, linewidth=2, color='#7b1fa2')
+        best_k_comp = int(df_scores.loc[df_scores['Composite_Score'].idxmax(), 'eps'])
+        sns.lineplot(ax=axes[1, 1], x='eps', y='Composite_Score', data=df_scores, marker='D', markersize=8, linewidth=2, color='#7b1fa2')
         axes[1, 1].axvline(x=best_k_comp, color='purple', linestyle='--', alpha=0.7, label=f'Rekomendasi k = {best_k_comp}')
         axes[1, 1].set_title('Normalized Composite Score\n(Konsensus / Gabungan 3 Metrik)', fontsize=11, fontweight='bold')
-        axes[1, 1].set_xlabel('Jumlah Cluster (k)')
-        axes[1, 1].set_xticks(unique_k)
+        axes[1, 1].set_xlabel('Jumlah Jarak Epsilon (eps)')
+        axes[1, 1].set_xticks(unique_eps)
         axes[1, 1].grid(True, linestyle=':', alpha=0.6)
         axes[1, 1].legend()
 
-        plt.suptitle('Evaluasi Metrik Klastering Berdasarkan Jumlah Cluster (k)', fontsize=14, fontweight='bold', y=0.98)
+        plt.suptitle('Evaluasi Metrik Klastering Berdasarkan Jumlah Jarak Epsilon (eps)', fontsize=14, fontweight='bold', y=0.98)
         plt.tight_layout()
         plt.show()
 
@@ -173,7 +181,7 @@ class ClusteringVisualizer:
         df_pca, centroids_pca, pca = self.model.convert_to_pca(X_cleaned)
         sns.set_theme(style="whitegrid")
         palette = 'Set2'
-        fig, axes = plt.subplots(1, 2, figsize=(16, 6))
+        _, axes = plt.subplots(1, 2, figsize=(16, 6))
 
         # Plot PCA 2D
         sns.scatterplot(ax=axes[0], x='PCA1', y='PCA2', hue='Cluster', data=df_pca, palette=palette, s=90, alpha=0.8, style='Cluster')
@@ -196,26 +204,26 @@ class ClusteringVisualizer:
 
     def plot_cluster_characteristic(self,num_cols:list):
             """Visualisasi hasil karakteristik dan keseimbangan data klaster dalam bentuk barplot 2D"""
-            if self.model.df_scores is None:
-                self.model.compute_scores_dataframe()
-    
-            best_idx = self.model.df_scores['Composite_Score'].idxmax()
-            best_eps = int(self.model.df_scores.loc[best_idx, 'eps'])
-    
+            best_k = self.model.n_clusters
             features = [col for col in num_cols if col != 'Cluster']
             n_features = len(features)
+
             if n_features == 0:
                 print("[WARNING] Tidak ada fitur numerik untuk divisualisasikan.")
                 return
-            df_profile = self.model.df.groupby('Cluster')[features].mean().reset_index()
+            
+            df_valid = self.model.df[self.model.df['Cluster'] != -1]
+            if df_valid.empty:
+                print('[WARNING] Semua data teridentifikasi sebagai noise (-1).')
+                return
+            df_profile = df_valid.groupby('Cluster')[features].mean().reset_index()
+
             palette = 'Set2'
-    
             n_show = len(features)
             n_cols = 3
             nrows = ceil(n_show/n_cols)
             _,axes = plt.subplots(nrows,n_cols,figsize=(25,6*nrows))
             axes = axes.flatten()
-    
             for i, col in enumerate(features):
                 counts = df_profile[col]
                 sns.barplot(ax=axes[i], x='Cluster', y=col, data=df_profile,hue='Cluster',legend=False,palette=palette, edgecolor='black', alpha=0.85)
@@ -226,7 +234,6 @@ class ClusteringVisualizer:
                         axes[i].text(j, v + (max(counts.values) * 0.02),f'{v:.1f}', ha="center", fontweight="bold")
             for j in range(n_show, len(axes)):
                 axes[j].axis('off')
-            plt.suptitle(f'Analisis Karakteristik Pelanggan Per Klaster (k={best_eps})', fontsize=15, fontweight='bold', y=1.05)
+            plt.suptitle(f'Analisis Karakteristik Pelanggan Per Klaster (k={best_k})', fontsize=20, fontweight='bold', y=1.05)
             plt.tight_layout()
             plt.show()
-
