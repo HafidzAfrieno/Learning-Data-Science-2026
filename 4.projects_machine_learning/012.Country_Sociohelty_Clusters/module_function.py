@@ -6,7 +6,9 @@ from math import ceil
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import DBSCAN
+from sklearn.neighbors import NearestNeighbors
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
+
 
 class DbscanClustering:
     """
@@ -14,9 +16,10 @@ class DbscanClustering:
     serta transformasi data untuk segmentasi menggunakan DBSCAN.
     """
     def __init__(self,df_raw:pd.DataFrame):
-        self.eps_range = np.arange(0.1, 1.0, 0.1)
-        self.df = df_raw.copy()
-        self.df_scores = None
+        self.eps_range = np.arange(0.1, 1.0, 0.2)
+        self.df_scores = pd.DataFrame
+        self.df = df_raw
+        
         self.sil_scores = []
         self.ch_scores = []
         self.db_scores = []
@@ -27,23 +30,35 @@ class DbscanClustering:
         """Melakukan training DBSCAN untuk setiap nilai eps dalam EPSILON"""
         dim = X_cleaned.shape[1]
         min_samples_val = 2 * dim 
+
         for eps in self.eps_range:
             dbscan = DBSCAN(eps=eps, min_samples=min_samples_val)
             labels = dbscan.fit_predict(X_cleaned)
-            core_mask = labels != -1 # Filter titik noise (-1) untuk perhitungan metrik evaluasi
-            unique_labels = set(labels[core_mask])
 
+            core_mask = labels != -1
+            unique_labels = set(labels[core_mask])
+        
             if len(unique_labels) >= 2:
+                # Evaluasi hanya pada data non-noise
                 X_valid = X_cleaned[core_mask]
                 labels_valid = labels[core_mask]
+                
                 self.eps_values.append(round(eps, 2))
                 self.sil_scores.append(silhouette_score(X_valid, labels_valid))
                 self.ch_scores.append(calinski_harabasz_score(X_valid, labels_valid))
                 self.db_scores.append(davies_bouldin_score(X_valid, labels_valid))
                 self.n_clusters_found.append(len(unique_labels))
 
+        if not self.eps_values:
+            print("[WARNING] Tidak ada konfigurasi eps yang menghasilkan minimal 2 cluster valid.")
+        else:
+            print(f"[INFO] Model berhasil dilatih. Ditemukan {len(self.eps_values)} konfigurasi eps valid.")
+
     def compute_scores_dataframe(self) -> pd.DataFrame:
         """Membuat DataFrame metrik evaluasi dan menghitung Composite Score secara normalisasi."""
+        if not getattr(self, 'eps_values', None):
+            raise ValueError("Tidak ada data metrik yang tersedia. Pastikan fit_model() menemukan minimal 2 cluster valid.")
+
         scaler = MinMaxScaler()
         df_scores = pd.DataFrame({
             'Clusters Found': self.n_clusters_found,
@@ -95,13 +110,13 @@ class ClusteringVisualizer:
             self.model = model_instance
 
     def plot_evaluation_metrics(self) -> None:
-        """Membuat plot evaluasi lengkap (Elbow, Silhouette, Calinski-Harabasz, Davies-Bouldin)."""
+        """Membuat plot evaluasi lengkap (Silhouette, Calinski-Harabasz, Davies-Bouldin, Composite Score)."""
         df_scores = self.model.df_scores
         if df_scores is None:
             df_scores = self.model.compute_scores_dataframe()
             
         _, axes = plt.subplots(2, 2, figsize=(14, 10))
-        # eps_list = list(self.model.eps_range)
+        unique_k = sorted(df_scores['Clusters Found'].unique())
 
         # --- Plot 1: Silhouette Score (Mendekati +1 Lebih Baik) ---
         best_k_sil = int(df_scores.loc[df_scores['Silhouette Score'].idxmax(), 'Clusters Found'])
@@ -109,7 +124,7 @@ class ClusteringVisualizer:
         axes[0, 0].axvline(x=best_k_sil, color='red', linestyle='--', alpha=0.7, label=f'Best k = {best_k_sil}')
         axes[0, 0].set_title('Silhouette Score\n(Mendekati +1 = Terbaik)', fontsize=11, fontweight='bold')
         axes[0, 0].set_xlabel('Jumlah Cluster (k)')
-        axes[0, 0].set_xticks(df_scores['eps'])
+        axes[0, 0].set_xticks(unique_k)
         axes[0, 0].grid(True, linestyle=':', alpha=0.6)
         axes[0, 0].legend()
 
@@ -119,7 +134,7 @@ class ClusteringVisualizer:
         axes[0, 1].axvline(x=best_k_ch, color='red', linestyle='--', alpha=0.7, label=f'Puncak k = {best_k_ch}')
         axes[0, 1].set_title('Calinski-Harabasz Score\n(Semakin Tinggi = Terbaik)', fontsize=11, fontweight='bold')
         axes[0, 1].set_xlabel('Jumlah Cluster (k)')
-        axes[0, 1].set_xticks(df_scores['eps'])
+        axes[0, 1].set_xticks(unique_k)
         axes[0, 1].grid(True, linestyle=':', alpha=0.6)
         axes[0, 1].legend()
 
@@ -129,20 +144,20 @@ class ClusteringVisualizer:
         axes[1, 0].axvline(x=best_k_db, color='green', linestyle='--', alpha=0.7, label=f'Terendah k = {best_k_db}')
         axes[1, 0].set_title('Davies-Bouldin Score\n(Semakin Rendah = Terbaik)', fontsize=11, fontweight='bold')
         axes[1, 0].set_xlabel('Jumlah Cluster (k)')
-        axes[1, 0].set_xticks(df_scores['eps'])
+        axes[1, 0].set_xticks(unique_k)
         axes[1, 0].grid(True, linestyle=':', alpha=0.6)
         axes[1, 0].legend()
 
-        # --- Plot 4 (BARU): Normalized Composite Score (Gabungan 3 Metrik) ---
+        # --- Plot 4: Normalized Composite Score (Gabungan 3 Metrik) ---
         best_k_comp = int(df_scores.loc[df_scores['Composite_Score'].idxmax(), 'Clusters Found'])
         sns.lineplot(ax=axes[1, 1], x='Clusters Found', y='Composite_Score', data=df_scores, marker='D', markersize=8, linewidth=2, color='#7b1fa2')
         axes[1, 1].axvline(x=best_k_comp, color='purple', linestyle='--', alpha=0.7, label=f'Rekomendasi k = {best_k_comp}')
         axes[1, 1].set_title('Normalized Composite Score\n(Konsensus / Gabungan 3 Metrik)', fontsize=11, fontweight='bold')
         axes[1, 1].set_xlabel('Jumlah Cluster (k)')
-        axes[1, 1].set_xticks(df_scores['eps'])
+        axes[1, 1].set_xticks(unique_k)
         axes[1, 1].grid(True, linestyle=':', alpha=0.6)
         axes[1, 1].legend()
 
-        plt.suptitle('Evaluasi Metrik Klastering Spectral Berdasarkan (K) Clusster', fontsize=14, fontweight='bold', y=0.98)
+        plt.suptitle('Evaluasi Metrik Klastering Berdasarkan Jumlah Cluster (k)', fontsize=14, fontweight='bold', y=0.98)
         plt.tight_layout()
         plt.show()
