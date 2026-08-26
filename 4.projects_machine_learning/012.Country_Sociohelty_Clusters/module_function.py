@@ -177,7 +177,7 @@ class ClusteringVisualizer:
         plt.tight_layout()
         plt.show()
 
-    def plot_cluster_results(self, X_cleaned: np.ndarray, best_kmeans: DBSCAN, feature_x: str, feature_y: str) -> None:
+    def plot_cluster_results(self, X_cleaned: np.ndarray, feature_x: str, feature_y: str) -> None:
         df_pca, centroids_pca, pca = self.model.convert_to_pca(X_cleaned)
         sns.set_theme(style="whitegrid")
         palette = 'Set2'
