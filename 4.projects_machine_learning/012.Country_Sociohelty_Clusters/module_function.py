@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+
 from math import ceil
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
@@ -9,6 +10,20 @@ from sklearn.cluster import DBSCAN
 from sklearn.neighbors import NearestNeighbors
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 
+def get_optimal_eps_range(X_cleaned: np.ndarray, min_samples: int, num_steps: int = 30):
+    k = max(2, min(min_samples, X_cleaned.shape[0] - 1))
+    nn = NearestNeighbors(n_neighbors=k).fit(X_cleaned)
+    distances, _ = nn.kneighbors(X_cleaned)
+    
+    sorted_distances = np.sort(distances[:, -1])
+    eps_start = np.percentile(sorted_distances, 10)  # Abaikan 10% jarak terpadat (noise)
+    eps_stop = np.percentile(sorted_distances, 90)   # Abaikan 10% jarak paling renggang (outlier)
+    
+    if eps_start >= eps_stop:
+        eps_start = sorted_distances.min()
+        eps_stop = sorted_distances.max()
+    eps_range = np.linspace(eps_start, eps_stop, num=num_steps)
+    return eps_range
 
 class DbscanClustering:
     """
@@ -16,10 +31,9 @@ class DbscanClustering:
     serta transformasi data untuk segmentasi menggunakan DBSCAN.
     """
     def __init__(self,df_raw:pd.DataFrame):
-        self.eps_range = np.arange(0.1, 1.0, 0.2)
         self.df_scores = pd.DataFrame
         self.df = df_raw
-        
+        self.eps_range = []
         self.sil_scores = []
         self.ch_scores = []
         self.db_scores = []
@@ -28,8 +42,9 @@ class DbscanClustering:
 
     def fit_model(self,X_cleaned:np.ndarray)->None:
         """Melakukan training DBSCAN untuk setiap nilai eps dalam EPSILON"""
-        dim = X_cleaned.shape[1]
-        min_samples_val = 2 * dim 
+        n_samples, dim = X_cleaned.shape
+        min_samples_val = max(3, min(2 * dim, int(np.log(n_samples) * 2), n_samples - 1))
+        self.eps_range = get_optimal_eps_range(X_cleaned=X_cleaned, min_samples=min_samples_val)
 
         for eps in self.eps_range:
             dbscan = DBSCAN(eps=eps, min_samples=min_samples_val)
@@ -39,7 +54,6 @@ class DbscanClustering:
             unique_labels = set(labels[core_mask])
         
             if len(unique_labels) >= 2:
-                # Evaluasi hanya pada data non-noise
                 X_valid = X_cleaned[core_mask]
                 labels_valid = labels[core_mask]
                 
@@ -56,10 +70,7 @@ class DbscanClustering:
 
     def compute_scores_dataframe(self) -> pd.DataFrame:
         """Membuat DataFrame metrik evaluasi dan menghitung Composite Score secara normalisasi."""
-        if not getattr(self, 'eps_values', None):
-            raise ValueError("Tidak ada data metrik yang tersedia. Pastikan fit_model() menemukan minimal 2 cluster valid.")
 
-        scaler = MinMaxScaler()
         df_scores = pd.DataFrame({
             'Clusters Found': self.n_clusters_found,
             'eps': self.eps_values,
@@ -67,6 +78,7 @@ class DbscanClustering:
             'Calinski-Harabasz Score': self.ch_scores,
             'Davies-Bouldin Score': self.db_scores
         })
+        scaler = MinMaxScaler()
         norm_sil = scaler.fit_transform(df_scores[['Silhouette Score']])
         norm_ch = scaler.fit_transform(df_scores[['Calinski-Harabasz Score']])
         norm_db = 1 - scaler.fit_transform(df_scores[['Davies-Bouldin Score']])
