@@ -84,7 +84,6 @@ class DbscanClustering:
         df_pca['Cluster'] = self.df['Cluster'].values
         valid_clusters = df_pca[df_pca['Cluster'] != -1]
         centroids_pca = valid_clusters.groupby('Cluster')[['PCA1', 'PCA2']].mean().values
-        
         return df_pca, centroids_pca, pca
 
 class ClusteringVisualizer:
