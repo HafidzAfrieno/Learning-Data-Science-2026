@@ -93,3 +93,56 @@ class ClusteringVisualizer:
     """
     def __init__(self, model_instance: DbscanClustering):
             self.model = model_instance
+
+    def plot_evaluation_metrics(self) -> None:
+        """Membuat plot evaluasi lengkap (Elbow, Silhouette, Calinski-Harabasz, Davies-Bouldin)."""
+        df_scores = self.model.df_scores
+        if df_scores is None:
+            df_scores = self.model.compute_scores_dataframe()
+            
+        _, axes = plt.subplots(2, 2, figsize=(14, 10))
+        # eps_list = list(self.model.eps_range)
+
+        # --- Plot 1: Silhouette Score (Mendekati +1 Lebih Baik) ---
+        best_k_sil = int(df_scores.loc[df_scores['Silhouette Score'].idxmax(), 'Clusters Found'])
+        sns.lineplot(ax=axes[0, 0], x='Clusters Found', y='Silhouette Score', data=df_scores, marker='o', markersize=8, linewidth=2, color='#2b5c8f')
+        axes[0, 0].axvline(x=best_k_sil, color='red', linestyle='--', alpha=0.7, label=f'Best k = {best_k_sil}')
+        axes[0, 0].set_title('Silhouette Score\n(Mendekati +1 = Terbaik)', fontsize=11, fontweight='bold')
+        axes[0, 0].set_xlabel('Jumlah Cluster (k)')
+        axes[0, 0].set_xticks(df_scores['eps'])
+        axes[0, 0].grid(True, linestyle=':', alpha=0.6)
+        axes[0, 0].legend()
+
+        # --- Plot 2: Calinski-Harabasz Score (Makin Tinggi Lebih Baik) ---
+        best_k_ch = int(df_scores.loc[df_scores['Calinski-Harabasz Score'].idxmax(), 'Clusters Found'])
+        sns.lineplot(ax=axes[0, 1], x='Clusters Found', y='Calinski-Harabasz Score', data=df_scores, marker='s', markersize=8, linewidth=2, color='#2e7d32')
+        axes[0, 1].axvline(x=best_k_ch, color='red', linestyle='--', alpha=0.7, label=f'Puncak k = {best_k_ch}')
+        axes[0, 1].set_title('Calinski-Harabasz Score\n(Semakin Tinggi = Terbaik)', fontsize=11, fontweight='bold')
+        axes[0, 1].set_xlabel('Jumlah Cluster (k)')
+        axes[0, 1].set_xticks(df_scores['eps'])
+        axes[0, 1].grid(True, linestyle=':', alpha=0.6)
+        axes[0, 1].legend()
+
+        # --- Plot 3: Davies-Bouldin Score (Makin Rendah Lebih Baik) ---
+        best_k_db = int(df_scores.loc[df_scores['Davies-Bouldin Score'].idxmin(), 'Clusters Found'])
+        sns.lineplot(ax=axes[1, 0], x='Clusters Found', y='Davies-Bouldin Score', data=df_scores, marker='^', markersize=8, linewidth=2, color='#c62828')
+        axes[1, 0].axvline(x=best_k_db, color='green', linestyle='--', alpha=0.7, label=f'Terendah k = {best_k_db}')
+        axes[1, 0].set_title('Davies-Bouldin Score\n(Semakin Rendah = Terbaik)', fontsize=11, fontweight='bold')
+        axes[1, 0].set_xlabel('Jumlah Cluster (k)')
+        axes[1, 0].set_xticks(df_scores['eps'])
+        axes[1, 0].grid(True, linestyle=':', alpha=0.6)
+        axes[1, 0].legend()
+
+        # --- Plot 4 (BARU): Normalized Composite Score (Gabungan 3 Metrik) ---
+        best_k_comp = int(df_scores.loc[df_scores['Composite_Score'].idxmax(), 'Clusters Found'])
+        sns.lineplot(ax=axes[1, 1], x='Clusters Found', y='Composite_Score', data=df_scores, marker='D', markersize=8, linewidth=2, color='#7b1fa2')
+        axes[1, 1].axvline(x=best_k_comp, color='purple', linestyle='--', alpha=0.7, label=f'Rekomendasi k = {best_k_comp}')
+        axes[1, 1].set_title('Normalized Composite Score\n(Konsensus / Gabungan 3 Metrik)', fontsize=11, fontweight='bold')
+        axes[1, 1].set_xlabel('Jumlah Cluster (k)')
+        axes[1, 1].set_xticks(df_scores['eps'])
+        axes[1, 1].grid(True, linestyle=':', alpha=0.6)
+        axes[1, 1].legend()
+
+        plt.suptitle('Evaluasi Metrik Klastering Spectral Berdasarkan (K) Clusster', fontsize=14, fontweight='bold', y=0.98)
+        plt.tight_layout()
+        plt.show()
