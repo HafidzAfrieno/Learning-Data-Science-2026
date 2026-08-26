@@ -10,18 +10,16 @@ from sklearn.cluster import DBSCAN
 from sklearn.neighbors import NearestNeighbors
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 
-def get_optimal_eps_range(X_cleaned: np.ndarray, min_samples: int, num_steps: int = 30):
+def get_optimal_eps_range_quantile(X_cleaned: np.ndarray, min_samples: int, num_steps: int = 30):
     k = max(2, min(min_samples, X_cleaned.shape[0] - 1))
     nn = NearestNeighbors(n_neighbors=k).fit(X_cleaned)
+
     distances, _ = nn.kneighbors(X_cleaned)
-    
-    sorted_distances = np.sort(distances[:, -1])
-    eps_start = np.percentile(sorted_distances, 10)  # Abaikan 10% jarak terpadat (noise)
-    eps_stop = np.percentile(sorted_distances, 90)   # Abaikan 10% jarak paling renggang (outlier)
-    
+    d_k = distances[:, -1]
+    eps_start, eps_stop = np.quantile(d_k, [0.25, 0.75]) #quantile high
     if eps_start >= eps_stop:
-        eps_start = sorted_distances.min()
-        eps_stop = sorted_distances.max()
+        eps_start, eps_stop = d_k.min(), d_k.max()
+
     eps_range = np.linspace(eps_start, eps_stop, num=num_steps)
     return eps_range
 
@@ -42,9 +40,8 @@ class DbscanClustering:
 
     def fit_model(self,X_cleaned:np.ndarray)->None:
         """Melakukan training DBSCAN untuk setiap nilai eps dalam EPSILON"""
-        n_samples, dim = X_cleaned.shape
-        min_samples_val = max(3, min(2 * dim, int(np.log(n_samples) * 2), n_samples - 1))
-        self.eps_range = get_optimal_eps_range(X_cleaned=X_cleaned, min_samples=min_samples_val)
+        min_samples_val = 3 #menggunakan standart sendiri
+        self.eps_range = get_optimal_eps_range_quantile(X_cleaned=X_cleaned, min_samples=min_samples_val)
 
         for eps in self.eps_range:
             dbscan = DBSCAN(eps=eps, min_samples=min_samples_val)
