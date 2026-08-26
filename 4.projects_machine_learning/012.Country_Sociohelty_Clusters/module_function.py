@@ -85,18 +85,16 @@ class DbscanClustering:
 
     def fit_best_model(self, X_cleaned: np.ndarray):
         """Memilih epsilon terbaik berdasarkan Composite Score tertinggi dan melatih ulang model."""
-        dim = X_cleaned.shape[1]
-        min_samples_val = 2 * dim 
-
+        min_samples_val = 3
         if self.df_scores is None:
             self.compute_scores_dataframe()
 
         best_idx = self.df_scores['Composite_Score'].idxmax()
-        best_eps = int(self.df_scores.loc[best_idx, 'Clusters Found'])
+        best_eps = int(self.df_scores.loc[best_idx, 'eps'])
         best_dbscan = DBSCAN(eps=best_eps,min_samples=min_samples_val)
         self.df['Cluster'] = best_dbscan.fit_predict(X_cleaned)
 
-        print(f"[INFO] Model optimal dipilih dengan jumlah cluster (k) = {best_eps}")
+        print(f"[INFO] Model optimal dipilih dengan epsilonb(eps) = {best_eps}")
         return best_dbscan, self.df
 
     def convert_to_pca(self, X_cleaned: np.ndarray):
@@ -170,3 +168,65 @@ class ClusteringVisualizer:
         plt.suptitle('Evaluasi Metrik Klastering Berdasarkan Jumlah Cluster (k)', fontsize=14, fontweight='bold', y=0.98)
         plt.tight_layout()
         plt.show()
+
+    def plot_cluster_results(self, X_cleaned: np.ndarray, best_kmeans: DBSCAN, feature_x: str, feature_y: str) -> None:
+        df_pca, centroids_pca, pca = self.model.convert_to_pca(X_cleaned)
+        sns.set_theme(style="whitegrid")
+        palette = 'Set2'
+        fig, axes = plt.subplots(1, 2, figsize=(16, 6))
+
+        # Plot PCA 2D
+        sns.scatterplot(ax=axes[0], x='PCA1', y='PCA2', hue='Cluster', data=df_pca, palette=palette, s=90, alpha=0.8, style='Cluster')
+        axes[0].scatter(centroids_pca[:, 0], centroids_pca[:, 1], s=250, c='red', marker='X', edgecolor='black', linewidth=1.5, label='Centroids')
+        axes[0].set_title('Visualisasi Klaster (PCA 2D)', fontsize=13, fontweight='bold', pad=12)
+        axes[0].set_xlabel(f'PCA 1 ({pca.explained_variance_ratio_[0]*100:.1f}% Var)')
+        axes[0].set_ylabel(f'PCA 2 ({pca.explained_variance_ratio_[1]*100:.1f}% Var)')
+        axes[0].legend(title='Cluster', loc='upper right')
+
+        # Plot Fitur Asli (Dinamis)
+        sns.scatterplot(ax=axes[1], x=feature_x, y=feature_y, hue='Cluster', data=self.model.df, palette=palette, s=90, style='Cluster')
+        axes[1].set_title(f'Segmentasi: {feature_x} vs {feature_y}', fontsize=13, fontweight='bold', pad=12)
+        axes[1].set_xlabel(feature_x)
+        axes[1].set_ylabel(feature_y)
+        axes[1].legend(title='Cluster', loc='upper right')
+
+        plt.suptitle('Analisis Visualisasi Klaster Pelanggan', fontsize=16, fontweight='bold', y=1.02)
+        plt.tight_layout()
+        plt.show()
+
+    def plot_cluster_characteristic(self,num_cols:list):
+            """Visualisasi hasil karakteristik dan keseimbangan data klaster dalam bentuk barplot 2D"""
+            if self.model.df_scores is None:
+                self.model.compute_scores_dataframe()
+    
+            best_idx = self.model.df_scores['Composite_Score'].idxmax()
+            best_eps = int(self.model.df_scores.loc[best_idx, 'eps'])
+    
+            features = [col for col in num_cols if col != 'Cluster']
+            n_features = len(features)
+            if n_features == 0:
+                print("[WARNING] Tidak ada fitur numerik untuk divisualisasikan.")
+                return
+            df_profile = self.model.df.groupby('Cluster')[features].mean().reset_index()
+            palette = 'Set2'
+    
+            n_show = len(features)
+            n_cols = 3
+            nrows = ceil(n_show/n_cols)
+            _,axes = plt.subplots(nrows,n_cols,figsize=(25,6*nrows))
+            axes = axes.flatten()
+    
+            for i, col in enumerate(features):
+                counts = df_profile[col]
+                sns.barplot(ax=axes[i], x='Cluster', y=col, data=df_profile,hue='Cluster',legend=False,palette=palette, edgecolor='black', alpha=0.85)
+                axes[i].set_title(f'Rata-Rata {col}', fontsize=12, fontweight='bold')
+                axes[i].set_xlabel('Cluster')
+                axes[i].set_ylabel('Rata-Rata')
+                for j, v in enumerate(counts.values):
+                        axes[i].text(j, v + (max(counts.values) * 0.02),f'{v:.1f}', ha="center", fontweight="bold")
+            for j in range(n_show, len(axes)):
+                axes[j].axis('off')
+            plt.suptitle(f'Analisis Karakteristik Pelanggan Per Klaster (k={best_eps})', fontsize=15, fontweight='bold', y=1.05)
+            plt.tight_layout()
+            plt.show()
+
