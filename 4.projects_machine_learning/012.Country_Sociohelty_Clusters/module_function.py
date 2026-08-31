@@ -8,6 +8,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import DBSCAN
 from sklearn.neighbors import NearestNeighbors
+import pickle
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 
 def get_optimal_eps_range_quantile(X_cleaned: np.ndarray, min_samples: int, num_steps: int = 30):
@@ -115,6 +116,11 @@ class DbscanClustering:
         valid_clusters = df_pca[df_pca['Cluster'] != -1]
         centroids_pca = valid_clusters.groupby('Cluster')[['PCA1', 'PCA2']].mean().values
         return df_pca, centroids_pca, pca
+
+    def save_model(self, best_model: DBSCAN, name_file: str):
+        """Menyimpan trained model ke dalam file .pkl"""
+        with open(name_file, 'wb') as f:
+            pickle.dump(best_model, f)
 
 class ClusteringVisualizer:
     """

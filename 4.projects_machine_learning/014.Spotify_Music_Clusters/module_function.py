@@ -8,6 +8,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import AgglomerativeClustering
 from scipy.cluster.hierarchy import dendrogram, linkage
+import pickle
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 
 class AggloMerativeClustering:
@@ -80,6 +81,11 @@ class AggloMerativeClustering:
         centroids_pca = df_pca.groupby('Cluster')[['PCA1', 'PCA2']].mean().values
         
         return df_pca, centroids_pca, pca
+
+    def save_model(self, best_model: AgglomerativeClustering, name_file: str):
+        """Menyimpan trained model ke dalam file .pkl"""
+        with open(name_file, 'wb') as f:
+            pickle.dump(best_model, f)
 
 class ClusteringVisualizer:
     """

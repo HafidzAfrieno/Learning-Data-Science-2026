@@ -2,10 +2,12 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 from math import ceil
+import pickle
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 
 class KMeansClustering:
@@ -83,6 +85,11 @@ class KMeansClustering:
         
         return df_pca, centroids_pca, pca
 
+    def save_model(self, best_model: KMeans, name_file: str):
+        """Menyimpan trained model ke dalam file .pkl"""
+        with open(name_file, 'wb') as f:
+            pickle.dump(best_model, f)
+        
 
 class ClusteringVisualizer:
     """

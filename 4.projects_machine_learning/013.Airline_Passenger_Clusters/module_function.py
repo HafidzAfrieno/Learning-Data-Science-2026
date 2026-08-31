@@ -7,6 +7,7 @@ from math import ceil
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.mixture import GaussianMixture
+import pickle
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 
 class GaussianMixtureClustering:
@@ -81,6 +82,11 @@ class GaussianMixtureClustering:
             centroids_pca = pca.transform(best_gmm.means_)
             
             return df_pca, centroids_pca, pca
+
+    def save_model(self, best_model: GaussianMixture, name_file: str):
+        """Menyimpan trained model ke dalam file .pkl"""
+        with open(name_file, 'wb') as f:
+            pickle.dump(best_model, f)
 
 class ClusteringVisualizer:
     """
